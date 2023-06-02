@@ -16,6 +16,5 @@ namespace HW_Hidreletrica.Telas
         {
             InitializeComponent();
         }
-
     }
 }
