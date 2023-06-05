@@ -34,13 +34,21 @@
             txt_password = new TextBox();
             label4 = new Label();
             button1 = new Button();
+            folderBrowserDialog1 = new FolderBrowserDialog();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            comboBox1 = new ComboBox();
+            label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.White;
             label1.Font = new Font("Segoe Print", 25.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(141, 9);
+            label1.Location = new Point(136, 13);
             label1.Name = "label1";
             label1.Size = new Size(122, 62);
             label1.TabIndex = 0;
@@ -49,12 +57,13 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(124, 145);
             label2.Name = "label2";
-            label2.Size = new Size(135, 25);
+            label2.Size = new Size(145, 25);
             label2.TabIndex = 1;
-            label2.Text = "Email o Usuario";
+            label2.Text = "Email ou Usuario";
             // 
             // txt_usuario
             // 
@@ -76,6 +85,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(163, 233);
             label4.Name = "label4";
@@ -85,30 +95,77 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.White;
+            button1.BackColor = Color.DarkCyan;
             button1.Font = new Font("Segoe Print", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(124, 341);
+            button1.Location = new Point(137, 371);
             button1.Name = "button1";
-            button1.Size = new Size(139, 67);
+            button1.Size = new Size(106, 62);
             button1.TabIndex = 7;
             button1.Text = "Entrar";
             button1.UseVisualStyleBackColor = false;
             button1.Click += btn_login;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Location = new Point(12, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(376, 441);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = Properties.Resources._1;
+            pictureBox2.Location = new Point(389, 75);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(377, 303);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 9;
+            pictureBox2.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Cliente", "Administrator" });
+            comboBox1.Location = new Point(128, 321);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 11;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(133, 293);
+            label3.Name = "label3";
+            label3.Size = new Size(112, 25);
+            label3.TabIndex = 12;
+            label3.Text = "Tipo Usuario";
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkCyan;
-            ClientSize = new Size(401, 494);
+            ClientSize = new Size(770, 463);
+            Controls.Add(label3);
+            Controls.Add(comboBox1);
+            Controls.Add(pictureBox2);
             Controls.Add(button1);
             Controls.Add(txt_password);
             Controls.Add(label4);
             Controls.Add(txt_usuario);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(pictureBox1);
             Name = "Login";
             Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,5 +178,10 @@
         private TextBox txt_password;
         private Label label4;
         private Button button1;
+        private FolderBrowserDialog folderBrowserDialog1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private ComboBox comboBox1;
+        private Label label3;
     }
 }

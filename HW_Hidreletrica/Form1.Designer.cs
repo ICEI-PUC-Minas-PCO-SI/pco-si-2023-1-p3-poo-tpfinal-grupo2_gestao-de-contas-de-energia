@@ -56,6 +56,7 @@
             btn_login.TabIndex = 1;
             btn_login.Text = "Login";
             btn_login.UseVisualStyleBackColor = false;
+            btn_login.Click += btn_login_Click;
             // 
             // btn_cadastro
             // 
