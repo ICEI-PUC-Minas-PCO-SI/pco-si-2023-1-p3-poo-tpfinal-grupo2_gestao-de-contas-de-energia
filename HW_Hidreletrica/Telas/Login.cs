@@ -16,5 +16,21 @@ namespace HW_Hidreletrica.Telas
         {
             InitializeComponent();
         }
+
+
+
+        private void txt_usuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_password_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_login(object sender, EventArgs e)
+        {
+
+        }
     }
 }
