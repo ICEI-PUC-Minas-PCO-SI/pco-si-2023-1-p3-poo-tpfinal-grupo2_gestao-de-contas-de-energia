@@ -1,10 +1,25 @@
 namespace HW_Hidreletrica
 {
-    public partial class Form1 : Form
+    public partial class Cadastro : Form
     {
-        public Form1()
+        public Cadastro()
         {
             InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
