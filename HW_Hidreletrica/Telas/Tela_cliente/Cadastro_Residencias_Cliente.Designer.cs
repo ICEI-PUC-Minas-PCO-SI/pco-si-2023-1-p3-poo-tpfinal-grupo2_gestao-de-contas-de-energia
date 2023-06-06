@@ -196,7 +196,7 @@
             // 
             btn_cadastrar.BackColor = Color.DarkOrange;
             btn_cadastrar.Font = new Font("Segoe Print", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_cadastrar.Location = new Point(551, 297);
+            btn_cadastrar.Location = new Point(539, 298);
             btn_cadastrar.Name = "btn_cadastrar";
             btn_cadastrar.Size = new Size(124, 63);
             btn_cadastrar.TabIndex = 27;

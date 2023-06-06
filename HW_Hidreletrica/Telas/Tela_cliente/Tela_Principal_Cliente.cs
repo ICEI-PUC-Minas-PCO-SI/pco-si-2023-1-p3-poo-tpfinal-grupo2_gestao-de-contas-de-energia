@@ -16,5 +16,10 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
         {
             InitializeComponent();
         }
+
+        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

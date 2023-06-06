@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HW_Hidreletrica.Telas.Tela_cliente;
 
 namespace HW_Hidreletrica.Telas
 {
@@ -30,6 +31,8 @@ namespace HW_Hidreletrica.Telas
 
         private void btn_login(object sender, EventArgs e)
         {
+            Tela_Principal_Cliente telaCliente = new Tela_Principal_Cliente();
+            telaCliente.ShowDialog();
 
         }
 
