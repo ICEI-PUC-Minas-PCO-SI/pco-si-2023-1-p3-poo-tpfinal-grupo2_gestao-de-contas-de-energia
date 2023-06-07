@@ -73,6 +73,16 @@ namespace HW_Hidreletrica.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adm {
+            get {
+                object obj = ResourceManager.GetObject("adm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap casa_cadastro {
             get {
                 object obj = ResourceManager.GetObject("casa-cadastro", resourceCulture);
@@ -123,9 +133,59 @@ namespace HW_Hidreletrica.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eletrodomesticos {
+            get {
+                object obj = ResourceManager.GetObject("eletrodomesticos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eletronicos {
+            get {
+                object obj = ResourceManager.GetObject("eletronicos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_logo {
+            get {
+                object obj = ResourceManager.GetObject("img-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Landing_Page {
             get {
                 object obj = ResourceManager.GetObject("Landing Page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap led {
+            get {
+                object obj = ResourceManager.GetObject("led", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap led1 {
+            get {
+                object obj = ResourceManager.GetObject("led1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

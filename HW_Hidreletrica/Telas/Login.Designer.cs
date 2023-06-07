@@ -59,11 +59,12 @@
             label2.AutoSize = true;
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(124, 145);
+            label2.Location = new Point(163, 145);
             label2.Name = "label2";
-            label2.Size = new Size(145, 25);
+            label2.Size = new Size(54, 25);
             label2.TabIndex = 1;
-            label2.Text = "Email ou Usuario";
+            label2.Text = "Email";
+            label2.Click += label2_Click;
             // 
             // txt_usuario
             // 
@@ -75,9 +76,9 @@
             // 
             // txt_password
             // 
-            txt_password.Location = new Point(86, 261);
+            txt_password.Location = new Point(86, 248);
             txt_password.Name = "txt_password";
-            txt_password.PasswordChar = '*';
+            txt_password.PasswordChar = '●';
             txt_password.Size = new Size(216, 23);
             txt_password.TabIndex = 6;
             txt_password.TextChanged += txt_password_TextChanged;
@@ -87,19 +88,20 @@
             label4.AutoSize = true;
             label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(163, 233);
+            label4.Location = new Point(160, 220);
             label4.Name = "label4";
             label4.Size = new Size(60, 25);
             label4.TabIndex = 5;
             label4.Text = "Senha";
+            label4.Click += label4_Click;
             // 
             // button1
             // 
             button1.BackColor = Color.DarkCyan;
             button1.Font = new Font("Segoe Print", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(137, 371);
+            button1.Location = new Point(136, 358);
             button1.Name = "button1";
-            button1.Size = new Size(106, 62);
+            button1.Size = new Size(108, 53);
             button1.TabIndex = 7;
             button1.Text = "Entrar";
             button1.UseVisualStyleBackColor = false;
@@ -108,7 +110,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(12, 9);
+            pictureBox1.Location = new Point(12, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(376, 441);
             pictureBox1.TabIndex = 8;
@@ -128,9 +130,9 @@
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.Items.AddRange(new object[] { "Cliente", "Administrator" });
-            comboBox1.Location = new Point(128, 321);
+            comboBox1.Location = new Point(128, 308);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 11;
@@ -140,7 +142,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(133, 293);
+            label3.Location = new Point(131, 280);
             label3.Name = "label3";
             label3.Size = new Size(112, 25);
             label3.TabIndex = 12;

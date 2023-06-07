@@ -21,5 +21,25 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
         {
 
         }
+
+        private void Tela_Principal_Cliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menu_perfil(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menu_logout(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menu_residencia(object sender, EventArgs e)
+        {
+
+        }
     }
 }
