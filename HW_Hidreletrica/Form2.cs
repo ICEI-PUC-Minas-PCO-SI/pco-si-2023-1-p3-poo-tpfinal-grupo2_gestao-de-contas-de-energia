@@ -21,5 +21,10 @@ namespace HW_Hidreletrica
         {
 
         }
+
+        private void Cadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
