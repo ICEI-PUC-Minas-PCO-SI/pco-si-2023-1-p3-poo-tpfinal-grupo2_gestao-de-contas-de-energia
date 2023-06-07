@@ -8,11 +8,16 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
+<<<<<<< Updated upstream
     "C:\\Users\\gusta\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\1350152\\.nuget\\packages\\": {}
+>>>>>>> Stashed changes
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\gusta\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
       "projectName": "HW_Hidreletrica",
       "projectPath": "C:\\Users\\gusta\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
@@ -21,10 +26,20 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\1350152\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
+      "projectName": "HW_Hidreletrica",
+      "projectPath": "C:\\Users\\1350152\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
+      "packagesPath": "C:\\Users\\1350152\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\1350152\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\1350152\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> Stashed changes
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -51,8 +66,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -64,7 +78,11 @@
             "privateAssets": "none"
           }
         },
+<<<<<<< Updated upstream
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+>>>>>>> Stashed changes
       }
     }
   }
