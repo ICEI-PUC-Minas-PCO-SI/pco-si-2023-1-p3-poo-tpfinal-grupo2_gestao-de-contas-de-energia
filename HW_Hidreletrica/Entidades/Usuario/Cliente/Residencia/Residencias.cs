@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia
 {
-	internal class Residencia
+	internal class Residencias
 	{
         public string numInstalacao { get; set; }
         public string rua { get; set; }
@@ -18,12 +18,12 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia
         public string descricao { get; set; }
         public int codTipo { get; set; }
 
-        public Residencia()
+        public Residencias()
         {
             
         }
 
-		public Residencia(string numInstalacao, string rua, string bairro, string cidade, int numero, string cep, string estado, string descricao, int codTipo)
+		public Residencias(string numInstalacao, string rua, string bairro, string cidade, int numero, string cep, string estado, string descricao, int codTipo)
 		{
 			this.numInstalacao = numInstalacao;
 			this.rua = rua;
