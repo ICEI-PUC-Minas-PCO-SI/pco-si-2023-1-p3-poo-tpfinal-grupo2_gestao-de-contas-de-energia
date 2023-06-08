@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gusta\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
+      "projectUniqueName": "C:\\Users\\gusta\\source\\repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
       "projectName": "HW_Hidreletrica",
-      "projectPath": "C:\\Users\\gusta\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
+      "projectPath": "C:\\Users\\gusta\\source\\repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
       "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gusta\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\obj\\",
+      "outputPath": "C:\\Users\\gusta\\source\\repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,13 +67,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\gusta\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

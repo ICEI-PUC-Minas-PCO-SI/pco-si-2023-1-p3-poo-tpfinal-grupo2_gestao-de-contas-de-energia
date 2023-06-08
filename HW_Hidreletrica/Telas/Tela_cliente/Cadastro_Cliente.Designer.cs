@@ -92,6 +92,9 @@
             this.cbx_cpf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_cpf.FormattingEnabled = true;
             this.cbx_cpf.IntegralHeight = false;
+            this.cbx_cpf.Items.AddRange(new object[] {
+            "CPF",
+            "CNPJ"});
             this.cbx_cpf.Location = new System.Drawing.Point(359, 268);
             this.cbx_cpf.Name = "cbx_cpf";
             this.cbx_cpf.Size = new System.Drawing.Size(108, 23);
