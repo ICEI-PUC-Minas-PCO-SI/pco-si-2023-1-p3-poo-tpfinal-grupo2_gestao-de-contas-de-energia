@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta
 {
-	internal class Conta
+	abstract class Conta
 	{
         public int codigo { get; set; }
         public double mesReferencia { get; set; }
         public double mesAnterior { get; set; }
-        public double Consumo { get; set; }
+        public double consumo { get; set; }
         public double valorTotal { get; set; }
         public Cliente cliente { get; set; }
         public Residencias residencia { get; set; }
@@ -28,7 +28,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta
 			this.codigo = codigo;
 			this.mesReferencia = mesReferencia;
 			this.mesAnterior = mesAnterior;
-			Consumo = consumo;
+			this.consumo = consumo;
 			this.cliente = cliente;
 			this.residencia = residencia;
 			this.codigoTipo = codigoTipo;

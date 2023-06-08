@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HW_Hidreletrica.Telas.Tela_cliente
 {
-    public partial class Contas_Clientes : Form
-    {
-        public Contas_Clientes()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class Contas : Form
+	{
+		public Contas()
+		{
+			InitializeComponent();
+
+		}
+		private void CarregaDtContaAtual()
+		{
+
+		}
+	}
 }
