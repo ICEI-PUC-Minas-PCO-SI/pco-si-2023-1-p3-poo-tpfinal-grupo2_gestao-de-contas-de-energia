@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luis\\OneDrive\\Documentos\\PUC\\PUC-3\\POO\\Trabalho-Final\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj": {}
+    "C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luis\\OneDrive\\Documentos\\PUC\\PUC-3\\POO\\Trabalho-Final\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj": {
+    "C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luis\\OneDrive\\Documentos\\PUC\\PUC-3\\POO\\Trabalho-Final\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
+        "projectUniqueName": "C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
         "projectName": "HW_Hidreletrica",
-        "projectPath": "C:\\Users\\Luis\\OneDrive\\Documentos\\PUC\\PUC-3\\POO\\Trabalho-Final\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
-        "packagesPath": "C:\\Users\\Luis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luis\\OneDrive\\Documentos\\PUC\\PUC-3\\POO\\Trabalho-Final\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\obj\\",
+        "projectPath": "C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
+        "packagesPath": "C:\\Users\\Lucas Ferreira Gudes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Luis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lucas Ferreira Gudes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,6 +44,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
