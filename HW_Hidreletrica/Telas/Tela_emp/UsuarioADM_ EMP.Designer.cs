@@ -1,6 +1,6 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente
+﻿namespace HW_Hidreletrica.Telas.Tela_emp
 {
-    partial class Cadastro_Cliente
+    partial class UsuarioADM__EMP
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // Cadastro_Cliente
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(800, 450);
-            ForeColor = Color.Black;
-            Name = "Cadastro_Cliente";
-            Text = "Cadastro_Cliente";
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "UsuarioADM__EMP";
         }
 
         #endregion
