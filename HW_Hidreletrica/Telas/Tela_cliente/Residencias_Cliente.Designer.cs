@@ -27,61 +27,70 @@
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Residencias_Cliente));
 			dataGridViewResidencias = new DataGridView();
 			textoResidencias = new Label();
 			btnDeletar = new Button();
 			button1 = new Button();
+			btnVoltar = new Button();
+			button2 = new Button();
 			btnEditar = new Button();
+			pictureBox1 = new PictureBox();
 			((System.ComponentModel.ISupportInitialize)dataGridViewResidencias).BeginInit();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
 			// 
 			// dataGridViewResidencias
 			// 
 			dataGridViewResidencias.AllowUserToAddRows = false;
 			dataGridViewResidencias.AllowUserToDeleteRows = false;
-			dataGridViewResidencias.BackgroundColor = Color.Tan;
+			dataGridViewResidencias.BackgroundColor = Color.AntiqueWhite;
 			dataGridViewResidencias.BorderStyle = BorderStyle.None;
 			dataGridViewResidencias.CellBorderStyle = DataGridViewCellBorderStyle.Raised;
+			dataGridViewResidencias.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 			dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = Color.Tan;
+			dataGridViewCellStyle1.BackColor = Color.AntiqueWhite;
 			dataGridViewCellStyle1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
 			dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
 			dataGridViewCellStyle1.Padding = new Padding(3);
-			dataGridViewCellStyle1.SelectionBackColor = Color.Chocolate;
+			dataGridViewCellStyle1.SelectionBackColor = Color.AntiqueWhite;
 			dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
 			dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
 			dataGridViewResidencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			dataGridViewResidencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = Color.Tan;
+			dataGridViewCellStyle2.BackColor = Color.AntiqueWhite;
 			dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
 			dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = Color.Chocolate;
-			dataGridViewCellStyle2.SelectionForeColor = Color.Tan;
+			dataGridViewCellStyle2.SelectionBackColor = Color.SandyBrown;
+			dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
 			dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
 			dataGridViewResidencias.DefaultCellStyle = dataGridViewCellStyle2;
 			dataGridViewResidencias.EnableHeadersVisualStyles = false;
 			dataGridViewResidencias.GridColor = Color.Tan;
-			dataGridViewResidencias.Location = new Point(30, 98);
+			dataGridViewResidencias.ImeMode = ImeMode.KatakanaHalf;
+			dataGridViewResidencias.Location = new Point(35, 100);
 			dataGridViewResidencias.Name = "dataGridViewResidencias";
 			dataGridViewResidencias.ReadOnly = true;
-			dataGridViewResidencias.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = Color.Moccasin;
+			dataGridViewCellStyle3.BackColor = Color.PapayaWhip;
 			dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
 			dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-			dataGridViewCellStyle3.SelectionBackColor = Color.Chocolate;
+			dataGridViewCellStyle3.SelectionBackColor = Color.SandyBrown;
 			dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
 			dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
 			dataGridViewResidencias.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			dataGridViewCellStyle4.BackColor = Color.Moccasin;
+			dataGridViewResidencias.RowHeadersWidth = 50;
+			dataGridViewResidencias.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+			dataGridViewCellStyle4.BackColor = Color.PapayaWhip;
 			dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
 			dataGridViewCellStyle4.ForeColor = SystemColors.ActiveCaptionText;
 			dataGridViewCellStyle4.Padding = new Padding(2);
 			dataGridViewResidencias.RowsDefaultCellStyle = dataGridViewCellStyle4;
 			dataGridViewResidencias.RowTemplate.Height = 25;
 			dataGridViewResidencias.ScrollBars = ScrollBars.Vertical;
-			dataGridViewResidencias.Size = new Size(621, 293);
+			dataGridViewResidencias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridViewResidencias.Size = new Size(695, 293);
 			dataGridViewResidencias.TabIndex = 0;
 			dataGridViewResidencias.CellContentClick += dataGridView1_CellContentClick;
 			// 
@@ -90,11 +99,12 @@
 			textoResidencias.AutoSize = true;
 			textoResidencias.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			textoResidencias.ForeColor = Color.DarkRed;
-			textoResidencias.Location = new Point(12, 18);
+			textoResidencias.Location = new Point(87, 3);
 			textoResidencias.Name = "textoResidencias";
 			textoResidencias.Size = new Size(469, 54);
 			textoResidencias.TabIndex = 1;
 			textoResidencias.Text = "Residencias Cadastradas";
+			textoResidencias.Click += textoResidencias_Click;
 			// 
 			// btnDeletar
 			// 
@@ -103,12 +113,13 @@
 			btnDeletar.FlatStyle = FlatStyle.Flat;
 			btnDeletar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
 			btnDeletar.ForeColor = SystemColors.ActiveCaptionText;
-			btnDeletar.Location = new Point(507, 412);
+			btnDeletar.Location = new Point(399, 415);
 			btnDeletar.Name = "btnDeletar";
-			btnDeletar.Size = new Size(75, 28);
+			btnDeletar.Size = new Size(81, 29);
 			btnDeletar.TabIndex = 2;
 			btnDeletar.Text = "Excluir";
 			btnDeletar.UseVisualStyleBackColor = false;
+			btnDeletar.Click += btnDeletar_Click;
 			// 
 			// button1
 			// 
@@ -116,34 +127,76 @@
 			button1.FlatAppearance.BorderSize = 0;
 			button1.FlatStyle = FlatStyle.Flat;
 			button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			button1.Location = new Point(713, 411);
+			button1.Location = new Point(593, 415);
 			button1.Name = "button1";
-			button1.Size = new Size(75, 27);
+			button1.Size = new Size(90, 29);
 			button1.TabIndex = 3;
 			button1.Text = "Adicionar";
 			button1.UseVisualStyleBackColor = false;
 			// 
+			// btnVoltar
+			// 
+			btnVoltar.BackColor = Color.DeepSkyBlue;
+			btnVoltar.FlatAppearance.BorderSize = 0;
+			btnVoltar.FlatStyle = FlatStyle.Flat;
+			btnVoltar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+			btnVoltar.ForeColor = SystemColors.ActiveCaptionText;
+			btnVoltar.Location = new Point(2, 3);
+			btnVoltar.Name = "btnVoltar";
+			btnVoltar.Size = new Size(63, 23);
+			btnVoltar.TabIndex = 4;
+			btnVoltar.Text = "Voltar";
+			btnVoltar.UseVisualStyleBackColor = false;
+			// 
+			// button2
+			// 
+			button2.BackColor = Color.CornflowerBlue;
+			button2.FlatAppearance.BorderSize = 0;
+			button2.FlatStyle = FlatStyle.Flat;
+			button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+			button2.Location = new Point(698, 415);
+			button2.Name = "button2";
+			button2.Size = new Size(90, 29);
+			button2.TabIndex = 5;
+			button2.Text = "Ver Contas";
+			button2.UseVisualStyleBackColor = false;
+			// 
 			// btnEditar
 			// 
-			btnEditar.BackColor = Color.DeepSkyBlue;
+			btnEditar.BackColor = Color.DarkGray;
 			btnEditar.FlatAppearance.BorderSize = 0;
 			btnEditar.FlatStyle = FlatStyle.Flat;
 			btnEditar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
 			btnEditar.ForeColor = SystemColors.ActiveCaptionText;
-			btnEditar.Location = new Point(614, 411);
+			btnEditar.Location = new Point(496, 415);
 			btnEditar.Name = "btnEditar";
-			btnEditar.Size = new Size(75, 29);
-			btnEditar.TabIndex = 4;
+			btnEditar.Size = new Size(81, 29);
+			btnEditar.TabIndex = 6;
 			btnEditar.Text = "Editar";
 			btnEditar.UseVisualStyleBackColor = false;
+			// 
+			// pictureBox1
+			// 
+			pictureBox1.BackgroundImage = Properties.Resources.casa;
+			pictureBox1.ErrorImage = Properties.Resources.casa;
+			pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
+			pictureBox1.Location = new Point(632, 12);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new Size(156, 95);
+			pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+			pictureBox1.TabIndex = 7;
+			pictureBox1.TabStop = false;
 			// 
 			// Residencias_Cliente
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.Tan;
+			BackColor = Color.AntiqueWhite;
 			ClientSize = new Size(800, 450);
+			Controls.Add(pictureBox1);
 			Controls.Add(btnEditar);
+			Controls.Add(button2);
+			Controls.Add(btnVoltar);
 			Controls.Add(button1);
 			Controls.Add(btnDeletar);
 			Controls.Add(textoResidencias);
@@ -152,6 +205,7 @@
 			Text = "Residencias";
 			Load += Residencias_Cliente_Load;
 			((System.ComponentModel.ISupportInitialize)dataGridViewResidencias).EndInit();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -162,6 +216,9 @@
 		private Label textoResidencias;
 		private Button btnDeletar;
 		private Button button1;
+		private Button btnVoltar;
+		private Button button2;
 		private Button btnEditar;
+		private PictureBox pictureBox1;
 	}
 }
