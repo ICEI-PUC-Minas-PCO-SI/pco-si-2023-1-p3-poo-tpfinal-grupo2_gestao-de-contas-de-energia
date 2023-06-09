@@ -27,7 +27,6 @@
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Residencias_Cliente));
 			dataGridViewResidencias = new DataGridView();
 			textoResidencias = new Label();
 			btnDeletar = new Button();
@@ -35,9 +34,7 @@
 			btnVoltar = new Button();
 			button2 = new Button();
 			btnEditar = new Button();
-			pictureBox1 = new PictureBox();
 			((System.ComponentModel.ISupportInitialize)dataGridViewResidencias).BeginInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
 			// 
 			// dataGridViewResidencias
@@ -175,25 +172,12 @@
 			btnEditar.Text = "Editar";
 			btnEditar.UseVisualStyleBackColor = false;
 			// 
-			// pictureBox1
-			// 
-			pictureBox1.BackgroundImage = Properties.Resources.casa;
-			pictureBox1.ErrorImage = Properties.Resources.casa;
-			pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-			pictureBox1.Location = new Point(632, 12);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(156, 95);
-			pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-			pictureBox1.TabIndex = 7;
-			pictureBox1.TabStop = false;
-			// 
 			// Residencias_Cliente
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.AntiqueWhite;
 			ClientSize = new Size(800, 450);
-			Controls.Add(pictureBox1);
 			Controls.Add(btnEditar);
 			Controls.Add(button2);
 			Controls.Add(btnVoltar);
@@ -205,7 +189,6 @@
 			Text = "Residencias";
 			Load += Residencias_Cliente_Load;
 			((System.ComponentModel.ISupportInitialize)dataGridViewResidencias).EndInit();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -219,6 +202,5 @@
 		private Button btnVoltar;
 		private Button button2;
 		private Button btnEditar;
-		private PictureBox pictureBox1;
 	}
 }
