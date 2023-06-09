@@ -10,5 +10,7 @@ namespace HW_Hidreletrica.Services.Residencia {
 
 		public DataTable getResidencias(int codUsuario);
 		public void excluirResidencia (int codigoResidencia);
+
+		public int getMaxIntalacao();
 	}
 }

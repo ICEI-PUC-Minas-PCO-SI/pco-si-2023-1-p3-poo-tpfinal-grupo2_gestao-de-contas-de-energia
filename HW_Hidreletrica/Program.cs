@@ -14,7 +14,8 @@ namespace HW_Hidreletrica
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-			Application.Run(new Residencias_Cliente());
+            Application.Run(new Residencias_Cliente());
+            //Application.Run(new Cadastro_Residencias_Cliente());
 			/*try {
 				Script_Server.CreateDatabase();
 				Application.Run(new Form1());

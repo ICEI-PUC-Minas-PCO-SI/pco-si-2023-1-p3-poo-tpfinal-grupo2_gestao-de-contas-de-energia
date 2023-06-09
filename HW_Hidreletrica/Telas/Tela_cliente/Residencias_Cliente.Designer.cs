@@ -30,9 +30,9 @@
 			dataGridViewResidencias = new DataGridView();
 			textoResidencias = new Label();
 			btnDeletar = new Button();
-			button1 = new Button();
+			btnAdicionar = new Button();
 			btnVoltar = new Button();
-			button2 = new Button();
+			btnContas = new Button();
 			btnEditar = new Button();
 			((System.ComponentModel.ISupportInitialize)dataGridViewResidencias).BeginInit();
 			SuspendLayout();
@@ -118,18 +118,19 @@
 			btnDeletar.UseVisualStyleBackColor = false;
 			btnDeletar.Click += btnDeletar_Click;
 			// 
-			// button1
+			// btnAdicionar
 			// 
-			button1.BackColor = Color.LawnGreen;
-			button1.FlatAppearance.BorderSize = 0;
-			button1.FlatStyle = FlatStyle.Flat;
-			button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			button1.Location = new Point(593, 415);
-			button1.Name = "button1";
-			button1.Size = new Size(90, 29);
-			button1.TabIndex = 3;
-			button1.Text = "Adicionar";
-			button1.UseVisualStyleBackColor = false;
+			btnAdicionar.BackColor = Color.LawnGreen;
+			btnAdicionar.FlatAppearance.BorderSize = 0;
+			btnAdicionar.FlatStyle = FlatStyle.Flat;
+			btnAdicionar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+			btnAdicionar.Location = new Point(698, 415);
+			btnAdicionar.Name = "btnAdicionar";
+			btnAdicionar.Size = new Size(90, 29);
+			btnAdicionar.TabIndex = 3;
+			btnAdicionar.Text = "Adicionar";
+			btnAdicionar.UseVisualStyleBackColor = false;
+			btnAdicionar.Click += btnAdicionar_Click;
 			// 
 			// btnVoltar
 			// 
@@ -145,18 +146,18 @@
 			btnVoltar.Text = "Voltar";
 			btnVoltar.UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// btnContas
 			// 
-			button2.BackColor = Color.CornflowerBlue;
-			button2.FlatAppearance.BorderSize = 0;
-			button2.FlatStyle = FlatStyle.Flat;
-			button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-			button2.Location = new Point(698, 415);
-			button2.Name = "button2";
-			button2.Size = new Size(90, 29);
-			button2.TabIndex = 5;
-			button2.Text = "Ver Contas";
-			button2.UseVisualStyleBackColor = false;
+			btnContas.BackColor = Color.CornflowerBlue;
+			btnContas.FlatAppearance.BorderSize = 0;
+			btnContas.FlatStyle = FlatStyle.Flat;
+			btnContas.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+			btnContas.Location = new Point(593, 415);
+			btnContas.Name = "btnContas";
+			btnContas.Size = new Size(90, 29);
+			btnContas.TabIndex = 5;
+			btnContas.Text = "Ver Contas";
+			btnContas.UseVisualStyleBackColor = false;
 			// 
 			// btnEditar
 			// 
@@ -179,9 +180,9 @@
 			BackColor = Color.AntiqueWhite;
 			ClientSize = new Size(800, 450);
 			Controls.Add(btnEditar);
-			Controls.Add(button2);
+			Controls.Add(btnContas);
 			Controls.Add(btnVoltar);
-			Controls.Add(button1);
+			Controls.Add(btnAdicionar);
 			Controls.Add(btnDeletar);
 			Controls.Add(textoResidencias);
 			Controls.Add(dataGridViewResidencias);
@@ -198,9 +199,9 @@
 		private DataGridView dataGridViewResidencias;
 		private Label textoResidencias;
 		private Button btnDeletar;
-		private Button button1;
+		private Button btnAdicionar;
 		private Button btnVoltar;
-		private Button button2;
+		private Button btnContas;
 		private Button btnEditar;
 	}
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia
 {
-	internal class Residencias
+	public class Residencias
 	{
-        public string numInstalacao { get; set; }
+        public int numInstalacao { get; set; }
         public string rua { get; set; }
         public string bairro { get; set; }
         public string cidade { get; set; }
@@ -16,14 +16,13 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia
         public string cep { get; set; }
         public string estado { get; set; }
         public string descricao { get; set; }
-        public int codTipo { get; set; }
-
+		public int codPessoa { get; set; }
         public Residencias()
         {
             
         }
 
-		public Residencias(string numInstalacao, string rua, string bairro, string cidade, int numero, string cep, string estado, string descricao, int codTipo)
+		public Residencias(int numInstalacao, string rua, string bairro, string cidade, int numero, string cep, string estado, string descricao, int codPessoa)
 		{
 			this.numInstalacao = numInstalacao;
 			this.rua = rua;
@@ -33,7 +32,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia
 			this.cep = cep;
 			this.estado = estado;
 			this.descricao = descricao;
-			this.codTipo = codTipo;
+			this.codPessoa = codPessoa;
 		}
 	}
 }

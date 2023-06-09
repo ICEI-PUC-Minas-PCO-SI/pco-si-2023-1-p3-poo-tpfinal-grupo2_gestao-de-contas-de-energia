@@ -1,4 +1,5 @@
 ﻿using HW_Hidreletrica.Entidades.Connect_SQL;
+using HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,8 +11,11 @@ using System.Threading.Tasks;
 namespace HW_Hidreletrica.Services.Residencia {
 	public class ResidenciaRepository : IResidenciaRepository {
 
-		public DataTable getResidencias(int codUsuario) {
+		public ResidenciaRepository() {
 			Connect_Server.database = "HW_Hidreletrica";
+		}
+
+		public DataTable getResidencias(int codUsuario) {
 			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
 				conexao.Open();
 
@@ -26,9 +30,8 @@ namespace HW_Hidreletrica.Services.Residencia {
 				}
 			}
 		}
-
 		public void excluirResidencia(int codResidencia) {
-			Connect_Server.database = "HW_Hidreletrica";
+
 			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
 				conexao.Open();
 				using (SqlCommand query = conexao.CreateCommand()) {
@@ -38,8 +41,47 @@ namespace HW_Hidreletrica.Services.Residencia {
 			}
 		}
 
+		public int getMaxIntalacao() {
+			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
+				conexao.Open();
+				using (SqlCommand query = conexao.CreateCommand()) {
+					query.CommandText = "Select max(NumInstalacao) from Residencia";
+					object result = query.ExecuteScalar();
+					int instalacao;
+					try {
+						instalacao = Convert.ToInt32(query.ExecuteScalar());
+						return instalacao;
+					} catch (Exception ex) {
+						return 0000;
+					}
+				}
+			}
+		}
+
 		public void Add<T>(T entity) where T : class {
-			throw new NotImplementedException();
+			if (entity is Residencias) {
+				Residencias residencia = entity as Residencias;
+
+				using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
+					conexao.Open();
+					using (SqlCommand query = conexao.CreateCommand()) {
+						query.CommandText = "INSERT INTO ENDERECO (NUMERO, RUA, BAIRRO, CIDADE, ESTADO, CEP) VALUES(@NUMERO, @RUA, @BAIRRO, @CIDADE, @ESTADO, @CEP)";
+						query.Parameters.AddWithValue("@NUMERO", residencia.numero);
+						query.Parameters.AddWithValue("@RUA", residencia.rua);
+						query.Parameters.AddWithValue("@BAIRRO", residencia.bairro);
+						query.Parameters.AddWithValue("@CIDADE", residencia.cidade);
+						query.Parameters.AddWithValue("@ESTADO", residencia.estado);
+						query.Parameters.AddWithValue("@CEP", residencia.cep);
+						query.ExecuteNonQuery();
+
+						query.CommandText = "INSERT INTO RESIDENCIA (NUMINSTALACAO, DESCRICAO, CODPESSOA, CODENDERECO) VALUES(@NUMINSTALACAO, @DESCRICAO, @CODPESSOA, (SELECT MAX(CODIGO) FROM ENDERECO))";
+						query.Parameters.AddWithValue("@NUMINSTALACAO", residencia.numInstalacao);
+						query.Parameters.AddWithValue("@DESCRICAO", residencia.descricao);
+						query.Parameters.AddWithValue("@CODPESSOA", residencia.codPessoa);
+						query.ExecuteNonQuery();
+					}
+				}
+			}
 		}
 
 		public void Delete<T>(T entity) where T : class {
@@ -53,5 +95,7 @@ namespace HW_Hidreletrica.Services.Residencia {
 		public void Update<T>(T entity) where T : class {
 			throw new NotImplementedException();
 		}
+
+		
 	}
 }

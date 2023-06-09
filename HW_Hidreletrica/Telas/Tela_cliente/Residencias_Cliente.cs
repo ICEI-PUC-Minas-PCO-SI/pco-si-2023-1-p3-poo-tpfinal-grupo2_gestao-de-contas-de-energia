@@ -35,11 +35,12 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 					dataGridViewResidencias.Columns[2].Width = 150;
 					dataGridViewResidencias.Columns[3].Width = 380;
 					btnDeletar.Visible = true;
-					btnVoltar.Visible = true;
-					dataGridViewResidencias.Visible = true;
+					btnContas.Visible = true;
+					btnEditar.Visible = true;
 				} else {
 					btnDeletar.Visible = false;
-					btnVoltar.Visible = false;
+					btnContas.Visible = false;
+					btnEditar.Visible = false;
 					dataGridViewResidencias.Visible = false;
 					mostraMensagem("Nenhuma residência cadastrada");
 				}
@@ -88,6 +89,12 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 
 		private void textoResidencias_Click(object sender, EventArgs e) {
 
+		}
+
+		private void btnAdicionar_Click(object sender, EventArgs e) {
+			Form residenciasCadastradas = new Cadastro_Residencias_Cliente();
+			residenciasCadastradas.Show();
+			this.Hide();
 		}
 	}
 }
