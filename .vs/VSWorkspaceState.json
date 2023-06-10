@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\HW_Hidreletrica",
     "\\HW_Hidreletrica\\Entidades",
     "\\HW_Hidreletrica\\Entidades\\Clientes",
@@ -8,5 +9,10 @@
     "\\HW_Hidreletrica\\Entidades\\EMP"
   ],
   "SelectedNode": "\\HW_Hidreletrica\\Form1.cs",
+=======
+    "\\HW_Hidreletrica"
+  ],
+  "SelectedNode": "\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
+>>>>>>> Gustavo-Alves
   "PreviewInSolutionExplorer": false
 }

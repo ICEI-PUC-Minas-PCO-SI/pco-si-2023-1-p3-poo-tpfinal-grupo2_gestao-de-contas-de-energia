@@ -16,5 +16,10 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
         {
             InitializeComponent();
         }
+
+        private void cbx_cpf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
