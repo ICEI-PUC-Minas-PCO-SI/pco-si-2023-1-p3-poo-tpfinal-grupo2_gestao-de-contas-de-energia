@@ -1,6 +1,5 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "1EDtq6NW+hdSarFa3U6W/Aeg8Wf2k8oT2/8jeSl66YTnn/MURBmz+yCreOapnPEePV8cOxYqBC2o/4g0g3QUqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
@@ -15,19 +14,5 @@
     "C:\\Users\\Lucas Ferreira Gudes\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\Lucas Ferreira Gudes\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
-=======
-  "dgSpecHash": "1pGIEzKEOrwOZ5lAT+9wObSFgLaVFM5x0ZpmmIchBWkVle01SBTFRSIpcm4fmSNxiSzKNaV6kw+6JN7caB0HxQ==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
-  "expectedPackageFiles": [],
   "logs": []
->>>>>>> Gustavo-Alves
 }
