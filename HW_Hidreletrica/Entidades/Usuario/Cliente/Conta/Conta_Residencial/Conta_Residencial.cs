@@ -1,5 +1,4 @@
 ﻿using HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia;
-using HW_Hidreletrica.Services.Services_Conta;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta.Conta_Residencial
 {
-	internal class Conta_Residencial : Conta, ICalculaValor
+	internal class Conta_Residencial : Contas
 	{
         public Conta_Residencial()
         {
             
         }
 
-		public Conta_Residencial(int codigo, double mesReferencia, double mesAnterior, double consumo, Cliente cliente, Residencias residencia, int codigoTipo) : base(codigo, mesReferencia, mesAnterior, consumo, cliente, residencia, codigoTipo)
+		public Conta_Residencial(int codigo, double mesReferencia, double mesAnterior, double consumo, Cliente cliente, Residencias residencia, int codigoTipo, double valorTotalSemImpostos,DateTime dtPagamento,DateTime dtVencimento) : base(codigo, mesReferencia, mesAnterior, consumo, cliente, residencia, codigoTipo,valorTotalSemImpostos,dtPagamento,dtVencimento)
 		{
 
 		}
 
-		public double CalculaConsumo(double val1, double val2)
+		public override double CalculaConsumo(double val1, double val2)
 		{
 			this.consumo = (val1 - val2);
 			return this.consumo;
 		}
 
-		public double CalculaValorSemImpostos(double val1)
+		public override double CalculaValorSemImpostos(double val1)
 		{
 			double tarifa = 0.40;
 			double contribuicaoAdicional = 9.25;
@@ -35,7 +34,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta.Conta_Residencial
 			return  soma;
 		}
 
-		public double CalculaValorTotal(double val1)
+		public override double CalculaValorTotal(double val1)
 		{
 			double tarifa = 0.40;
 			double contribuicaoAdicional = 9.25;
