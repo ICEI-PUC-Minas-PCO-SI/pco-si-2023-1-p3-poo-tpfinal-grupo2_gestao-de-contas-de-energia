@@ -92,9 +92,30 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 		}
 
 		private void btnAdicionar_Click(object sender, EventArgs e) {
-			Form residenciasCadastradas = new Cadastro_Residencias_Cliente();
-			residenciasCadastradas.Show();
+			Form cadastroResidencia = new Cadastro_Residencias_Cliente();
+			cadastroResidencia.Show();
 			this.Hide();
+		}
+
+		private void btnEditar_Click(object sender, EventArgs e) {
+			int residenciasSelecionadas = dataGridViewResidencias.Rows.GetRowCount(DataGridViewElementStates.Selected);
+			if (residenciasSelecionadas == 1) {
+				try {
+					foreach (DataGridViewRow row in dataGridViewResidencias.SelectedRows) {
+						int codResidencia = (int)row.Cells[0].Value;        //PEGANDO CÓDIGO DA RESIDENCIA
+						Form cadastroResidencia = new Cadastro_Residencias_Cliente(codResidencia);
+						cadastroResidencia.Show();
+						this.Hide();
+
+					}
+					carregaResidencias();
+				} catch (Exception ex) {
+					MessageBox.Show("Não foi possível excluir residencia: " + ex.Message);
+				}
+
+			} else {
+				MessageBox.Show("Escolha apenas uma residência para editar!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+			}
 		}
 	}
 }

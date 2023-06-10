@@ -275,6 +275,7 @@
 			Name = "Cadastro_Residencias_Cliente";
 			Text = "Cadastro_Residencias_Cliente";
 			TopMost = true;
+			Load += Cadastro_Residencias_Cliente_Load;
 			((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);

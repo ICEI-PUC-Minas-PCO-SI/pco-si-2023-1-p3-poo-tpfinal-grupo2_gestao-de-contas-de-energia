@@ -172,6 +172,7 @@
 			btnEditar.TabIndex = 6;
 			btnEditar.Text = "Editar";
 			btnEditar.UseVisualStyleBackColor = false;
+			btnEditar.Click += btnEditar_Click;
 			// 
 			// Residencias_Cliente
 			// 

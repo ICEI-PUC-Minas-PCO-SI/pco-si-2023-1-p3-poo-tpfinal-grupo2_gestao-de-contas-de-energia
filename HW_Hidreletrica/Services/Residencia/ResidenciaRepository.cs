@@ -96,6 +96,29 @@ namespace HW_Hidreletrica.Services.Residencia {
 			throw new NotImplementedException();
 		}
 
-		
+		public DataTable getInformacoesResidencia(int codResidencia) {
+			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
+					conexao.Open();
+				var sqlQuery = $"SELECT * FROM RESIDENCIA R, ENDERECO E WHERE R.CODIGO = {codResidencia} AND E.CODIGO = R.CODENDERECO";
+				using (SqlDataAdapter dados = new SqlDataAdapter(sqlQuery, conexao)) {
+					using (DataTable residencias = new DataTable()) {
+						dados.Fill(residencias);         //EXTRAI OS DADOS	
+						return residencias;
+					}
+				}
+			}
+		}
+
+		public void atualizaApelido(string apelido, int codresidencia) {
+			using(SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
+				conexao.Open();
+				using (SqlCommand query = conexao.CreateCommand()) {
+					query.CommandText = "UPDATE RESIDENCIA SET DESCRICAO = @DESCRICAO WHERE CODIGO = @CODIGO";
+					query.Parameters.AddWithValue("@DESCRICAO", apelido);
+					query.Parameters.AddWithValue("@CODIGO", codresidencia);
+					query.ExecuteNonQuery();
+				}
+			}
+		}
 	}
 }
