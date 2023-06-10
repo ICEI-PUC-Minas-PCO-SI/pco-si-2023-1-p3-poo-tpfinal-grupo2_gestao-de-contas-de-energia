@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5imVvCg52KJqzcLGIwIo+ojnOpRviCc4o0HHuykRiTQThiZF/s6KabLlu93LDErUr8N8KRNvNIfabNd/1F6UjA==",
+  "dgSpecHash": "1pGIEzKEOrwOZ5lAT+9wObSFgLaVFM5x0ZpmmIchBWkVle01SBTFRSIpcm4fmSNxiSzKNaV6kw+6JN7caB0HxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\1350152\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
+  "projectFilePath": "C:\\Users\\Lucas Ferreira Gudes\\OneDrive\\Área de Trabalho\\Trab POO\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\HW_Hidreletrica.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\1350152\\Source\\Repos\\pco-si-2023-1-p3-poo-tpfinal-grupo2_gestao-de-contas-de-energia\\HW_Hidreletrica\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
