@@ -1,3 +1,6 @@
+using HW_Hidreletrica.Entidades.Usuario.Cliente.Conta;
+using HW_Hidreletrica.Telas.Tela_cliente;
+
 namespace HW_Hidreletrica
 {
     internal static class Program
@@ -11,7 +14,7 @@ namespace HW_Hidreletrica
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Contas_Clientes());
         }
     }
 }
