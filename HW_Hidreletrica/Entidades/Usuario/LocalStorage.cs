@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using static System.Windows.Forms.LinkLabel;
+using System.Reflection;
 
 namespace HW_Hidreletrica.Entidades.Usuario {
 	public static class LocalStorage {
@@ -34,7 +36,23 @@ namespace HW_Hidreletrica.Entidades.Usuario {
 			arq.Close();
 		}
 
+		public static bool verificaUsuarioLogado() {
+			if (File.Exists(filePath)) {
+				FileInfo fileInfo = new FileInfo(filePath);
+				if (ReadFile(1) != "") {
+					return true; //EXISTE USUÁRIO LOGADO
+				} else {
+					return false; // NÃO EXISTE USUÁRIO LOGADO
+				}
+			} else {
+				return false;		// NÃO EXISTE USUÁRIO LOGADO
+			}
+			
+
+		}
+
 		static string ReadFile(int linha) {
+
 			using (StreamReader reader = new StreamReader(filePath)) {
 				for (int i = 1; i < linha; i++) {
 					reader.ReadLine();
