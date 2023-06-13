@@ -1,4 +1,5 @@
-﻿using HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia;
+﻿using HW_Hidreletrica.Entidades.Usuario;
+using HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia;
 using HW_Hidreletrica.Services.Residencia;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 					aviso.Visible = false;
 					try {
 						int instalacao = this.residencia.getMaxIntalacao() + 1;
-						Residencias novaResidencia = new Residencias(instalacao, rua, bairro, cidade, numero, cep, uf, apelido, 3);
+						Residencias novaResidencia = new Residencias(instalacao, rua, bairro, cidade, numero, cep, uf, apelido, LocalStorage.getCodigoUsuario());
 						residencia.Add(novaResidencia);
 
 						Form residenciasCadastradas = new Residencias_Cliente();

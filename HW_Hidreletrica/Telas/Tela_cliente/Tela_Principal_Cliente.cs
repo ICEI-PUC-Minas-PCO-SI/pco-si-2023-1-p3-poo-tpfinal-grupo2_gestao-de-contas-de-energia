@@ -48,7 +48,9 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 
         private void menu_residencia(object sender, EventArgs e)
         {
-            
-        }
+			Residencias_Cliente residencias = new Residencias_Cliente();
+			residencias.Show();
+			this.Hide();
+		}
     }
 }

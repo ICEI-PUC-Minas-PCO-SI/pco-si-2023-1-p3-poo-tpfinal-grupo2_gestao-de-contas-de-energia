@@ -1,4 +1,5 @@
 ﻿using HW_Hidreletrica.Entidades.Connect_SQL;
+using HW_Hidreletrica.Entidades.Usuario;
 using HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia;
 using HW_Hidreletrica.Services.Residencia;
 using System;
@@ -28,7 +29,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 
 		public void carregaResidencias() {
 			try {
-				dataGridViewResidencias.DataSource = residencia.getResidencias(3);
+				dataGridViewResidencias.DataSource = residencia.getResidencias(LocalStorage.getCodigoUsuario());
 				if (dataGridViewResidencias.RowCount > 0) {
 					dataGridViewResidencias.Columns[0].Visible = false;     //OCULTANDO O CÓDIGO DA RESIDENCIA
 					dataGridViewResidencias.Columns[1].Width = 120;
@@ -116,6 +117,12 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 			} else {
 				MessageBox.Show("Escolha apenas uma residência para editar!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 			}
+		}
+
+		private void btnVoltar_Click(object sender, EventArgs e) {
+			Tela_Principal_Cliente principal = new Tela_Principal_Cliente();
+			principal.Show();
+			this.Hide();
 		}
 	}
 }
