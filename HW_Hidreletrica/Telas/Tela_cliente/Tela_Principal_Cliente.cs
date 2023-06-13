@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HW_Hidreletrica.Entidades.Usuario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,39 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
         public Tela_Principal_Cliente()
         {
             InitializeComponent();
+        }
+
+        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tela_Principal_Cliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menu_perfil(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menu_logout(object sender, EventArgs e)
+        {
+			var confirmaLogOut = MessageBox.Show("Tem certeza que sair? ", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            if (confirmaLogOut == DialogResult.Yes) {
+				LocalStorage.logOut();
+				Principal principal = new Principal();
+				principal.Show();
+				this.Hide();
+			}
+
+			
+		}
+
+        private void menu_residencia(object sender, EventArgs e)
+        {
+            
         }
     }
 }
