@@ -159,6 +159,7 @@
 			btnContas.TabIndex = 5;
 			btnContas.Text = "Ver Contas";
 			btnContas.UseVisualStyleBackColor = false;
+			btnContas.Click += btnContas_Click;
 			// 
 			// btnEditar
 			// 
