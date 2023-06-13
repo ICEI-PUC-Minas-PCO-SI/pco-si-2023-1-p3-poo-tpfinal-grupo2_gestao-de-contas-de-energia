@@ -9,6 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entidades\NewFolder\**" />
+    <Compile Remove="Services\NewFolder\**" />
+    <EmbeddedResource Remove="Entidades\NewFolder\**" />
+    <EmbeddedResource Remove="Services\NewFolder\**" />
+    <None Remove="Entidades\NewFolder\**" />
+    <None Remove="Services\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 

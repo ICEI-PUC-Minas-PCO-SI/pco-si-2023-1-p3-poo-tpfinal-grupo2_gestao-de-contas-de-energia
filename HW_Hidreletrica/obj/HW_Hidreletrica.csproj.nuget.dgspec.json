@@ -18,6 +18,7 @@
         ],
         "configFilePaths": [
           "C:\\Users\\alves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alves\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,6 +69,7 @@
               "privateAssets": "none"
             }
           },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }

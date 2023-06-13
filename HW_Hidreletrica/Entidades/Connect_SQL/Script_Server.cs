@@ -9,7 +9,7 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 {
     public static class Script_Server
     {
-        static void CreateDatabase()
+        public static void CreateDatabase()
         {
 
             using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
