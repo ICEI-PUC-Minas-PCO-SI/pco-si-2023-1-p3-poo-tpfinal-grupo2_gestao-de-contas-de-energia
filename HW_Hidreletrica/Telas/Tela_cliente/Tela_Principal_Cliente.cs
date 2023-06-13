@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HW_Hidreletrica.Entidades.Usuario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,12 +35,15 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 
         private void menu_logout(object sender, EventArgs e)
         {
-
-        }
+			LocalStorage.logOut();
+			Form1 principal = new Form1();
+			principal.Show();
+			this.Hide();
+		}
 
         private void menu_residencia(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

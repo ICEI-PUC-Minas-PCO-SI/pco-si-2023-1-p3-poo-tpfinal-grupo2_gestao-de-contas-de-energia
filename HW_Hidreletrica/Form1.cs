@@ -12,7 +12,8 @@ namespace HW_Hidreletrica
         private void btn_login_Click(object sender, EventArgs e)
         {
             Login login = new Login();
-            login.ShowDialog();
-        }
+            login.Show();
+			this.Hide();
+		}
     }
 }

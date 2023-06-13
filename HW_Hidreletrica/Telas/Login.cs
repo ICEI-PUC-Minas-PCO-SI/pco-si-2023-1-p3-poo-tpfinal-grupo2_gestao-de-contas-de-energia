@@ -20,8 +20,6 @@ namespace HW_Hidreletrica.Telas {
 		AdministradorRepository adm = new AdministradorRepository();
 		public Login() {
 			InitializeComponent();
-			int codigousua = LocalStorage.getCodigoUsuario();
-			string tipo = LocalStorage.getTipoUsuario();
 		}
 		private void txt_usuario_TextChanged(object sender, EventArgs e) {
 
@@ -47,7 +45,8 @@ namespace HW_Hidreletrica.Telas {
 							LocalStorage.salvaInformacoes(nome, email, codigo, "Cliente");
 							
 							Tela_Principal_Cliente telaCliente = new Tela_Principal_Cliente();
-							telaCliente.ShowDialog();
+							telaCliente.Show();
+							this.Hide();
 						} else {
 							mensagem.Text = "Email ou senha incorretos";
 							mensagem.Visible = true;
@@ -64,7 +63,8 @@ namespace HW_Hidreletrica.Telas {
 							
 
 							Tela_Principal_EMP telaAdm = new Tela_Principal_EMP();
-							telaAdm.ShowDialog();
+							telaAdm.Show();
+							this.Hide();
 						} else {
 							mensagem.Text = "Email ou senha incorretos";
 							mensagem.Visible = true;

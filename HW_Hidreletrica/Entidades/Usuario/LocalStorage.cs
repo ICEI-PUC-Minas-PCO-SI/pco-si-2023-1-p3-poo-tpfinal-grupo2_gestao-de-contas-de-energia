@@ -28,6 +28,12 @@ namespace HW_Hidreletrica.Entidades.Usuario {
 			return codigo;
 		}
 
+		public static void logOut() {
+			StreamWriter arq = new StreamWriter(filePath);
+			arq.WriteLine("");
+			arq.Close();
+		}
+
 		static string ReadFile(int linha) {
 			using (StreamReader reader = new StreamReader(filePath)) {
 				for (int i = 1; i < linha; i++) {
