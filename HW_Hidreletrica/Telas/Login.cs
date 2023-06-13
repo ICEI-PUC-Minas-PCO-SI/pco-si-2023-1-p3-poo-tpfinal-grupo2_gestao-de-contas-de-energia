@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HW_Hidreletrica.Telas.Tela_cliente;
 
 namespace HW_Hidreletrica.Telas
 {
@@ -15,6 +16,44 @@ namespace HW_Hidreletrica.Telas
         public Login()
         {
             InitializeComponent();
+        }
+
+
+
+        private void txt_usuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_password_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_login(object sender, EventArgs e)
+        {
+            Tela_Principal_Cliente telaCliente = new Tela_Principal_Cliente();
+            telaCliente.ShowDialog();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Cadastro_Cliente";
+            SuspendLayout();
+            // 
+            // Cadastro_Cliente
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(800, 450);
+            ForeColor = Color.Black;
+            Name = "Cadastro_Cliente";
+            Text = "Cadastro_Cliente";
+            ResumeLayout(false);
         }
 
         #endregion
