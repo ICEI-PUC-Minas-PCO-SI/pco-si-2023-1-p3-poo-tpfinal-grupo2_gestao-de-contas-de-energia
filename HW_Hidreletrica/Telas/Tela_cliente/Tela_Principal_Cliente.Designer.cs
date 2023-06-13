@@ -92,7 +92,6 @@
             perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
             perfilToolStripMenuItem.Size = new Size(68, 29);
             perfilToolStripMenuItem.Text = "Perfil";
-            perfilToolStripMenuItem.Click += perfilToolStripMenuItem_Click;
             // 
             // perfilToolStripMenuItem1
             // 
