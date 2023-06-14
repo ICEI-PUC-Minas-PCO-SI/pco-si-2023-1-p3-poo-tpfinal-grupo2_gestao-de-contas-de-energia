@@ -12,6 +12,7 @@ using HW_Hidreletrica.Services.Repository.Cliente;
 using HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Fisica;
 using HW_Hidreletrica.Entidades.Usuario.Cliente;
 using HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Juridica;
+using HW_Hidreletrica.Entidades.Usuario;
 
 namespace HW_Hidreletrica.Telas.Tela_cliente
 {
@@ -30,6 +31,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			if (cbx_cpf.SelectedIndex == 0)
 			{
 				txt_CNPJ_CPF.Mask = "000,000,000-00";
+				
 			}
 			else
 			{
@@ -67,13 +69,22 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 		{
 			Clientes cliente;
 
-			if (string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(txt_telefone.Text) || string.IsNullOrEmpty(txt_nome.Text) || string.IsNullOrEmpty(txt_senha.Text) || string.IsNullOrEmpty(txt_confsenha.Text) || string.IsNullOrEmpty(txt_CNPJ_CPF.Text))
+			if (string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(txt_telefone.Text) || string.IsNullOrEmpty(txt_nome.Text) || string.IsNullOrEmpty(txt_senha.Text) || string.IsNullOrEmpty(txt_confsenha.Text) || string.IsNullOrEmpty(txt_CNPJ_CPF.Text) || string.IsNullOrEmpty(dtNascimento.Text))
 			{
 				MessageBox.Show("Favor preencher todos os campos do formulário para que o cadastro seja realizado", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 			}
 			else if (!string.IsNullOrEmpty(errorProvider1.GetError(txt_email)) || !string.IsNullOrEmpty(errorProvider2.GetError(txt_telefone)) || !string.IsNullOrEmpty(errorProvider4.GetError(txt_confsenha)))
 			{
 				MessageBox.Show("Favor preencher o formulário de forma correta para que o cadastro possa ser realizado", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+			} 
+			else if(cbx_cpf.SelectedIndex == 0 && txt_CNPJ_CPF.Text.Length != 14)
+			{
+					errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");
+			}
+			else if(cbx_cpf.SelectedIndex == 1 && txt_CNPJ_CPF.Text.Length != 18)
+			{
+				errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");	
+				
 			}
 			else
 			{
@@ -85,15 +96,16 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 				{
 					if (cbx_cpf.SelectedIndex == 0)
 					{
-						cliente = new Pessoa_Fisica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: txt_senha.Text,
-																		 _cpf: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(mtb_nascimento.Text.Substring(6)), int.Parse(mtb_nascimento.Text.Substring(3, 2)), int.Parse(mtb_nascimento.Text.Substring(0, 2))));
+						cliente = new Pessoa_Fisica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text),
+																		 _cpf: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
 
 					}
 					else
 					{
-						cliente = new Pessoa_Juridica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: txt_senha.Text,
-																		 _cnpj: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(mtb_nascimento.Text.Substring(6)), int.Parse(mtb_nascimento.Text.Substring(3, 2)), int.Parse(mtb_nascimento.Text.Substring(0, 2))));
+						cliente = new Pessoa_Juridica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text),
+																		 _cnpj: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
 					}
+
 					clienteRepository.Add(cliente);
 					MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
@@ -131,6 +143,33 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			else
 			{
 				errorProvider2.Clear();
+			}
+		}
+
+		private void txt_CNPJ_CPF_Leave(object sender, EventArgs e)
+		{
+			if (cbx_cpf.SelectedIndex == 0)
+			{
+				if (txt_CNPJ_CPF.Text.Length != 14)
+				{
+					errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");
+				}
+				else
+				{
+					errorProvider5.Clear();
+				}
+				
+			}
+			else
+			{
+				if (txt_CNPJ_CPF.Text.Length != 18)
+				{
+					errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");
+				}
+				else
+				{
+					errorProvider5.Clear();
+				}
 			}
 		}
 	}

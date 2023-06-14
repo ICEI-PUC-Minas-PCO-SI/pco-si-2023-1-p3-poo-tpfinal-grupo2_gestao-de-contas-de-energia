@@ -32,6 +32,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Cliente));
 			pictureBox1 = new PictureBox();
 			panel1 = new Panel();
+			dtNascimento = new DateTimePicker();
 			txt_telefone = new MaskedTextBox();
 			txt_CNPJ_CPF = new MaskedTextBox();
 			cbx_cpf = new ComboBox();
@@ -39,7 +40,6 @@
 			btn_cadastrar = new Button();
 			btn_cancelar = new Button();
 			label7 = new Label();
-			mtb_nascimento = new MaskedTextBox();
 			txt_confsenha = new TextBox();
 			label6 = new Label();
 			txt_senha = new TextBox();
@@ -54,12 +54,14 @@
 			errorProvider2 = new ErrorProvider(components);
 			errorProvider3 = new ErrorProvider(components);
 			errorProvider4 = new ErrorProvider(components);
+			errorProvider5 = new ErrorProvider(components);
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
+			((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
 			SuspendLayout();
 			// 
 			// pictureBox1
@@ -75,6 +77,7 @@
 			// panel1
 			// 
 			panel1.BackColor = Color.White;
+			panel1.Controls.Add(dtNascimento);
 			panel1.Controls.Add(txt_telefone);
 			panel1.Controls.Add(txt_CNPJ_CPF);
 			panel1.Controls.Add(cbx_cpf);
@@ -82,7 +85,6 @@
 			panel1.Controls.Add(btn_cadastrar);
 			panel1.Controls.Add(btn_cancelar);
 			panel1.Controls.Add(label7);
-			panel1.Controls.Add(mtb_nascimento);
 			panel1.Controls.Add(txt_confsenha);
 			panel1.Controls.Add(label6);
 			panel1.Controls.Add(txt_senha);
@@ -97,6 +99,15 @@
 			panel1.Name = "panel1";
 			panel1.Size = new Size(557, 519);
 			panel1.TabIndex = 9;
+			// 
+			// dtNascimento
+			// 
+			dtNascimento.CustomFormat = "dd/MM/yyyy";
+			dtNascimento.Format = DateTimePickerFormat.Custom;
+			dtNascimento.Location = new Point(316, 212);
+			dtNascimento.Name = "dtNascimento";
+			dtNascimento.Size = new Size(200, 23);
+			dtNascimento.TabIndex = 16;
 			// 
 			// txt_telefone
 			// 
@@ -114,6 +125,7 @@
 			txt_CNPJ_CPF.Name = "txt_CNPJ_CPF";
 			txt_CNPJ_CPF.Size = new Size(211, 23);
 			txt_CNPJ_CPF.TabIndex = 8;
+			txt_CNPJ_CPF.Leave += txt_CNPJ_CPF_Leave;
 			// 
 			// cbx_cpf
 			// 
@@ -171,15 +183,6 @@
 			label7.Size = new Size(166, 23);
 			label7.TabIndex = 12;
 			label7.Text = "Data de Nascimento";
-			// 
-			// mtb_nascimento
-			// 
-			mtb_nascimento.Location = new Point(330, 203);
-			mtb_nascimento.Mask = "00/00/0000";
-			mtb_nascimento.Name = "mtb_nascimento";
-			mtb_nascimento.Size = new Size(166, 23);
-			mtb_nascimento.TabIndex = 4;
-			mtb_nascimento.TextAlign = HorizontalAlignment.Center;
 			// 
 			// txt_confsenha
 			// 
@@ -295,6 +298,10 @@
 			// 
 			errorProvider4.ContainerControl = this;
 			// 
+			// errorProvider5
+			// 
+			errorProvider5.ContainerControl = this;
+			// 
 			// Cadastro_Cliente
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -312,6 +319,7 @@
 			((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
+			((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -324,7 +332,6 @@
 		private Button btn_cadastrar;
 		private Button btn_cancelar;
 		private Label label7;
-		private MaskedTextBox mtb_nascimento;
 		private TextBox txt_confsenha;
 		private Label label6;
 		private TextBox txt_senha;
@@ -341,5 +348,7 @@
 		private ErrorProvider errorProvider3;
 		private ErrorProvider errorProvider4;
 		private MaskedTextBox txt_telefone;
+		private DateTimePicker dtNascimento;
+		private ErrorProvider errorProvider5;
 	}
 }
