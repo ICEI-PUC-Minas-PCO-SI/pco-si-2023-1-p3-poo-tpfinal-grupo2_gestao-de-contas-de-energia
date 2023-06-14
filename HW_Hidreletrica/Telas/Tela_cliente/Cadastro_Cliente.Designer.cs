@@ -104,7 +104,7 @@
 			txt_telefone.Mask = "00 00000-0000";
 			txt_telefone.Name = "txt_telefone";
 			txt_telefone.Size = new Size(216, 23);
-			txt_telefone.TabIndex = 18;
+			txt_telefone.TabIndex = 2;
 			txt_telefone.TextAlign = HorizontalAlignment.Center;
 			txt_telefone.Leave += txt_telefone_Leave_1;
 			// 
@@ -113,7 +113,7 @@
 			txt_CNPJ_CPF.Location = new Point(164, 365);
 			txt_CNPJ_CPF.Name = "txt_CNPJ_CPF";
 			txt_CNPJ_CPF.Size = new Size(211, 23);
-			txt_CNPJ_CPF.TabIndex = 17;
+			txt_CNPJ_CPF.TabIndex = 8;
 			// 
 			// cbx_cpf
 			// 
@@ -124,7 +124,7 @@
 			cbx_cpf.Location = new Point(19, 365);
 			cbx_cpf.Name = "cbx_cpf";
 			cbx_cpf.Size = new Size(108, 23);
-			cbx_cpf.TabIndex = 16;
+			cbx_cpf.TabIndex = 7;
 			cbx_cpf.SelectedIndexChanged += cbx_cpf_SelectedIndexChanged;
 			// 
 			// label8
@@ -145,7 +145,7 @@
 			btn_cadastrar.Location = new Point(182, 435);
 			btn_cadastrar.Name = "btn_cadastrar";
 			btn_cadastrar.Size = new Size(107, 58);
-			btn_cadastrar.TabIndex = 14;
+			btn_cadastrar.TabIndex = 9;
 			btn_cadastrar.Text = "Cadastrar";
 			btn_cadastrar.UseVisualStyleBackColor = false;
 			btn_cadastrar.Click += btn_cadastrar_Click;
@@ -158,7 +158,7 @@
 			btn_cancelar.Location = new Point(316, 435);
 			btn_cancelar.Name = "btn_cancelar";
 			btn_cancelar.Size = new Size(102, 58);
-			btn_cancelar.TabIndex = 13;
+			btn_cancelar.TabIndex = 10;
 			btn_cancelar.Text = "Cancelar";
 			btn_cancelar.UseVisualStyleBackColor = false;
 			// 
@@ -178,7 +178,7 @@
 			mtb_nascimento.Mask = "00/00/0000";
 			mtb_nascimento.Name = "mtb_nascimento";
 			mtb_nascimento.Size = new Size(166, 23);
-			mtb_nascimento.TabIndex = 11;
+			mtb_nascimento.TabIndex = 4;
 			mtb_nascimento.TextAlign = HorizontalAlignment.Center;
 			// 
 			// txt_confsenha
@@ -187,7 +187,7 @@
 			txt_confsenha.MaxLength = 11;
 			txt_confsenha.Name = "txt_confsenha";
 			txt_confsenha.Size = new Size(253, 23);
-			txt_confsenha.TabIndex = 10;
+			txt_confsenha.TabIndex = 6;
 			txt_confsenha.UseSystemPasswordChar = true;
 			txt_confsenha.Leave += txt_confsenha_Leave;
 			// 
@@ -207,7 +207,7 @@
 			txt_senha.MaxLength = 11;
 			txt_senha.Name = "txt_senha";
 			txt_senha.Size = new Size(253, 23);
-			txt_senha.TabIndex = 8;
+			txt_senha.TabIndex = 5;
 			txt_senha.UseSystemPasswordChar = true;
 			// 
 			// label5
@@ -236,7 +236,7 @@
 			txt_nome.MaxLength = 80;
 			txt_nome.Name = "txt_nome";
 			txt_nome.Size = new Size(253, 23);
-			txt_nome.TabIndex = 4;
+			txt_nome.TabIndex = 3;
 			// 
 			// label3
 			// 
@@ -256,7 +256,7 @@
 			txt_email.Name = "txt_email";
 			txt_email.PlaceholderText = "xxxxxxx@xxxxx.com";
 			txt_email.Size = new Size(253, 23);
-			txt_email.TabIndex = 2;
+			txt_email.TabIndex = 1;
 			txt_email.Leave += txt_email_Leave;
 			// 
 			// label2

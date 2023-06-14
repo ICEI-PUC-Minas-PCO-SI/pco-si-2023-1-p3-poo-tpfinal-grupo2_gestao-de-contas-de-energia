@@ -22,7 +22,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 		{
 			InitializeComponent();
 			cbx_cpf.SelectedIndex = 0;
-			
+
 		}
 
 		private void cbx_cpf_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			{
 				if (clienteRepository.getClienteByEmail(txt_email.Text))
 				{
-					MessageBox.Show("Esse cliente ja esta cadastrado","ERRO",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+					MessageBox.Show("Esse cliente ja esta cadastrado", "ERRO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
 				}
 				else
 				{
@@ -87,7 +87,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 					{
 						cliente = new Pessoa_Fisica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: txt_senha.Text,
 																		 _cpf: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(mtb_nascimento.Text.Substring(6)), int.Parse(mtb_nascimento.Text.Substring(3, 2)), int.Parse(mtb_nascimento.Text.Substring(0, 2))));
-						
+
 					}
 					else
 					{
@@ -124,7 +124,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 
 		private void txt_telefone_Leave_1(object sender, EventArgs e)
 		{
-			if(txt_telefone.Text.Length != 13)
+			if (txt_telefone.Text.Length != 13)
 			{
 				errorProvider2.SetError(txt_telefone, "Favor inserir um telefone válido");
 			}
