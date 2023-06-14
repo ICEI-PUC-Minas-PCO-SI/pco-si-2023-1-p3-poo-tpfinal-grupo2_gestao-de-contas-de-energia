@@ -27,10 +27,10 @@ namespace HW_Hidreletrica.Entidades.Usuario
             return nome;
         }public string getEmail()
         {
-            return nome;
+            return email;
         }public string getSenha()
         {
-            return nome;
+            return senha;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 					cmd.ExecuteNonQuery();
 					cmd.CommandText = "create table TipoPessoa(\r\n\tCodigo int PRIMARY KEY IDENTITY(1,1),\r\n\tDescricao char(30) not null\r\n);";
 					cmd.ExecuteNonQuery();
-					cmd.CommandText = "create table Pessoa(\r\n\tCodigo int PRIMARY KEY IDENTITY(1,1),\r\n\tNome varchar(30) not null,\r\n\tEmail varchar(30) not null,\r\n\tsenha varchar(15) not null,\r\n\tDtNascimento date not null,\r\n\tCPF varchar(15),\r\n\tCNPJ varchar(15),\r\n\tCodTipo int not null,\r\n\tTelefone varchar(15),\r\n\tConstraint FK_CodTipo Foreign Key(CodTipo) references TipoPessoa\r\n);";
+					cmd.CommandText = "create table Pessoa(\r\n\tCodigo int PRIMARY KEY IDENTITY(1,1),\r\n\tNome varchar(30) not null,\r\n\tEmail varchar(30) not null,\r\n\tsenha varchar(15) not null,\r\n\tDtNascimento date not null,\r\n\tCPF varchar(15) not null,\r\n\tCNPJ varchar(15) not null,\r\n\tCodTipo int not null,\r\n\tTelefone varchar(15),\r\n\tConstraint FK_CodTipo Foreign Key(CodTipo) references TipoPessoa\r\n);";
 					cmd.ExecuteNonQuery();
 					cmd.CommandText = "create table Endereco(\r\n\tCodigo int PRIMARY KEY IDENTITY(1,1),\r\n\tNumero int  not null,\r\n\tRua varchar(100) not null,\r\n\tBairro varchar(40) not null,\r\n\tCidade varchar(30) not null,\r\n\tEstado varchar(30)  not null,\r\n\tCep varchar(30) not null\r\n);";
 					cmd.ExecuteNonQuery();
