@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Fisica
 {
-	internal class Pessoa_Fisica : Cliente
+	internal class Pessoa_Fisica : Clientes
 	{
 		private string cpf;
 

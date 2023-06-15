@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Juridica
 {
-	internal class Pessoa_Juridica : Cliente
+	internal class Pessoa_Juridica : Clientes
 	{
 		private string cnpj;
 

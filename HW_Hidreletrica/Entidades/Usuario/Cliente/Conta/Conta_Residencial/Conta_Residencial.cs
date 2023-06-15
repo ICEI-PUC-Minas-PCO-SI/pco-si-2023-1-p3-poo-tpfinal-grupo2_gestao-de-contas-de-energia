@@ -14,7 +14,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta.Conta_Residencial
             
         }
 
-		public Conta_Residencial(int codigo, double mesReferencia, double mesAnterior, double consumo, Cliente cliente, Residencias residencia, int codigoTipo, double valorTotalSemImpostos,DateTime dtPagamento,DateTime dtVencimento) : base(codigo, mesReferencia, mesAnterior, consumo, cliente, residencia, codigoTipo,valorTotalSemImpostos,dtPagamento,dtVencimento)
+		public Conta_Residencial(int codigo, double mesReferencia, double mesAnterior, double consumo, Clientes cliente, Residencias residencia, int codigoTipo, double valorTotalSemImpostos,DateTime dtPagamento,DateTime dtVencimento) : base(codigo, mesReferencia, mesAnterior, consumo, cliente, residencia, codigoTipo,valorTotalSemImpostos,dtPagamento,dtVencimento)
 		{
 
 		}

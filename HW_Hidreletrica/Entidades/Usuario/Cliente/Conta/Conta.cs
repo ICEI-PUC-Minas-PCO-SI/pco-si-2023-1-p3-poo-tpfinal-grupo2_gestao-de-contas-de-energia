@@ -16,7 +16,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta
         public double consumo { get; set; }
         public double valorTotal { get; set; }
         public double valorTotalSemImpostos { get; set; }
-        public Cliente cliente { get; set; }
+        public Clientes cliente { get; set; }
         public Residencias residencia { get; set; }
         public int codigoTipo { get; set; }
         public DateTime dtPagamento { get; set; }
@@ -26,7 +26,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta
             
         }
 
-		public Contas(int codigo, double mesReferencia, double mesAnterior, double consumo, Cliente cliente, Residencias residencia, int codigoTipo, double valorTotalSemImpostos, DateTime dtPagamento, DateTime dtVencimento)
+		public Contas(int codigo, double mesReferencia, double mesAnterior, double consumo, Clientes cliente, Residencias residencia, int codigoTipo, double valorTotalSemImpostos, DateTime dtPagamento, DateTime dtVencimento)
 		{
 			this.codigo = codigo;
 			this.mesReferencia = mesReferencia;

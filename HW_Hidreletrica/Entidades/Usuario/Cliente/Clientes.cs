@@ -7,14 +7,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace HW_Hidreletrica.Entidades.Usuario.Cliente
 {
-     abstract class Cliente : Usuario
+     abstract class Clientes : Usuario
     {
         private string telefone;
         private DateTime dtNascimento;
-		public Cliente()
+		public Clientes()
 		{
 		}
-        public Cliente(string _telefone,DateTime _dtNascimento,string _nome, string _email, string _senha) : base (_nome,_email,_senha)
+        public Clientes(string _telefone,DateTime _dtNascimento,string _nome, string _email, string _senha) : base (_nome,_email,_senha)
         {
             this.telefone = _telefone;
             this.dtNascimento = _dtNascimento;
