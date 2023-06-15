@@ -13,52 +13,41 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace HW_Hidreletrica.Services.Repository.Cliente
-{
-	internal class ClienteRepository : IClienteRepository
-	{
+namespace HW_Hidreletrica.Services.Repository.Cliente {
+	internal class ClienteRepository : IClienteRepository {
 		string tabela;
-		public bool getClienteByEmail(string email)
-		{
-			using(SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
-			{
+		public bool getClienteByEmail(string email) {
+			using (SqlConnection cn = new SqlConnection(Connect_Server.Connect())) {
 				cn.Open();
 				string sql = $"select Email from Pessoa where Email = '{email}'";
 
-        public ClienteRepository()
-				using (SqlDataAdapter da = new SqlDataAdapter(sql,cn))
-				{
+				using (SqlDataAdapter da = new SqlDataAdapter(sql, cn)) {
 					DataTable dt = new DataTable();
 					da.Fill(dt);
-					
-					if(dt.Rows.Count > 0)
+
+					if (dt.Rows.Count > 0)
 						return true;
 					return false;
 				}
 			}
 		}
-		public void Add<T>(T entity) where T : class
-		{
+		public void Add<T>(T entity) where T : class {
 			int CodTipo;
 			string query;
-			
 
-			if (entity is Clientes)
-			{
-				
-				if(entity is Pessoa_Fisica) 
-				{
+
+			if (entity is Clientes) {
+
+				if (entity is Pessoa_Fisica) {
 					Pessoa_Fisica cliente = entity as Pessoa_Fisica;
 					CodTipo = 1;
 					query = "insert into Pessoa(Nome, Email, senha, DtNascimento, CPF,CodTipo, Telefone) values " +
 					$"(@Nome,@Email,@Senha,@DtNascimento,@Cpf,@Codtipo,@Telefone);";
 
-					using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
-					{
+					using (SqlConnection cn = new SqlConnection(Connect_Server.Connect())) {
 						cn.Open();
 
-						using (SqlCommand cmd = new SqlCommand(query, cn))
-						{
+						using (SqlCommand cmd = new SqlCommand(query, cn)) {
 							cmd.Parameters.AddWithValue("@Nome", cliente.getNome());
 							cmd.Parameters.AddWithValue("@Email", cliente.getEmail());
 							cmd.Parameters.AddWithValue("@Senha", cliente.getSenha());
@@ -70,20 +59,16 @@ namespace HW_Hidreletrica.Services.Repository.Cliente
 							//os parametros virao do objeto
 						}
 					}
-				}
-				else
-				{
+				} else {
 					Pessoa_Juridica cliente = entity as Pessoa_Juridica;
 					CodTipo = 2;
 					query = "insert into Pessoa(Nome, Email, senha, DtNascimento, CNPJ,CodTipo, Telefone) values " +
 					$"(@Nome,@Email,@Senha,@DtNascimento,@CNPJ,@Codtipo,@Telefone);";
 
-					using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
-					{
+					using (SqlConnection cn = new SqlConnection(Connect_Server.Connect())) {
 						cn.Open();
 
-						using (SqlCommand cmd = new SqlCommand(query, cn))
-						{
+						using (SqlCommand cmd = new SqlCommand(query, cn)) {
 							cmd.Parameters.AddWithValue("@Nome", cliente.getNome());
 							cmd.Parameters.AddWithValue("@Email", cliente.getEmail());
 							cmd.Parameters.AddWithValue("@Senha", cliente.getSenha());
@@ -100,29 +85,23 @@ namespace HW_Hidreletrica.Services.Repository.Cliente
 			}
 		}
 
-		public void Delete<T>(T entity) where T : class
-		{
+		public void Delete<T>(T entity) where T : class {
 			throw new NotImplementedException();
 		}
-		public bool SaveChanges()
-		{
-			throw new NotImplementedException();
-		}
-
-		public void Update<T>(T entity) where T : class
-		{
+		public bool SaveChanges() {
 			throw new NotImplementedException();
 		}
 
-		public DataTable getCliente(string emailUsuario, string senhaUsuario)
-		{
-			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect()))
-			{
+		public void Update<T>(T entity) where T : class {
+			throw new NotImplementedException();
+		}
+
+		public DataTable getCliente(string emailUsuario, string senhaUsuario) {
+			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
 				conexao.Open();
 				string query = $"select nome,email,codigo from Pessoa where Email = '{emailUsuario}' and Senha = '{senhaUsuario}'";
 
-				using (SqlDataAdapter dados = new SqlDataAdapter(query, conexao))
-				{
+				using (SqlDataAdapter dados = new SqlDataAdapter(query, conexao)) {
 					DataTable datatable = new DataTable();
 					dados.Fill(datatable);
 					return datatable;

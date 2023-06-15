@@ -63,8 +63,9 @@
 			btn_cadastro.TabIndex = 2;
 			btn_cadastro.Text = "Cadastro";
 			btn_cadastro.UseVisualStyleBackColor = false;
+			btn_cadastro.Click += btn_cadastro_Click;
 			// 
-			// Form1
+			// Principal
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -75,8 +76,8 @@
 			Controls.Add(btn_login);
 			Controls.Add(pictureBox1);
 			DoubleBuffered = true;
-			Name = "Form1";
-			Text = "Form1";
+			Name = "Principal";
+			Text = "Principal";
 			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);
 		}

@@ -68,7 +68,7 @@
 			txtEmail.MaxLength = 30;
 			txtEmail.Name = "txtEmail";
 			txtEmail.Size = new Size(216, 23);
-			txtEmail.TabIndex = 2;
+			txtEmail.TabIndex = 1;
 			txtEmail.TextChanged += txt_usuario_TextChanged;
 			// 
 			// txtSenha
@@ -78,7 +78,7 @@
 			txtSenha.Name = "txtSenha";
 			txtSenha.PasswordChar = '●';
 			txtSenha.Size = new Size(216, 23);
-			txtSenha.TabIndex = 6;
+			txtSenha.TabIndex = 2;
 			txtSenha.TextChanged += txt_password_TextChanged;
 			// 
 			// label4
@@ -100,7 +100,7 @@
 			button1.Location = new Point(136, 358);
 			button1.Name = "button1";
 			button1.Size = new Size(108, 53);
-			button1.TabIndex = 7;
+			button1.TabIndex = 4;
 			button1.Text = "Entrar";
 			button1.UseVisualStyleBackColor = false;
 			button1.Click += btn_login;
@@ -145,7 +145,7 @@
 			cbxTipoUsuario.Location = new Point(130, 266);
 			cbxTipoUsuario.Name = "cbxTipoUsuario";
 			cbxTipoUsuario.Size = new Size(131, 23);
-			cbxTipoUsuario.TabIndex = 13;
+			cbxTipoUsuario.TabIndex = 3;
 			// 
 			// mensagem
 			// 

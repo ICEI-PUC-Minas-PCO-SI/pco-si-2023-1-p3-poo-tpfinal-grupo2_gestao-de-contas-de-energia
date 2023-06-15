@@ -36,14 +36,16 @@ namespace HW_Hidreletrica.Telas {
 			if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(senha) && !string.IsNullOrEmpty(tipoUsuario)) {
 				mensagem.Visible = false;
 				try {
+					senha = Cryptography_Password.CryptographyMethod(senha);
 					if (tipoUsuario == "Cliente") {
 						DataTable sql = cliente.getCliente(email, senha);
-						if(sql.Rows.Count != 0){
+						if (sql.Rows.Count != 0) {
 							mensagem.Visible = false;
+
 							string nome = sql.Rows[0]["nome"].ToString();
 							int codigo = int.Parse(sql.Rows[0]["codigo"].ToString());
 							LocalStorage.salvaInformacoes(nome, email, codigo, "Cliente");
-							
+
 							Tela_Principal_Cliente telaCliente = new Tela_Principal_Cliente();
 							telaCliente.Show();
 							this.Hide();
@@ -55,12 +57,10 @@ namespace HW_Hidreletrica.Telas {
 						DataTable sql = adm.getAdminitrador(email, senha);
 						if (sql.Rows.Count != 0) {
 							mensagem.Visible = false;
-							string nome = sql.Rows[0]["nome"].ToString();
 
+							string nome = sql.Rows[0]["nome"].ToString();
 							int codigo = int.Parse(sql.Rows[0]["CodAdministrador"].ToString());
 							LocalStorage.salvaInformacoes(nome, email, codigo, "Administrador");
-
-							
 
 							Tela_Principal_EMP telaAdm = new Tela_Principal_EMP();
 							telaAdm.Show();
@@ -71,10 +71,10 @@ namespace HW_Hidreletrica.Telas {
 						}
 					}
 
-				}catch(Exception ex) {
+				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 				}
-				
+
 			} else {
 				mensagem.Text = "Preencha todos os campos";
 				mensagem.Visible = true;

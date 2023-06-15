@@ -1,7 +1,5 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente
-{
-	partial class Cadastro_Cliente
-	{
+﻿namespace HW_Hidreletrica.Telas.Tela_cliente {
+	partial class Cadastro_Cliente {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -11,10 +9,8 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
+		protected override void Dispose(bool disposing) {
+			if (disposing && (components != null)) {
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -26,8 +22,7 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent()
-		{
+		private void InitializeComponent() {
 			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Cliente));
 			pictureBox1 = new PictureBox();
@@ -173,6 +168,7 @@
 			btn_cancelar.TabIndex = 10;
 			btn_cancelar.Text = "Cancelar";
 			btn_cancelar.UseVisualStyleBackColor = false;
+			btn_cancelar.Click += btn_cancelar_Click;
 			// 
 			// label7
 			// 

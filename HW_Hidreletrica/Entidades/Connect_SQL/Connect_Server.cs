@@ -9,7 +9,7 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 	internal static class Connect_Server
 	{
 		public static string server = @"(localdb)\MSSQLLocalDB";
-		public static string database = "HW_Hidreletrica";
+		public static string database = "master";
 		public static string user = "";
 		public static string password = "";
 		
