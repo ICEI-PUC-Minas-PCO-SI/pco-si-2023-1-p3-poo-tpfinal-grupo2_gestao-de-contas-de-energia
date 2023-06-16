@@ -98,7 +98,8 @@ namespace HW_Hidreletrica.Services.Repository.Cliente {
 			throw new NotImplementedException();
 		}
 
-		public DataTable getCliente(string emailUsuario, string senhaUsuario) {
+		public DataTable getCliente(string emailUsuario, string senhaUsuario) 
+		{
 			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
 				conexao.Open();
 				string query = $"select nome,email,codigo from Pessoa where Email = '{emailUsuario}' and Senha = '{senhaUsuario}'";
@@ -125,7 +126,7 @@ namespace HW_Hidreletrica.Services.Repository.Cliente {
 					DataTable dt = new DataTable();
 					ad.Fill(dt);
 
-					int result = int.Parse(dt.Rows[0]["Codigo"].ToString()) + 1;
+					int result = int.Parse(dt.Rows[0]["Codigo"].ToString() + 1);
 
 					return (result.ToString());
 				}

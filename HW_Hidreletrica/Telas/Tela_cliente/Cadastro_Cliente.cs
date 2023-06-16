@@ -88,6 +88,8 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			}
 			else
 			{
+				// Aqui verifica se o e-mail que esta tentando ser cadastrado já existe
+
 				if (clienteRepository.getClienteByEmail(txt_email.Text))
 				{
 					MessageBox.Show("Esse cliente ja esta cadastrado", "ERRO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
@@ -106,8 +108,17 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 																		 _cnpj: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
 					}
 
+					//Cadastrando novo Usuário
 					clienteRepository.Add(cliente);
 					MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+					// Salvando Usuário que acabou de se cadastrar no LocalStorage
+					DataTable dt = clienteRepository.getCliente(txt_email.Text, Cryptography_Password.CryptographyMethod(txt_senha.Text));
+					int codigo = int.Parse(dt.Rows[0]["codigo"].ToString());
+					LocalStorage.salvaInformacoes(txt_nome.Text, txt_email.Text,codigo, "Cliente");
+
+
 					Tela_Principal_Cliente principalCliente = new Tela_Principal_Cliente();
 					principalCliente.Show();
 					this.Hide();

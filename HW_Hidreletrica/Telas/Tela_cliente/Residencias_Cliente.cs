@@ -38,15 +38,6 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 
 		private void Residencias_Cliente_Load(object sender, EventArgs e)
 		{
-			Residencias re = new Residencias();
-			Pessoa_Fisica pe = new Pessoa_Fisica();
-
-			pe.codigo = "38";
-			re.codigo = 4;
-			ContaRepository contaB = new ContaRepository();
-			Conta_Comercial contaComercial = new Conta_Comercial(dtPagamento: new DateTime(2023, 06, 11), dtVencimento: new DateTime(2023, 06, 30), mesAnterior: 500, mesReferencia: 900
-																  , residencia: re, cliente: pe);
-			contaB.Add(contaComercial);
 			carregaResidencias();
 		}
 
