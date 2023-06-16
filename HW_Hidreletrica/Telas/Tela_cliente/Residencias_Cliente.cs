@@ -51,9 +51,6 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 			}
 		}
 
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-
-		}
 
 		private void btnDeletar_Click(object sender, EventArgs e) {
 			int residenciasSelecionadas = dataGridViewResidencias.Rows.GetRowCount(DataGridViewElementStates.Selected);

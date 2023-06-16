@@ -85,17 +85,6 @@ namespace HW_Hidreletrica.Services.Repository.Cliente {
 			}
 		}
 
-		public void Delete<T>(T entity) where T : class {
-			throw new NotImplementedException();
-		}
-		public bool SaveChanges() {
-			throw new NotImplementedException();
-		}
-
-		public void Update<T>(T entity) where T : class {
-			throw new NotImplementedException();
-		}
-
 		public DataTable getCliente(string emailUsuario, string senhaUsuario) {
 			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
 				conexao.Open();
@@ -108,5 +97,31 @@ namespace HW_Hidreletrica.Services.Repository.Cliente {
 				}
 			}
 		}
+
+		public DataTable getInformacoesCliente(int codigoCliente) {
+			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
+				conexao.Open();
+				string query = $"select * from Pessoa where codigo = '{codigoCliente}'";
+
+				using (SqlDataAdapter dados = new SqlDataAdapter(query, conexao)) {
+					DataTable datatable = new DataTable();
+					dados.Fill(datatable);
+					return datatable;
+				}
+			}
+		}
+
+		public void Delete<T>(T entity) where T : class {
+			throw new NotImplementedException();
+		}
+		public bool SaveChanges() {
+			throw new NotImplementedException();
+		}
+
+		public void Update<T>(T entity) where T : class {
+			throw new NotImplementedException();
+		}
+
+		
 	}
 }

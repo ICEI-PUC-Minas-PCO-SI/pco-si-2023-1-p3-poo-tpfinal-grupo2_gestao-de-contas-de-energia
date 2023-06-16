@@ -19,6 +19,9 @@
     <Compile Update="Telas\Tela_cliente\Contas_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\Tela_emp\DadosCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Telas\Tela_cliente\Perfil_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>

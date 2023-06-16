@@ -89,7 +89,6 @@
 			dataGridViewResidencias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridViewResidencias.Size = new Size(695, 293);
 			dataGridViewResidencias.TabIndex = 0;
-			dataGridViewResidencias.CellContentClick += dataGridView1_CellContentClick;
 			// 
 			// textoResidencias
 			// 
