@@ -37,9 +37,6 @@ namespace HW_Hidreletrica
 			} catch (Exception ex) {
 				MessageBox.Show(ex.Message);
 			}
-			
-
-            
 		}
     }
 }

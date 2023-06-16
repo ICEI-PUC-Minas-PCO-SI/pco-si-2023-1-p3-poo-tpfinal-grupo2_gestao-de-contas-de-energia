@@ -28,18 +28,18 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 
 		}
 
-		private void menu_perfil(object sender, EventArgs e)
-		{
+        private void menu_perfil(object sender, EventArgs e)
+        {
+           Perfil_Cliente perfil = new Perfil_Cliente();
+           perfil.Show();
+           this.Hide();
+        }
 
-		}
-
-		private void menu_logout(object sender, EventArgs e)
-		{
-			var confirmaLogOut = MessageBox.Show("Tem certeza que sair? ", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-			if (confirmaLogOut == DialogResult.Yes)
-			{
-				try
-				{
+        private void menu_logout(object sender, EventArgs e)
+        {
+			var confirmaLogOut = MessageBox.Show("Tem certeza que deseja sair? ", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            if (confirmaLogOut == DialogResult.Yes) {    
+                try {
 					LocalStorage.logOut();
 					Principal principal = new Principal();
 					principal.Show();
