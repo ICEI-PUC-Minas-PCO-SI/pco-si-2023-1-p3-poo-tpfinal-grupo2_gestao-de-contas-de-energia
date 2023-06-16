@@ -30,11 +30,11 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 					cmd.ExecuteNonQuery();
 					cmd.CommandText = "create table Endereco(\r\n\tCodigo int PRIMARY KEY IDENTITY(1,1),\r\n\tNumero int  not null,\r\n\tRua varchar(100) not null,\r\n\tBairro varchar(40) not null,\r\n\tCidade varchar(30) not null,\r\n\tEstado varchar(30)  not null,\r\n\tCep varchar(30) not null\r\n);";
 					cmd.ExecuteNonQuery();
-					cmd.CommandText = "create table Residencia(\r\n\tCodigo int PRIMARY KEY IDENTITY(1,1),\r\n\tNumInstalacao int not null,\r\n\tDescricao char(30) not null,\r\n\tCodTipo int not null,\r\n\tCodPessoa int not null,\r\n\tCodEndereco int not null,\r\n\tConstraint FK_CodPessoa Foreign Key(CodPessoa) references Pessoa,\r\n\tConstraint FK_CodEndereco Foreign Key(CodEndereco) references Endereco\r\n);";
+					cmd.CommandText = "create table Residencia(\r\n\tCodigo int PRIMARY KEY IDENTITY(1,1),\r\n\tNumInstalacao int not null,\r\n\tDescricao char(30) not null,\r\n\tCodPessoa int not null,\r\n\tCodEndereco int not null,\r\n\tConstraint FK_CodPessoa Foreign Key(CodPessoa) references Pessoa,\r\n\tConstraint FK_CodEndereco Foreign Key(CodEndereco) references Endereco\r\n);";
 					cmd.ExecuteNonQuery();
 					cmd.CommandText = "create table TipoConta(\r\n\tCodigo int PRIMARY KEY IDENTITY(1,1),\r\n\tDescricao varchar(60) not null\r\n);";
 					cmd.ExecuteNonQuery();
-					cmd.CommandText = "create table Conta(\r\n\tCodigo int IDENTITY(1,1),\r\n\tMesReferencia double PRECISION,\r\n\tMesAnterior double PRECISION,\r\n\tConsumo double PRECISION, \r\n\tValorTotal double PRECISION, \r\n\tCodPessoa int,\r\n\tCodResidencia int,\r\n\tCodTipo int not null,\r\n\tdtPagamento date,\r\n\tdtVencimento date,\r\n\tPrimary Key(Codigo, CodResidencia,CodPessoa),\r\n\tConstraint FK_TipoConta Foreign Key(CodTipo) references TipoConta,\r\n);";
+					cmd.CommandText = "create table Conta(\r\n\tCodigo int IDENTITY(1,1),\r\n\tMesReferencia double PRECISION,\r\n\tMesAnterior double PRECISION,\r\n\tConsumo double PRECISION, \r\n\tValorTotal double PRECISION,\r\n\tValorTotalSemImposto double PRECISION,\r\n\tCodPessoa int,\r\n\tCodResidencia int,\r\n\tCodTipo int not null,\r\n\tdtPagamento date,\r\n\tdtVencimento date,\r\n\tPrimary Key(Codigo, CodResidencia,CodPessoa),\r\n\tConstraint FK_TipoConta Foreign Key(CodTipo) references TipoConta,\r\n);";
 					cmd.ExecuteNonQuery();
 
 				}
@@ -56,6 +56,11 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 					cmd.CommandText = "insert into TipoPessoa(Descricao) values('Pessoa Fisica')";
 					cmd.ExecuteNonQuery();
 					cmd.CommandText = "insert into TipoPessoa(Descricao) values('Pessoa Juridica')";
+					cmd.ExecuteNonQuery();
+
+					cmd.CommandText = "insert into TipoConta(Descricao) values ('Residencial')";
+					cmd.ExecuteNonQuery();
+					cmd.CommandText = "insert into TipoConta(Descricao) values ('Comercial')";
 					cmd.ExecuteNonQuery();
 
 				}

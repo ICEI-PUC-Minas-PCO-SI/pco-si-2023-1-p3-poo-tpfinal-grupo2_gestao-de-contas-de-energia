@@ -1,7 +1,5 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente
-{
-	partial class Contas_Clientes
-	{
+﻿namespace HW_Hidreletrica.Telas.Tela_cliente {
+	partial class Contas_Clientes {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -11,10 +9,8 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
+		protected override void Dispose(bool disposing) {
+			if (disposing && (components != null)) {
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -26,8 +22,7 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent()
-		{
+		private void InitializeComponent() {
 			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -42,6 +37,7 @@
 			label4 = new Label();
 			cb_FiltroMes = new ComboBox();
 			label2 = new Label();
+			btnVoltar = new Button();
 			((System.ComponentModel.ISupportInitialize)dtContaAtual).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dtContaMesAnterior).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dtConta2MesesAnterior).BeginInit();
@@ -185,12 +181,27 @@
 			label2.TabIndex = 8;
 			label2.Text = "Selecione a conta que deseja ver:";
 			// 
+			// btnVoltar
+			// 
+			btnVoltar.BackColor = Color.DeepSkyBlue;
+			btnVoltar.FlatAppearance.BorderSize = 0;
+			btnVoltar.FlatStyle = FlatStyle.Flat;
+			btnVoltar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			btnVoltar.Location = new Point(12, 577);
+			btnVoltar.Name = "btnVoltar";
+			btnVoltar.Size = new Size(81, 40);
+			btnVoltar.TabIndex = 9;
+			btnVoltar.Text = "Voltar";
+			btnVoltar.UseVisualStyleBackColor = false;
+			btnVoltar.Click += btnVoltar_Click;
+			// 
 			// Contas_Clientes
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.SeaShell;
 			ClientSize = new Size(1471, 629);
+			Controls.Add(btnVoltar);
 			Controls.Add(label2);
 			Controls.Add(cb_FiltroMes);
 			Controls.Add(label4);
@@ -220,5 +231,6 @@
 		private Label label4;
 		private ComboBox cb_FiltroMes;
 		private Label label2;
+		private Button btnVoltar;
 	}
 }

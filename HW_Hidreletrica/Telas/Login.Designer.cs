@@ -1,7 +1,5 @@
-﻿namespace HW_Hidreletrica.Telas
-{
-	partial class Login
-	{
+﻿namespace HW_Hidreletrica.Telas {
+	partial class Login {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -11,10 +9,8 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
+		protected override void Dispose(bool disposing) {
+			if (disposing && (components != null)) {
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -26,8 +22,7 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent()
-		{
+		private void InitializeComponent() {
 			label1 = new Label();
 			label2 = new Label();
 			txtEmail = new TextBox();
@@ -40,6 +35,7 @@
 			label3 = new Label();
 			cbxTipoUsuario = new ComboBox();
 			mensagem = new Label();
+			btnVoltar = new Button();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
 			SuspendLayout();
@@ -101,10 +97,10 @@
 			// button1
 			// 
 			button1.BackColor = Color.DarkCyan;
-			button1.Font = new Font("Segoe Print", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			button1.Location = new Point(136, 358);
+			button1.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+			button1.Location = new Point(197, 350);
 			button1.Name = "button1";
-			button1.Size = new Size(108, 53);
+			button1.Size = new Size(88, 49);
 			button1.TabIndex = 4;
 			button1.Text = "Entrar";
 			button1.UseVisualStyleBackColor = false;
@@ -158,12 +154,24 @@
 			mensagem.BackColor = Color.White;
 			mensagem.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
 			mensagem.ForeColor = Color.Red;
-			mensagem.Location = new Point(89, 318);
+			mensagem.Location = new Point(89, 311);
 			mensagem.Name = "mensagem";
 			mensagem.Size = new Size(186, 20);
 			mensagem.TabIndex = 15;
 			mensagem.Text = "Preencha todos os campos";
 			mensagem.Visible = false;
+			// 
+			// btnVoltar
+			// 
+			btnVoltar.BackColor = Color.DarkCyan;
+			btnVoltar.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+			btnVoltar.Location = new Point(89, 350);
+			btnVoltar.Name = "btnVoltar";
+			btnVoltar.Size = new Size(90, 49);
+			btnVoltar.TabIndex = 16;
+			btnVoltar.Text = "Cancelar";
+			btnVoltar.UseVisualStyleBackColor = false;
+			btnVoltar.Click += btnVoltar_Click;
 			// 
 			// Login
 			// 
@@ -171,6 +179,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.DarkCyan;
 			ClientSize = new Size(770, 463);
+			Controls.Add(btnVoltar);
 			Controls.Add(mensagem);
 			Controls.Add(cbxTipoUsuario);
 			Controls.Add(label3);
@@ -205,5 +214,6 @@
 		private Label label3;
 		private ComboBox cbxTipoUsuario;
 		private Label mensagem;
+		private Button btnVoltar;
 	}
 }
