@@ -75,7 +75,7 @@ namespace HW_Hidreletrica.Services.Residencia {
 						query.ExecuteNonQuery();
 
 						query.CommandText = "INSERT INTO RESIDENCIA (NUMINSTALACAO, DESCRICAO, CODPESSOA, CODENDERECO) VALUES(@NUMINSTALACAO, @DESCRICAO, @CODPESSOA, (SELECT MAX(CODIGO) FROM ENDERECO))";
-						query.Parameters.AddWithValue("@NUMINSTALACAO", residencia.numInstalacao);
+						query.Parameters.AddWithValue("@NUMINSTALACAO", residencia.codigo);
 						query.Parameters.AddWithValue("@DESCRICAO", residencia.descricao);
 						query.Parameters.AddWithValue("@CODPESSOA", residencia.codPessoa);
 						query.ExecuteNonQuery();

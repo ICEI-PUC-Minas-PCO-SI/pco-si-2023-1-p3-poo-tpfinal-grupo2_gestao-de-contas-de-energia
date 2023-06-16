@@ -19,12 +19,12 @@ namespace HW_Hidreletrica.Services.Repository.Cliente.Conta
         {
             
         }
-        public DataTable getContaMes(int mesReferencia)
+        public DataTable getContaMes(int mesReferencia, int codigoResidencia)
 		{
 			using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
 			{
 				cn.Open();
-				string query = $"select Codigo, MesReferencia as 'Mês Referência kW/h', MesAnterior as 'Mês Anterior kW/h', Consumo, ValorTotal as 'Valor Total', ValorTotalSemImposto as 'Valor Total sem Imposto' ,dtPagamento as 'Data de Pagamento', dtVencimento as 'Data de Vencimento' from Conta where month(dtVencimento) = month(getdate()) - { mesReferencia}; ";
+				string query = $"select Codigo, MesReferencia as 'Mês Referência kW/h', MesAnterior as 'Mês Anterior kW/h', Consumo, ValorTotal as 'Valor Total', ValorTotalSemImposto as 'Valor Total sem Imposto' ,dtPagamento as 'Data de Pagamento', dtVencimento as 'Data de Vencimento' from Conta where month(dtVencimento) = month(getdate()) - { mesReferencia} and CodResidencia = {codigoResidencia}; ";
 
 				using (SqlDataAdapter da = new SqlDataAdapter(query,cn))
 				{
@@ -46,17 +46,17 @@ namespace HW_Hidreletrica.Services.Repository.Cliente.Conta
 				conta.valorTotalSemImpostos = conta.CalculaValorSemImpostos(conta.consumo);
 				if(conta is Conta_Comercial)
 				{
-					codTipo = 1;
+					conta.codigoTipo = 1;
 				}
 				else
 				{
-					codTipo= 2;
+					conta.codigoTipo = 2;
 				}
 				using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
 				{
 					cn.Open();
-					string query = $"insert into Conta (MesReferencia,MesAnterior,Consumo,ValorTotal,ValorTotalSemImposto,CodTipo,dtPagamento,dtVencimento) values " +
-						           $"(@MesReferencia,@MesAnterior,@Consumo,@ValorTotal,@ValorTotalSemImposto,@Codtipo,@dtPagamento,@dtVencimento);";
+					string query = $"insert into Conta (MesReferencia,MesAnterior,Consumo,ValorTotal,ValorTotalSemImposto,CodTipo,dtPagamento,dtVencimento,CodResidencia,CodPessoa) values " +
+						           $"(@MesReferencia,@MesAnterior,@Consumo,@ValorTotal,@ValorTotalSemImposto,@Codtipo,@dtPagamento,@dtVencimento,@CodResidencia,@CodPessoa);";
 					//adicionar os paramatros aqui por @
 					using (SqlCommand cmd = new SqlCommand(query,cn))
 					{
@@ -68,6 +68,8 @@ namespace HW_Hidreletrica.Services.Repository.Cliente.Conta
 						cmd.Parameters.AddWithValue("@Codtipo", conta.codigoTipo);
 						cmd.Parameters.AddWithValue("@dtPagamento", conta.dtPagamento);
 						cmd.Parameters.AddWithValue("@dtVencimento", conta.dtVencimento);
+						cmd.Parameters.AddWithValue("@CodResidencia", conta.residencia.codigo);
+						cmd.Parameters.AddWithValue("@CodPessoa", conta.cliente.getCodigo());
 						cmd.ExecuteNonQuery();
 						//os parametros virao do objeto
 					}

@@ -14,7 +14,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Fisica
         {
             
         }
-        public Pessoa_Fisica(string _cpf, string _telefone, DateTime _dtNascimento, string _nome, string _email, string _senha) : base(_telefone, _dtNascimento,_nome,_email, _senha)
+        public Pessoa_Fisica(string _cpf, string _telefone, DateTime _dtNascimento, string _nome, string _email, string _senha, string _codigo) : base(_telefone, _dtNascimento,_nome,_email, _senha, _codigo)
         {
             this.cpf = _cpf;
         }

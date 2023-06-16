@@ -22,9 +22,9 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			InitializeComponent();
 
 
-			dtContaAtual.DataSource = contaRepository.getContaMes(0);
-			dtContaMesAnterior.DataSource = contaRepository.getContaMes(1);
-			dtConta2MesesAnterior.DataSource = contaRepository.getContaMes(2);
+			dtContaAtual.DataSource = contaRepository.getContaMes(0,codigoResidencia);
+			dtContaMesAnterior.DataSource = contaRepository.getContaMes(1,codigoResidencia);
+			dtConta2MesesAnterior.DataSource = contaRepository.getContaMes(2, codigoResidencia);
 
 
 

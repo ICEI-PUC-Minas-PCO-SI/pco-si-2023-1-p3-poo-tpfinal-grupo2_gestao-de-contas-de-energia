@@ -14,9 +14,11 @@ using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace HW_Hidreletrica.Services.Repository.Cliente {
-	internal class ClienteRepository : IClienteRepository {
+	internal class ClienteRepository : IClienteRepository
+	{
 		string tabela;
 		public bool getClienteByEmail(string email) {
+
 			using (SqlConnection cn = new SqlConnection(Connect_Server.Connect())) {
 				cn.Open();
 				string sql = $"select Email from Pessoa where Email = '{email}'";
@@ -107,6 +109,29 @@ namespace HW_Hidreletrica.Services.Repository.Cliente {
 					return datatable;
 				}
 			}
+		}
+
+		public string getIdCliente()
+		{
+			//select MAX(Codigo) from Pessoa
+
+			using(SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
+			{
+				cn.Open();
+
+				string query = "select MAX(Codigo) as Codigo from Pessoa";
+				using(SqlDataAdapter ad = new SqlDataAdapter(query, cn))
+				{
+					DataTable dt = new DataTable();
+					ad.Fill(dt);
+
+					int result = int.Parse(dt.Rows[0]["Codigo"].ToString()) + 1;
+
+					return (result.ToString());
+				}
+
+			}
+			
 		}
 	}
 }

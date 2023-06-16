@@ -9,6 +9,6 @@ namespace HW_Hidreletrica.Services.Repository.Cliente.Conta
 {
 	public interface IContaRepository : IRepository
 	{
-		DataTable getContaMes(int mesReferencia);
+		DataTable getContaMes(int mesReferencia,int codigoResidencia);
 	}
 }

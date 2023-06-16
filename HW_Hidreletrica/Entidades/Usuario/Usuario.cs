@@ -8,6 +8,7 @@ namespace HW_Hidreletrica.Entidades.Usuario
 {
 	abstract class Usuario
 	{
+        public string codigo;
         private string nome;
         private string email;
         private string senha;
@@ -16,8 +17,9 @@ namespace HW_Hidreletrica.Entidades.Usuario
         {
             
         }
-        public Usuario(string _nome,string _email,string _senha)
+        public Usuario(string _nome,string _email,string _senha,string _codigo)
         {
+            this.codigo = _codigo;
             this.nome = _nome;
             this.email = _email;
             this.senha = _senha;
@@ -31,6 +33,10 @@ namespace HW_Hidreletrica.Entidades.Usuario
         }public string getSenha()
         {
             return senha;
+        }
+        public string getCodigo()
+        {
+            return codigo;
         }
     }
 }

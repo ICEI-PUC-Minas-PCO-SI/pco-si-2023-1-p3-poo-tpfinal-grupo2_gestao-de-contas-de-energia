@@ -8,7 +8,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia
 {
 	public class Residencias
 	{
-        public int numInstalacao { get; set; }
+        public int codigo { get; set; }
         public string rua { get; set; }
         public string bairro { get; set; }
         public string cidade { get; set; }
@@ -22,9 +22,9 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia
             
         }
 
-		public Residencias(int numInstalacao, string rua, string bairro, string cidade, int numero, string cep, string estado, string descricao, int codPessoa)
+		public Residencias(int codigo, string rua, string bairro, string cidade, int numero, string cep, string estado, string descricao, int codPessoa)
 		{
-			this.numInstalacao = numInstalacao;
+			this.codigo = codigo;
 			this.rua = rua;
 			this.bairro = bairro;
 			this.cidade = cidade;

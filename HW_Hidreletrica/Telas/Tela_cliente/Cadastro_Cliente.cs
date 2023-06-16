@@ -14,66 +14,95 @@ using HW_Hidreletrica.Entidades.Usuario.Cliente;
 using HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Juridica;
 using HW_Hidreletrica.Entidades.Usuario;
 
-namespace HW_Hidreletrica.Telas.Tela_cliente {
-	public partial class Cadastro_Cliente : Form {
+namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	public partial class Cadastro_Cliente : Form
+	{
 		ClienteRepository clienteRepository = new ClienteRepository();
-		public Cadastro_Cliente() {
+		public Cadastro_Cliente()
+		{
 			InitializeComponent();
 			cbx_cpf.SelectedIndex = 0;
 
 		}
 
-		private void cbx_cpf_SelectedIndexChanged(object sender, EventArgs e) {
-			if (cbx_cpf.SelectedIndex == 0) {
+		private void cbx_cpf_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cbx_cpf.SelectedIndex == 0)
+			{
 				txt_CNPJ_CPF.Mask = "000,000,000-00";
 
-			} else {
+			}
+			else
+			{
 				txt_CNPJ_CPF.Mask = "00,000,000/0000-00";
 			}
 		}
 
-		private void txt_email_Leave(object sender, EventArgs e) {
+		private void txt_email_Leave(object sender, EventArgs e)
+		{
 			string pattern = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
 							 @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
 							 @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
 
-			if (Regex.IsMatch(txt_email.Text, pattern)) {
+			if (Regex.IsMatch(txt_email.Text, pattern))
+			{
 				errorProvider1.Clear();
 
-			} else {
+			}
+			else
+			{
 				errorProvider1.SetError(txt_email, "Favor colocar um e-mail válido");
 
 			}
 		}
 
-		private void txt_telefone_KeyPress(object sender, KeyPressEventArgs e) {
-			if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != ' ' && e.KeyChar != '-') {
+		private void txt_telefone_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != ' ' && e.KeyChar != '-')
+			{
 				e.Handled = true;
 			}
 		}
 
-		private void btn_cadastrar_Click(object sender, EventArgs e) {
+		private void btn_cadastrar_Click(object sender, EventArgs e)
+		{
 			Clientes cliente;
 
-			if (string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(txt_telefone.Text) || string.IsNullOrEmpty(txt_nome.Text) || string.IsNullOrEmpty(txt_senha.Text) || string.IsNullOrEmpty(txt_confsenha.Text) || string.IsNullOrEmpty(txt_CNPJ_CPF.Text) || string.IsNullOrEmpty(dtNascimento.Text)) {
+			if (string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(txt_telefone.Text) || string.IsNullOrEmpty(txt_nome.Text) || string.IsNullOrEmpty(txt_senha.Text) || string.IsNullOrEmpty(txt_confsenha.Text) || string.IsNullOrEmpty(txt_CNPJ_CPF.Text) || string.IsNullOrEmpty(dtNascimento.Text))
+			{
 				MessageBox.Show("Favor preencher todos os campos do formulário para que o cadastro seja realizado", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-			} else if (!string.IsNullOrEmpty(errorProvider1.GetError(txt_email)) || !string.IsNullOrEmpty(errorProvider2.GetError(txt_telefone)) || !string.IsNullOrEmpty(errorProvider4.GetError(txt_confsenha))) {
+			}
+			else if (!string.IsNullOrEmpty(errorProvider1.GetError(txt_email)) || !string.IsNullOrEmpty(errorProvider2.GetError(txt_telefone)) || !string.IsNullOrEmpty(errorProvider4.GetError(txt_confsenha)))
+			{
 				MessageBox.Show("Favor preencher o formulário de forma correta para que o cadastro possa ser realizado", "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-			} else if (cbx_cpf.SelectedIndex == 0 && txt_CNPJ_CPF.Text.Length != 14) {
+			}
+			else if (cbx_cpf.SelectedIndex == 0 && txt_CNPJ_CPF.Text.Length != 14)
+			{
 				errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");
-			} else if (cbx_cpf.SelectedIndex == 1 && txt_CNPJ_CPF.Text.Length != 18) {
+			}
+			else if (cbx_cpf.SelectedIndex == 1 && txt_CNPJ_CPF.Text.Length != 18)
+			{
 				errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");
 
-			} else {
-				if (clienteRepository.getClienteByEmail(txt_email.Text)) {
+			}
+			else
+			{
+				if (clienteRepository.getClienteByEmail(txt_email.Text))
+				{
 					MessageBox.Show("Esse cliente ja esta cadastrado", "ERRO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-				} else {
-					if (cbx_cpf.SelectedIndex == 0) {
-						cliente = new Pessoa_Fisica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text),
+				}
+				else
+				{
+					if (cbx_cpf.SelectedIndex == 0)
+					{
+						cliente = new Pessoa_Fisica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), _codigo: clienteRepository.getIdCliente(),
 																		 _cpf: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
 
-					} else {
-						cliente = new Pessoa_Juridica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text),
+					}
+					else
+					{
+						cliente = new Pessoa_Juridica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), _codigo: clienteRepository.getIdCliente(),
 																		 _cnpj: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
 					}
 
@@ -87,47 +116,68 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 
 		}
 
-		private void txt_confsenha_Leave(object sender, EventArgs e) {
-			if ((string.IsNullOrEmpty(txt_confsenha.Text) || string.IsNullOrEmpty(txt_senha.Text) || (txt_senha.Text != txt_confsenha.Text))) {
+		private void txt_confsenha_Leave(object sender, EventArgs e)
+		{
+			if ((string.IsNullOrEmpty(txt_confsenha.Text) || string.IsNullOrEmpty(txt_senha.Text) || (txt_senha.Text != txt_confsenha.Text)))
+			{
 				string erro = "O campo não pode ser nulo ou vazio";
 				errorProvider3.SetError(txt_senha, erro);
 				errorProvider4.SetError(txt_confsenha, erro);
-			} else if ((txt_senha.Text != txt_confsenha.Text)) {
+			}
+			else if ((txt_senha.Text != txt_confsenha.Text))
+			{
 				string erro = "As senhas devem ser iguais";
 				errorProvider3.SetError(txt_senha, erro);
 				errorProvider4.SetError(txt_confsenha, erro);
-			} else {
+			}
+			else
+			{
 				errorProvider3.Clear();
 				errorProvider4.Clear();
 			}
 		}
 
-		private void txt_telefone_Leave_1(object sender, EventArgs e) {
-			if (txt_telefone.Text.Length != 13) {
+		private void txt_telefone_Leave_1(object sender, EventArgs e)
+		{
+			if (txt_telefone.Text.Length != 13)
+			{
 				errorProvider2.SetError(txt_telefone, "Favor inserir um telefone válido");
-			} else {
+			}
+			else
+			{
 				errorProvider2.Clear();
 			}
 		}
 
-		private void txt_CNPJ_CPF_Leave(object sender, EventArgs e) {
-			if (cbx_cpf.SelectedIndex == 0) {
-				if (txt_CNPJ_CPF.Text.Length != 14) {
+		private void txt_CNPJ_CPF_Leave(object sender, EventArgs e)
+		{
+			if (cbx_cpf.SelectedIndex == 0)
+			{
+				if (txt_CNPJ_CPF.Text.Length != 14)
+				{
 					errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");
-				} else {
+				}
+				else
+				{
 					errorProvider5.Clear();
 				}
 
-			} else {
-				if (txt_CNPJ_CPF.Text.Length != 18) {
+			}
+			else
+			{
+				if (txt_CNPJ_CPF.Text.Length != 18)
+				{
 					errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");
-				} else {
+				}
+				else
+				{
 					errorProvider5.Clear();
 				}
 			}
 		}
 
-		private void btn_cancelar_Click(object sender, EventArgs e) {
+		private void btn_cancelar_Click(object sender, EventArgs e)
+		{
 			Principal principal = new Principal();
 			principal.Show();
 			this.Hide();

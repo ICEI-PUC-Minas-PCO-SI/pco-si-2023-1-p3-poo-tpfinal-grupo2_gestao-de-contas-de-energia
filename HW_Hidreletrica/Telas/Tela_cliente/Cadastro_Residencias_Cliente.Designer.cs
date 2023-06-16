@@ -1,5 +1,7 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente {
-	partial class Cadastro_Residencias_Cliente {
+﻿namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	partial class Cadastro_Residencias_Cliente
+	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -9,8 +11,10 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing) {
-			if (disposing && (components != null)) {
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -22,7 +26,8 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent() {
+		private void InitializeComponent()
+		{
 			txtNumero = new TextBox();
 			labelNumero = new Label();
 			labelUF = new Label();
@@ -273,6 +278,7 @@
 			Controls.Add(pictureBox2);
 			Controls.Add(pictureBox1);
 			Name = "Cadastro_Residencias_Cliente";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Cadastro_Residencias_Cliente";
 			TopMost = true;
 			Load += Cadastro_Residencias_Cliente_Load;

@@ -14,7 +14,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Juridica
         {
             
         }
-        public Pessoa_Juridica(string _cnpj, string _telefone, DateTime _dtNascimento, string _nome, string _email, string _senha) : base(_telefone, _dtNascimento, _nome, _email, _senha)
+        public Pessoa_Juridica(string _cnpj, string _telefone, DateTime _dtNascimento, string _nome, string _email, string _senha, string _codigo) : base(_telefone, _dtNascimento, _nome, _email, _senha, _codigo)
         {
             this.cnpj = _cnpj;
         }

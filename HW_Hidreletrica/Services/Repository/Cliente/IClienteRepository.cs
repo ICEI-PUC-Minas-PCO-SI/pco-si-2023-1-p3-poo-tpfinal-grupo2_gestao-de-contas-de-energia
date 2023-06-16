@@ -9,5 +9,6 @@ namespace HW_Hidreletrica.Services.Repository.Cliente
 	internal interface IClienteRepository : IRepository
 	{
 		Boolean getClienteByEmail(string email);
+		string getIdCliente();
 	}
 }

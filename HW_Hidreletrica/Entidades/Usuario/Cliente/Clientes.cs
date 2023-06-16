@@ -14,7 +14,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente
 		public Clientes()
 		{
 		}
-        public Clientes(string _telefone,DateTime _dtNascimento,string _nome, string _email, string _senha) : base (_nome,_email,_senha)
+        public Clientes(string _telefone,DateTime _dtNascimento,string _nome, string _email, string _senha,string _codigo) : base (_nome,_email,_senha,_codigo)
         {
             this.telefone = _telefone;
             this.dtNascimento = _dtNascimento;

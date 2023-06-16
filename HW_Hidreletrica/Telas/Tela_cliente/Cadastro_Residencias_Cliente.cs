@@ -14,31 +14,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HW_Hidreletrica.Telas.Tela_cliente {
-	public partial class Cadastro_Residencias_Cliente : Form {
+namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	public partial class Cadastro_Residencias_Cliente : Form
+	{
 
 		ResidenciaRepository residencia = new ResidenciaRepository();
 		public bool inserir = false;
 		public int codResidencia;
-		public Cadastro_Residencias_Cliente(int codResidencia) {
+		public Cadastro_Residencias_Cliente(int codResidencia)
+		{
 			inserir = false;
 			this.codResidencia = codResidencia;
 			InitializeComponent();
-			
+
 		}
 
-		public Cadastro_Residencias_Cliente() {
+		public Cadastro_Residencias_Cliente()
+		{
 			inserir = true;
 			InitializeComponent();
 		}
-		private void Cadastro_Residencias_Cliente_Load(object sender, EventArgs e) {
-			if (!inserir) {
-				getInformacoesResidencia();				//PREENCHE INFORMAÇÕES PARA EDITAR
+		private void Cadastro_Residencias_Cliente_Load(object sender, EventArgs e)
+		{
+			if (!inserir)
+			{
+				getInformacoesResidencia();             //PREENCHE INFORMAÇÕES PARA EDITAR
 			}
 		}
 
-		private void btnCadastro_Click(object sender, EventArgs e) {
-			if (inserir) {
+		private void btnCadastro_Click(object sender, EventArgs e)
+		{
+			if (inserir)
+			{
 				string apelido = txbApelido.Text;
 				string rua = txbRua.Text;
 				string bairro = txbBairro.Text;
@@ -46,10 +54,12 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 				string cep = txtCep.Text;
 				string uf = cbxUF.Text;
 
-				if (!string.IsNullOrEmpty(apelido) && !string.IsNullOrEmpty(rua) && !string.IsNullOrEmpty(bairro) && !string.IsNullOrEmpty(cidade) && !string.IsNullOrEmpty(cep) && !string.IsNullOrEmpty(uf) && !string.IsNullOrEmpty(txtNumero.Text)) {
+				if (!string.IsNullOrEmpty(apelido) && !string.IsNullOrEmpty(rua) && !string.IsNullOrEmpty(bairro) && !string.IsNullOrEmpty(cidade) && !string.IsNullOrEmpty(cep) && !string.IsNullOrEmpty(uf) && !string.IsNullOrEmpty(txtNumero.Text))
+				{
 					int numero = int.Parse(txtNumero.Text);
 					aviso.Visible = false;
-					try {
+					try
+					{
 						int instalacao = this.residencia.getMaxIntalacao() + 1;
 						Residencias novaResidencia = new Residencias(instalacao, rua, bairro, cidade, numero, cep, uf, apelido, LocalStorage.getCodigoUsuario());
 						residencia.Add(novaResidencia);
@@ -58,36 +68,51 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 						residenciasCadastradas.Show();
 						this.Hide();
 
-					} catch (Exception ex) {
+					}
+					catch (Exception ex)
+					{
 						MessageBox.Show("Não foi possível adicionar a residencia: " + ex.Message);
 					}
-				} else {
+				}
+				else
+				{
 					aviso.Visible = true;
 				}
-			} else {
+			}
+			else
+			{
 				atualizaResidencia();
 			}
 		}
 
-		public void atualizaResidencia() {
-			if (!string.IsNullOrEmpty(txbApelido.Text)){
+		public void atualizaResidencia()
+		{
+			if (!string.IsNullOrEmpty(txbApelido.Text))
+			{
 				aviso.Visible = false;
-				try {
+				try
+				{
 					residencia.atualizaApelido(txbApelido.Text, codResidencia);
 					Form residenciasCadastradas = new Residencias_Cliente();
 					residenciasCadastradas.Show();
 					this.Hide();
-				} catch (Exception ex) {
+				}
+				catch (Exception ex)
+				{
 					MessageBox.Show("Não foi possível atualizar a residencia: " + ex.Message);
 				}
-				
-			} else {
+
+			}
+			else
+			{
 				aviso.Visible = true;
 			}
 		}
 
-		public void getInformacoesResidencia() {
-			try {
+		public void getInformacoesResidencia()
+		{
+			try
+			{
 				DataTable sql = residencia.getInformacoesResidencia(codResidencia);
 				txbApelido.Text = sql.Rows[0]["Descricao"].ToString();
 				txbRua.Text = sql.Rows[0]["Rua"].ToString();
@@ -106,26 +131,33 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 				cbxUF.Enabled = false;
 				txtNumero.Text = sql.Rows[0]["Numero"].ToString();
 				txtNumero.ReadOnly = true;
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				MessageBox.Show(ex.Message);
 			}
 
 		}
 
 		//FUNCAO PARA PERMITIR APENAS NÚMEROS NO LABEL 
-		private void txtNumero_KeyPress(object sender, KeyPressEventArgs e) {
-			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+		private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+			{
 				e.Handled = true;
 			}
 		}
 
-		private void txtCep_KeyPress(object sender, KeyPressEventArgs e) {
-			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+		private void txtCep_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+			{
 				e.Handled = true;
 			}
 		}
 
-		private void btnCancelar_Click(object sender, EventArgs e) {
+		private void btnCancelar_Click(object sender, EventArgs e)
+		{
 			Form residenciasCadastradas = new Residencias_Cliente();
 			residenciasCadastradas.Show();
 			this.Hide();
