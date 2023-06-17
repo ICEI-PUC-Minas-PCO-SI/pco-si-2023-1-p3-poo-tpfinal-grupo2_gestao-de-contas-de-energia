@@ -13,85 +13,67 @@ using HW_Hidreletrica.Services.Residencia;
 using HW_Hidreletrica.Services.Repository.Cliente;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Globalization;
+using HW_Hidreletrica.Telas.Tela_emp;
 
-namespace HW_Hidreletrica.Telas.Tela_cliente
-{
-	public partial class DadosCliente : Form
-	{
+namespace HW_Hidreletrica.Telas.Tela_cliente {
+	public partial class DadosCliente : Form {
 
 		private int codigoCliente;
 		ResidenciaRepository residencia = new ResidenciaRepository();
 		ClienteRepository cliente = new ClienteRepository();
-		public DadosCliente(int codigoCliente)
-		{
+		public DadosCliente(int codigoCliente) {
 			this.codigoCliente = codigoCliente;
 			InitializeComponent();
 		}
 
 
-		private void DadosCliente_Load(object sender, EventArgs e)
-		{
+		private void DadosCliente_Load(object sender, EventArgs e) {
 			carregaInformacoesCliente();
 			carregaResidencias();
 		}
 
-		public void carregaInformacoesCliente()
-		{
+		public void carregaInformacoesCliente() {
 			TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
 
-			try
-			{
+			try {
 				DataTable sql = cliente.getInformacoesCliente(codigoCliente);
 				labelNome.Text = textInfo.ToTitleCase(sql.Rows[0]["nome"].ToString());
 				labelEmail.Text = sql.Rows[0]["email"].ToString();
 				labelTelefone.Text = sql.Rows[0]["telefone"].ToString();
-				if (string.IsNullOrEmpty(sql.Rows[0]["CNPJ"].ToString()))
-				{
+				if (string.IsNullOrEmpty(sql.Rows[0]["CNPJ"].ToString())) {
 					labelDescricao.Text = "CPF: ";
 					labelIdentificador.Text = sql.Rows[0]["CPF"].ToString();
 
-				}
-				else
-				{
+				} else {
 					labelDescricao.Text = "CNPJ:";
 					labelIdentificador.Text = "CNPJ:" + sql.Rows[0]["CNPJ"].ToString();
 				}
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				MessageBox.Show("Não foi possível carregar informações do cliente:" + ex.Message);
 			}
 		}
 
-		public void carregaResidencias()
-		{
-			try
-			{
+		public void carregaResidencias() {
+			try {
 				DataTable dataTable = residencia.getResidencias(codigoCliente);
-				if (dataTable.Rows.Count > 0)
-				{
+				if (dataTable.Rows.Count > 0) {
 					dataGridViewResidenciasCliente.DataSource = dataTable;
 					dataGridViewResidenciasCliente.Visible = true;
 					dataGridViewResidenciasCliente.Columns[0].Visible = false;     //OCULTANDO O CÓDIGO DA RESIDENCIA
 					dataGridViewResidenciasCliente.Columns[1].Width = 120;
 					dataGridViewResidenciasCliente.Columns[2].Visible = false;
 					dataGridViewResidenciasCliente.Columns[3].Width = 380;
-				}
-				else
-				{
+				} else {
 					dataGridViewResidenciasCliente.Visible = false;
 					mostraMensagem("Nenhuma residência cadastrada");
 				}
 
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				MessageBox.Show("Não foi possível carregar residencias:" + ex.Message);
 			}
 		}
 
-		private void mostraMensagem(string mensagem)
-		{
+		private void mostraMensagem(string mensagem) {
 
 			System.Windows.Forms.Label texto = new System.Windows.Forms.Label();
 			texto.Text = mensagem;
@@ -103,19 +85,20 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			this.Controls.Add(texto);
 		}
 
-		private void DadosCliente_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			if (e.CloseReason == CloseReason.UserClosing)
-			{
-				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-				{
+		private void DadosCliente_FormClosing(object sender, FormClosingEventArgs e) {
+			if (e.CloseReason == CloseReason.UserClosing) {
+				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
 					Application.Exit();
-				}
-				else
-				{
+				} else {
 					e.Cancel = true;
 				}
 			}
+		}
+
+		private void btnVoltar_Click(object sender, EventArgs e) {
+			Tela_Principal_EMP principal = new Tela_Principal_EMP();
+			principal.Show();
+			this.Hide();
 		}
 	}
 }

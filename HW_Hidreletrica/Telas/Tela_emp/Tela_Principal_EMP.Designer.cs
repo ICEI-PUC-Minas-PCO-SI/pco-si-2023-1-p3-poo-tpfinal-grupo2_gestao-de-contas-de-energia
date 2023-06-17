@@ -1,7 +1,5 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_emp
-{
-	partial class Tela_Principal_EMP
-	{
+﻿namespace HW_Hidreletrica.Telas.Tela_emp {
+	partial class Tela_Principal_EMP {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -11,10 +9,8 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
+		protected override void Dispose(bool disposing) {
+			if (disposing && (components != null)) {
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -26,8 +22,7 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent()
-		{
+		private void InitializeComponent() {
 			components = new System.ComponentModel.Container();
 			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
@@ -40,6 +35,7 @@
 			label4 = new Label();
 			btn_AplicaFiltro = new Button();
 			errorProvider1 = new ErrorProvider(components);
+			btnVerCliente = new Button();
 			((System.ComponentModel.ISupportInitialize)dt_Clientes).BeginInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
 			SuspendLayout();
@@ -63,6 +59,7 @@
 			dataGridViewCellStyle2.SelectionBackColor = Color.MediumPurple;
 			dt_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
 			dt_Clientes.RowTemplate.Height = 25;
+			dt_Clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dt_Clientes.Size = new Size(1375, 435);
 			dt_Clientes.TabIndex = 0;
 			// 
@@ -81,7 +78,7 @@
 			// 
 			label2.AutoSize = true;
 			label2.Font = new Font("Microsoft YaHei UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-			label2.Location = new Point(1219, 616);
+			label2.Location = new Point(1047, 628);
 			label2.Name = "label2";
 			label2.Size = new Size(55, 19);
 			label2.TabIndex = 2;
@@ -119,7 +116,7 @@
 			// label4
 			// 
 			label4.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label4.Location = new Point(1280, 616);
+			label4.Location = new Point(1108, 628);
 			label4.Name = "label4";
 			label4.Size = new Size(47, 19);
 			label4.TabIndex = 6;
@@ -144,12 +141,27 @@
 			// 
 			errorProvider1.ContainerControl = this;
 			// 
+			// btnVerCliente
+			// 
+			btnVerCliente.BackColor = Color.Teal;
+			btnVerCliente.FlatStyle = FlatStyle.Flat;
+			btnVerCliente.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+			btnVerCliente.ForeColor = SystemColors.ControlLightLight;
+			btnVerCliente.Location = new Point(1334, 623);
+			btnVerCliente.Name = "btnVerCliente";
+			btnVerCliente.Size = new Size(95, 32);
+			btnVerCliente.TabIndex = 8;
+			btnVerCliente.Text = "Ver Cliente";
+			btnVerCliente.UseVisualStyleBackColor = false;
+			btnVerCliente.Click += btnVerCliente_Click;
+			// 
 			// Tela_Principal_EMP
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.SeaShell;
 			ClientSize = new Size(1494, 669);
+			Controls.Add(btnVerCliente);
 			Controls.Add(btn_AplicaFiltro);
 			Controls.Add(label4);
 			Controls.Add(label3);
@@ -179,5 +191,6 @@
 		private Label label4;
 		private Button btn_AplicaFiltro;
 		private ErrorProvider errorProvider1;
+		private Button btnVerCliente;
 	}
 }
