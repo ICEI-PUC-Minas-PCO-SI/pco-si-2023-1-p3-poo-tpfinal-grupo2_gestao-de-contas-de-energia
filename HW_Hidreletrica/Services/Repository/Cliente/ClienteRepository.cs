@@ -87,17 +87,6 @@ namespace HW_Hidreletrica.Services.Repository.Cliente {
 			}
 		}
 
-		public void Delete<T>(T entity) where T : class {
-			throw new NotImplementedException();
-		}
-		public bool SaveChanges() {
-			throw new NotImplementedException();
-		}
-
-		public void Update<T>(T entity) where T : class {
-			throw new NotImplementedException();
-		}
-
 		public DataTable getCliente(string emailUsuario, string senhaUsuario) 
 		{
 			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
@@ -134,5 +123,21 @@ namespace HW_Hidreletrica.Services.Repository.Cliente {
 			}
 			
 		}
+
+		public void Delete<T>(T entity) where T : class
+		{
+			throw new NotImplementedException();
+		}
+		public bool SaveChanges()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Update<T>(T entity) where T : class
+		{
+			throw new NotImplementedException();
+		}
+
+
 	}
 }
