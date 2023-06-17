@@ -217,6 +217,7 @@
 			Controls.Add(dtContaMesAnterior);
 			Controls.Add(dtContaAtual);
 			Name = "Contas_Clientes";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Contas";
 			FormClosing += Contas_Clientes_FormClosing;
 			((System.ComponentModel.ISupportInitialize)dtContaAtual).EndInit();

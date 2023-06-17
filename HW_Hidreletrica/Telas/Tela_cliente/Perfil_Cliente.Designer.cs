@@ -175,6 +175,7 @@
 			ClientSize = new Size(826, 533);
 			Controls.Add(panel1);
 			Name = "Perfil_Cliente";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Perfil_Cliente";
 			FormClosing += Perfil_Cliente_FormClosing;
 			Load += Perfil_Cliente_Load;

@@ -29,6 +29,8 @@
 		private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
+			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			dt_Clientes = new DataGridView();
 			label1 = new Label();
 			label2 = new Label();
@@ -44,9 +46,22 @@
 			// 
 			// dt_Clientes
 			// 
+			dt_Clientes.AllowUserToAddRows = false;
+			dt_Clientes.AllowUserToDeleteRows = false;
 			dt_Clientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dt_Clientes.Location = new Point(54, 144);
 			dt_Clientes.Name = "dt_Clientes";
+			dt_Clientes.ReadOnly = true;
+			dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = SystemColors.Control;
+			dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = Color.MediumPurple;
+			dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+			dt_Clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle2.SelectionBackColor = Color.MediumPurple;
+			dt_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
 			dt_Clientes.RowTemplate.Height = 25;
 			dt_Clientes.Size = new Size(1375, 435);
 			dt_Clientes.TabIndex = 0;

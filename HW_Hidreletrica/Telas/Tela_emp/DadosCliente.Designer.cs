@@ -256,6 +256,7 @@
 			Controls.Add(labelNome);
 			Controls.Add(label1);
 			Name = "DadosCliente";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Informações do Cliente";
 			FormClosing += DadosCliente_FormClosing;
 			Load += DadosCliente_Load;

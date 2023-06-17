@@ -195,7 +195,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			{
 				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
-					Application.Exit();
+                    System.Windows.Forms.Application.Exit();
 				}
 				else
 				{
