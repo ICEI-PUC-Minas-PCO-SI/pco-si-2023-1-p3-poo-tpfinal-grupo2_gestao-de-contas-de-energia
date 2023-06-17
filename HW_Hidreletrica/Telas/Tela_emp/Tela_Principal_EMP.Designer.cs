@@ -54,18 +54,21 @@
 			// label1
 			// 
 			label1.AutoSize = true;
+			label1.Font = new Font("Microsoft YaHei UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+			label1.ForeColor = Color.SlateBlue;
 			label1.Location = new Point(74, 59);
 			label1.Name = "label1";
-			label1.Size = new Size(49, 15);
+			label1.Size = new Size(95, 28);
 			label1.TabIndex = 1;
 			label1.Text = "Clientes";
 			// 
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Location = new Point(1219, 602);
+			label2.Font = new Font("Microsoft YaHei UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+			label2.Location = new Point(1219, 616);
 			label2.Name = "label2";
-			label2.Size = new Size(38, 15);
+			label2.Size = new Size(55, 19);
 			label2.TabIndex = 2;
 			label2.Text = "Total: ";
 			// 
@@ -91,29 +94,35 @@
 			// label3
 			// 
 			label3.AutoSize = true;
+			label3.Font = new Font("Microsoft YaHei UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
 			label3.Location = new Point(933, 67);
 			label3.Name = "label3";
-			label3.Size = new Size(80, 15);
+			label3.Size = new Size(83, 16);
 			label3.TabIndex = 5;
 			label3.Text = "Filtrar Cliente:";
 			// 
 			// label4
 			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(1281, 603);
+			label4.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+			label4.Location = new Point(1280, 616);
 			label4.Name = "label4";
-			label4.Size = new Size(38, 15);
+			label4.Size = new Size(47, 19);
 			label4.TabIndex = 6;
 			label4.Text = "label4";
+			label4.TextAlign = ContentAlignment.MiddleCenter;
 			// 
 			// btn_AplicaFiltro
 			// 
-			btn_AplicaFiltro.Location = new Point(1334, 64);
+			btn_AplicaFiltro.BackColor = Color.MediumSlateBlue;
+			btn_AplicaFiltro.FlatStyle = FlatStyle.Flat;
+			btn_AplicaFiltro.Font = new Font("Microsoft YaHei UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			btn_AplicaFiltro.ForeColor = SystemColors.ControlLightLight;
+			btn_AplicaFiltro.Location = new Point(1334, 59);
 			btn_AplicaFiltro.Name = "btn_AplicaFiltro";
-			btn_AplicaFiltro.Size = new Size(95, 23);
+			btn_AplicaFiltro.Size = new Size(95, 32);
 			btn_AplicaFiltro.TabIndex = 7;
 			btn_AplicaFiltro.Text = "Aplicar Filtro";
-			btn_AplicaFiltro.UseVisualStyleBackColor = true;
+			btn_AplicaFiltro.UseVisualStyleBackColor = false;
 			btn_AplicaFiltro.Click += btn_AplicaFiltro_Click;
 			// 
 			// errorProvider1
@@ -124,6 +133,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
+			BackColor = Color.SeaShell;
 			ClientSize = new Size(1494, 669);
 			Controls.Add(btn_AplicaFiltro);
 			Controls.Add(label4);
@@ -134,7 +144,9 @@
 			Controls.Add(label1);
 			Controls.Add(dt_Clientes);
 			Name = "Tela_Principal_EMP";
-			Text = "Tela_Principal_EMP";
+			StartPosition = FormStartPosition.CenterScreen;
+			Text = "Tela Principal Administrador";
+			FormClosing += Tela_Principal_EMP_FormClosing;
 			((System.ComponentModel.ISupportInitialize)dt_Clientes).EndInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
 			ResumeLayout(false);

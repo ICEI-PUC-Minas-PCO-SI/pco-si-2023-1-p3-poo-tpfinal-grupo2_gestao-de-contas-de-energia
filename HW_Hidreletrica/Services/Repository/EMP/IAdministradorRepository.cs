@@ -16,7 +16,7 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 		DataTable getClienteByCpf(string cpf);
 		DataTable getClienteByCnpj(string cnpj);
 
-		DataTable getClienteByCIdentificador(int identificador);
+		DataTable getClienteByCIdentificador(string identificador);
 
 		DataTable getClienteByConsumo(double consumo);
 

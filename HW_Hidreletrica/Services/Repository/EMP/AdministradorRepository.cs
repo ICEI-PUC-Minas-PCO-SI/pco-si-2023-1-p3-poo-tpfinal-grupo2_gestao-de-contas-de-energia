@@ -40,7 +40,7 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 			{
 				cn.Open();
 
-				string query = "select P.Codigo as 'Identificador', Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Rua,E.Bairro,E.Numero,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom" +
+				string query = "select P.Codigo as 'Identificador', Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom" +
 					" Pessoa P, TipoPessoa T, Residencia R, Endereco E, Conta C, TipoConta TC\r\nwhere P.CodTipo = T.Codigo\r\nand E.Codigo = R.CodEndereco\r\nand R.CodPessoa = P.Codigo\r\nand C.CodPessoa = P.Codigo\r\nand C.CodResidencia = R.Codigo\r\nand C.CodTipo = TC.Codigo\r\n\r\n";
 				using (SqlDataAdapter ad = new SqlDataAdapter(query, cn))
 				{
@@ -58,7 +58,7 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 			{
 				cn.Open();
 
-				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Rua,E.Bairro,E.Numero,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom " +
+				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom " +
 					$"Pessoa P, TipoPessoa T, Residencia R, Endereco E, Conta C, TipoConta TC\r\nwhere P.CodTipo = T.Codigo\r\nand E.Codigo = R.CodEndereco\r\nand R.CodPessoa = P.Codigo\r\nand C.CodPessoa = P.Codigo\r\nand C.CodResidencia = R.Codigo\r\nand C.CodTipo = TC.Codigo\r\nand P.CPF = '{cpf}'";
 				using (SqlDataAdapter ad = new SqlDataAdapter(query, cn))
 				{
@@ -77,7 +77,7 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 			{
 				cn.Open();
 
-				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Rua,E.Bairro,E.Numero,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom " +
+				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom " +
 					$"Pessoa P, TipoPessoa T, Residencia R, Endereco E, Conta C, TipoConta TC\r\nwhere P.CodTipo = T.Codigo\r\nand E.Codigo = R.CodEndereco\r\nand R.CodPessoa = P.Codigo\r\nand C.CodPessoa = P.Codigo\r\nand C.CodResidencia = R.Codigo\r\nand C.CodTipo = TC.Codigo\r\nand P.CNPJ = '{cnpj}'";
 				using (SqlDataAdapter ad = new SqlDataAdapter(query, cn))
 				{
@@ -88,13 +88,13 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 			}
 		}
 
-		public DataTable getClienteByCIdentificador(int identificador)
+		public DataTable getClienteByCIdentificador(string identificador)
 		{
 			using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
 			{
 				cn.Open();
 
-				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Rua,E.Bairro,E.Numero,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom" +
+				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom" +
 					$" Pessoa P, TipoPessoa T, Residencia R, Endereco E, Conta C, TipoConta TC\r\nwhere P.CodTipo = T.Codigo\r\nand E.Codigo = R.CodEndereco\r\nand R.CodPessoa = P.Codigo\r\nand C.CodPessoa = P.Codigo\r\nand C.CodResidencia = R.Codigo\r\nand C.CodTipo = TC.Codigo\r\nand P.Codigo = {identificador}";
 				using (SqlDataAdapter ad = new SqlDataAdapter(query, cn))
 				{
@@ -111,7 +111,7 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 			{
 				cn.Open();
 
-				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Rua,E.Bairro,E.Numero,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom" +
+				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom" +
 					$" Pessoa P, TipoPessoa T, Residencia R, Endereco E, Conta C, TipoConta TC\r\nwhere P.CodTipo = T.Codigo\r\nand E.Codigo = R.CodEndereco\r\nand R.CodPessoa = P.Codigo\r\nand C.CodPessoa = P.Codigo\r\nand C.CodResidencia = R.Codigo\r\nand C.CodTipo = TC.Codigo\r\nand C.Consumo > {consumo}";
 				using (SqlDataAdapter ad = new SqlDataAdapter(query, cn))
 				{
@@ -127,7 +127,7 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 			{
 				cn.Open();
 
-				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Rua,E.Bairro,E.Numero,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom" +
+				string query = $"select P.Codigo as 'Identificador' ,Nome, Email, Telefone,DtNascimento as 'Data de Nascimento', T.Descricao,CPF, CNPJ,R.NumInstalacao as 'Número da Instalação', R.Descricao ,E.Cidade,E.Estado, E.Cep,\r\nC.MesReferencia as 'Mês Referência', C.MesAnterior as 'Mês Anterior', C.Consumo, C.ValorTotal, TC.Descricao as 'Tipo da Conta'\r\nfrom" +
 					$" Pessoa P, TipoPessoa T, Residencia R, Endereco E, Conta C, TipoConta TC\r\nwhere P.CodTipo = T.Codigo\r\nand E.Codigo = R.CodEndereco\r\nand R.CodPessoa = P.Codigo\r\nand C.CodPessoa = P.Codigo\r\nand C.CodResidencia = R.Codigo\r\nand C.CodTipo = TC.Codigo\r\n and C.dtVencimento < getdate()\r\nand C.dtPagamento is null";
 				using (SqlDataAdapter ad = new SqlDataAdapter(query, cn))
 				{
