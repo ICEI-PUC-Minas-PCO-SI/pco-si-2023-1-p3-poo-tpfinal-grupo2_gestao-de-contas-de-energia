@@ -162,5 +162,20 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			residenciasCadastradas.Show();
 			this.Hide();
 		}
+
+		private void Cadastro_Residencias_Cliente_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (e.CloseReason == CloseReason.UserClosing)
+			{
+				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					Application.Exit();
+				}
+				else
+				{
+					e.Cancel = true;
+				}
+			}
+		}
 	}
 }

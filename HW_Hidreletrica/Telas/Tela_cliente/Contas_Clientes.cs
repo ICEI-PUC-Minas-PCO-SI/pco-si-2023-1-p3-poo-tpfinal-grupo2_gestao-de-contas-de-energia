@@ -10,12 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HW_Hidreletrica.Telas.Tela_cliente {
-	public partial class Contas_Clientes : Form {
+namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	public partial class Contas_Clientes : Form
+	{
 		ContaRepository contaRepository = new ContaRepository();
 		int codigoResidencia;
 
-		public Contas_Clientes(int codigoResidencia) {
+		public Contas_Clientes(int codigoResidencia)
+		{
 			this.codigoResidencia = codigoResidencia;
 			InitializeComponent();
 
@@ -30,8 +33,10 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 			this.codigoResidencia = codigoResidencia;
 		}
 
-		private void cbFiltroMes_SelectedIndexChanged(object sender, EventArgs e) {
-			if (cb_FiltroMes.SelectedIndex == 1) {
+		private void cbFiltroMes_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cb_FiltroMes.SelectedIndex == 1)
+			{
 
 				lb_MesAnterior.Visible = true;
 				dtContaMesAnterior.Visible = true;
@@ -39,13 +44,17 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 				lb_2MesesAnteriores.Visible = false;
 				dtConta2MesesAnterior.Visible = false;
 
-			} else if (cb_FiltroMes.SelectedIndex == 2) {
+			}
+			else if (cb_FiltroMes.SelectedIndex == 2)
+			{
 				lb_MesAnterior.Visible = true;
 				dtContaMesAnterior.Visible = true;
 
 				lb_2MesesAnteriores.Visible = true;
 				dtConta2MesesAnterior.Visible = true;
-			} else {
+			}
+			else
+			{
 				lb_MesAnterior.Visible = false;
 				dtContaMesAnterior.Visible = false;
 
@@ -54,10 +63,26 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 			}
 		}
 
-		private void btnVoltar_Click(object sender, EventArgs e) {
+		private void btnVoltar_Click(object sender, EventArgs e)
+		{
 			Tela_Principal_Cliente principal_Cliente = new Tela_Principal_Cliente();
 			principal_Cliente.Show();
 			this.Hide();
+		}
+
+		private void Contas_Clientes_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (e.CloseReason == CloseReason.UserClosing)
+			{
+				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					Application.Exit();
+				}
+				else
+				{
+					e.Cancel = true;
+				}
+			}
 		}
 	}
 }

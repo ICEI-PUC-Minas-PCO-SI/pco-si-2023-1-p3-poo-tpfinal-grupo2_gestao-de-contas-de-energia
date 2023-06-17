@@ -1,5 +1,7 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente {
-	partial class Cadastro_Cliente {
+﻿namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	partial class Cadastro_Cliente
+	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -9,8 +11,10 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing) {
-			if (disposing && (components != null)) {
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -22,7 +26,8 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent() {
+		private void InitializeComponent()
+		{
 			components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Cliente));
 			pictureBox1 = new PictureBox();
@@ -309,6 +314,7 @@
 			Name = "Cadastro_Cliente";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Cadastro_Cliente";
+			FormClosing += Cadastro_Cliente_FormClosing;
 			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			panel1.ResumeLayout(false);
 			panel1.PerformLayout();

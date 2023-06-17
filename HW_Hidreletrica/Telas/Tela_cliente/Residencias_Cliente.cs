@@ -188,5 +188,20 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 				MessageBox.Show("Selecione apenas uma residência para ver as contas!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 			}
 		}
+
+		private void Residencias_Cliente_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (e.CloseReason == CloseReason.UserClosing)
+			{
+				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					Application.Exit();
+				}
+				else
+				{
+					e.Cancel = true;
+				}
+			}
+		}
 	}
 }

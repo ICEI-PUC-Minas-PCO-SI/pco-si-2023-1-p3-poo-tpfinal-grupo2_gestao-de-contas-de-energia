@@ -28,18 +28,20 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 
 		}
 
-        private void menu_perfil(object sender, EventArgs e)
-        {
-           Perfil_Cliente perfil = new Perfil_Cliente();
-           perfil.Show();
-           this.Hide();
-        }
+		private void menu_perfil(object sender, EventArgs e)
+		{
+			Perfil_Cliente perfil = new Perfil_Cliente();
+			perfil.Show();
+			this.Hide();
+		}
 
-        private void menu_logout(object sender, EventArgs e)
-        {
+		private void menu_logout(object sender, EventArgs e)
+		{
 			var confirmaLogOut = MessageBox.Show("Tem certeza que deseja sair? ", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-            if (confirmaLogOut == DialogResult.Yes) {    
-                try {
+			if (confirmaLogOut == DialogResult.Yes)
+			{
+				try
+				{
 					LocalStorage.logOut();
 					Principal principal = new Principal();
 					principal.Show();
@@ -57,6 +59,21 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			Residencias_Cliente residencias = new Residencias_Cliente();
 			residencias.Show();
 			this.Hide();
+		}
+
+		private void Tela_Principal_Cliente_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (e.CloseReason == CloseReason.UserClosing)
+			{
+				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					Application.Exit();
+				}
+				else
+				{
+					e.Cancel = true;
+				}
+			}
 		}
 	}
 }

@@ -12,22 +12,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HW_Hidreletrica.Telas.Tela_cliente {
-	public partial class Perfil_Cliente : Form {
+namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	public partial class Perfil_Cliente : Form
+	{
 
 		ClienteRepository cliente = new ClienteRepository();
-		public Perfil_Cliente() {
+		public Perfil_Cliente()
+		{
 			InitializeComponent();
 		}
 
-		private void Perfil_Cliente_Load(object sender, EventArgs e) {
+		private void Perfil_Cliente_Load(object sender, EventArgs e)
+		{
 			carregaInformacoesUsuario();
 		}
 
-		private void carregaInformacoesUsuario() {
+		private void carregaInformacoesUsuario()
+		{
 			TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
 
-			try {
+			try
+			{
 				DataTable sql = cliente.getInformacoesCliente(LocalStorage.getCodigoUsuario());
 				lb_nome.Text = textInfo.ToTitleCase(sql.Rows[0]["nome"].ToString());
 				lb_email.Text = sql.Rows[0]["email"].ToString();
@@ -36,29 +42,52 @@ namespace HW_Hidreletrica.Telas.Tela_cliente {
 
 				lb_data.Text = dataNascimento[0];
 
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				MessageBox.Show("Não foi possível carregar informações do cliente:" + ex.Message);
 			}
 		}
 
-		private void btn_sair_Click(object sender, EventArgs e) {
+		private void btn_sair_Click(object sender, EventArgs e)
+		{
 			var confirmaLogOut = MessageBox.Show("Tem certeza que deseja sair? ", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-			if (confirmaLogOut == DialogResult.Yes) {
-				try {
+			if (confirmaLogOut == DialogResult.Yes)
+			{
+				try
+				{
 					LocalStorage.logOut();
 					Principal principal = new Principal();
 					principal.Show();
 					this.Hide();
-				} catch (Exception ex) {
+				}
+				catch (Exception ex)
+				{
 					MessageBox.Show(ex.Message);
 				}
 			}
 		}
 
-		private void btn_voltar_Click(object sender, EventArgs e) {
+		private void btn_voltar_Click(object sender, EventArgs e)
+		{
 			Tela_Principal_Cliente principalCliente = new Tela_Principal_Cliente();
 			principalCliente.Show();
 			this.Hide();
+		}
+
+		private void Perfil_Cliente_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (e.CloseReason == CloseReason.UserClosing)
+			{
+				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					Application.Exit();
+				}
+				else
+				{
+					e.Cancel = true;
+				}
+			}
 		}
 	}
 }

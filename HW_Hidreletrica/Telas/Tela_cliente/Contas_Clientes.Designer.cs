@@ -1,5 +1,7 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente {
-	partial class Contas_Clientes {
+﻿namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	partial class Contas_Clientes
+	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -9,8 +11,10 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing) {
-			if (disposing && (components != null)) {
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -22,7 +26,8 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent() {
+		private void InitializeComponent()
+		{
 			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -213,6 +218,7 @@
 			Controls.Add(dtContaAtual);
 			Name = "Contas_Clientes";
 			Text = "Contas";
+			FormClosing += Contas_Clientes_FormClosing;
 			((System.ComponentModel.ISupportInitialize)dtContaAtual).EndInit();
 			((System.ComponentModel.ISupportInitialize)dtContaMesAnterior).EndInit();
 			((System.ComponentModel.ISupportInitialize)dtConta2MesesAnterior).EndInit();

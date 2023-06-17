@@ -201,6 +201,7 @@
 			Name = "Tela_Principal_Cliente";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Home";
+			FormClosing += Tela_Principal_Cliente_FormClosing;
 			Load += Tela_Principal_Cliente_Load;
 			menuStrip1.ResumeLayout(false);
 			menuStrip1.PerformLayout();

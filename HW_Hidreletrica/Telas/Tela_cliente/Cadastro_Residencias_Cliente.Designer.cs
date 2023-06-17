@@ -281,6 +281,7 @@
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Cadastro_Residencias_Cliente";
 			TopMost = true;
+			FormClosing += Cadastro_Residencias_Cliente_FormClosing;
 			Load += Cadastro_Residencias_Cliente_Load;
 			((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

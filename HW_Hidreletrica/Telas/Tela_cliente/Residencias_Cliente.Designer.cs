@@ -196,6 +196,7 @@
 			Name = "Residencias_Cliente";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Residencias";
+			FormClosing += Residencias_Cliente_FormClosing;
 			Load += Residencias_Cliente_Load;
 			((System.ComponentModel.ISupportInitialize)dataGridViewResidencias).EndInit();
 			ResumeLayout(false);

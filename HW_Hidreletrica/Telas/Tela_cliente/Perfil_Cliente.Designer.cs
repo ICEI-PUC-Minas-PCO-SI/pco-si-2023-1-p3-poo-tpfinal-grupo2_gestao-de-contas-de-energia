@@ -1,5 +1,7 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente {
-	partial class Perfil_Cliente {
+﻿namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	partial class Perfil_Cliente
+	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -9,8 +11,10 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing) {
-			if (disposing && (components != null)) {
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -22,9 +26,11 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent() {
+		private void InitializeComponent()
+		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perfil_Cliente));
 			panel1 = new Panel();
+			btn_voltar = new Button();
 			lb_perfil = new Label();
 			lb_data = new Label();
 			lb_email = new Label();
@@ -33,7 +39,6 @@
 			lb_nome = new Label();
 			btn_sair = new Button();
 			pictureBox1 = new PictureBox();
-			btn_voltar = new Button();
 			panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
@@ -54,6 +59,19 @@
 			panel1.Name = "panel1";
 			panel1.Size = new Size(409, 441);
 			panel1.TabIndex = 0;
+			// 
+			// btn_voltar
+			// 
+			btn_voltar.BackColor = Color.LightSkyBlue;
+			btn_voltar.FlatAppearance.BorderSize = 0;
+			btn_voltar.FlatStyle = FlatStyle.Flat;
+			btn_voltar.Location = new Point(129, 382);
+			btn_voltar.Name = "btn_voltar";
+			btn_voltar.Size = new Size(63, 37);
+			btn_voltar.TabIndex = 13;
+			btn_voltar.Text = "Voltar";
+			btn_voltar.UseVisualStyleBackColor = false;
+			btn_voltar.Click += btn_voltar_Click;
 			// 
 			// lb_perfil
 			// 
@@ -149,19 +167,6 @@
 			pictureBox1.TabIndex = 0;
 			pictureBox1.TabStop = false;
 			// 
-			// btn_voltar
-			// 
-			btn_voltar.BackColor = Color.LightSkyBlue;
-			btn_voltar.FlatAppearance.BorderSize = 0;
-			btn_voltar.FlatStyle = FlatStyle.Flat;
-			btn_voltar.Location = new Point(129, 382);
-			btn_voltar.Name = "btn_voltar";
-			btn_voltar.Size = new Size(63, 37);
-			btn_voltar.TabIndex = 13;
-			btn_voltar.Text = "Voltar";
-			btn_voltar.UseVisualStyleBackColor = false;
-			btn_voltar.Click += btn_voltar_Click;
-			// 
 			// Perfil_Cliente
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -171,6 +176,7 @@
 			Controls.Add(panel1);
 			Name = "Perfil_Cliente";
 			Text = "Perfil_Cliente";
+			FormClosing += Perfil_Cliente_FormClosing;
 			Load += Perfil_Cliente_Load;
 			panel1.ResumeLayout(false);
 			panel1.PerformLayout();
