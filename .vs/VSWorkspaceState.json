@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\HW_Hidreletrica"
+    "\\HW_Hidreletrica",
+    "\\HW_Hidreletrica\\Entidades",
+    "\\HW_Hidreletrica\\Services",
+    "\\HW_Hidreletrica\\Services\\Repository",
+    "\\HW_Hidreletrica\\Services\\Repository\\Administrador",
+    "\\HW_Hidreletrica\\Telas",
+    "\\HW_Hidreletrica\\Telas\\Tela_emp"
   ],
-  "SelectedNode": "\\HW_Hidreletrica\\Form1.cs",
+  "SelectedNode": "\\HW_Hidreletrica\\Services\\Repository\\Administrador\\AdministradorRepository.cs",
   "PreviewInSolutionExplorer": false
 }

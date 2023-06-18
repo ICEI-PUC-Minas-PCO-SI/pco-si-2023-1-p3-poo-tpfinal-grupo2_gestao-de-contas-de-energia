@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HW_Hidreletrica.Entidades.Usuario.EMP
 {
-    internal class Administrador : Usuario
+    internal class Administradores : Usuario
     {
-        public Administrador()
+        public Administradores()
         {
             
         }
