@@ -18,7 +18,9 @@ namespace HW_Hidreletrica
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-			try {
+			Connect_Server.database = "HW_Hidreletrica";
+			Application.Run(new Perfil_EMP());
+			/*try {
 				//Script_Server.CreateDatabase();
 				Connect_Server.database = "HW_Hidreletrica";
 				if (LocalStorage.verificaUsuarioLogado()) {
@@ -36,7 +38,9 @@ namespace HW_Hidreletrica
 				}
 			} catch (Exception ex) {
 				MessageBox.Show(ex.Message);
-			}
+			}*/
+
+
 		}
     }
 }
