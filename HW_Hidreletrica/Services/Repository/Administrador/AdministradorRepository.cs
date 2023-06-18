@@ -73,5 +73,25 @@ namespace HW_Hidreletrica.Services.Repository.Administrador
 		{
 			throw new NotImplementedException();
 		}
+
+		public string getIdAdministrador()
+		{
+			using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
+			{
+				cn.Open();
+
+				string query = "select MAX(CodAdministrador) as Codigo from Administrador";
+				using (SqlDataAdapter ad = new SqlDataAdapter(query, cn))
+				{
+					DataTable dt = new DataTable();
+					ad.Fill(dt);
+
+					int result = int.Parse(dt.Rows[0]["Codigo"].ToString() + 1);
+
+					return (result.ToString());
+				}
+
+			}
+		}
 	}
 }

@@ -9,5 +9,9 @@ namespace HW_Hidreletrica.Services.Repository.Administrador
 	internal interface IAdministradorRepository : IRepository
 	{
 		Boolean getAdministradorByEmail(string email);
+
+		string getIdAdministrador();
+
+
 	}
 }
