@@ -172,5 +172,10 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 				}
 			}
 		}
+
+		private void btn_cadastrar_Click_1(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

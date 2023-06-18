@@ -28,299 +28,297 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Cliente));
-			pictureBox1 = new PictureBox();
-			panel1 = new Panel();
-			dtNascimento = new DateTimePicker();
-			txt_telefone = new MaskedTextBox();
-			txt_CNPJ_CPF = new MaskedTextBox();
-			cbx_cpf = new ComboBox();
-			label8 = new Label();
-			btn_cadastrar = new Button();
-			btn_cancelar = new Button();
-			label7 = new Label();
-			txt_confsenha = new TextBox();
-			label6 = new Label();
-			txt_senha = new TextBox();
-			label5 = new Label();
-			label4 = new Label();
-			txt_nome = new TextBox();
-			label3 = new Label();
-			txt_email = new TextBox();
-			label2 = new Label();
-			label1 = new Label();
-			errorProvider1 = new ErrorProvider(components);
-			errorProvider2 = new ErrorProvider(components);
-			errorProvider3 = new ErrorProvider(components);
-			errorProvider4 = new ErrorProvider(components);
-			errorProvider5 = new ErrorProvider(components);
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-			panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
-			((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
-			((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
-			((System.ComponentModel.ISupportInitialize)errorProvider4).BeginInit();
-			((System.ComponentModel.ISupportInitialize)errorProvider5).BeginInit();
-			SuspendLayout();
-			// 
-			// pictureBox1
-			// 
-			pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-			pictureBox1.Location = new Point(12, 94);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(282, 341);
-			pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-			pictureBox1.TabIndex = 8;
-			pictureBox1.TabStop = false;
-			// 
-			// panel1
-			// 
-			panel1.BackColor = Color.White;
-			panel1.Controls.Add(dtNascimento);
-			panel1.Controls.Add(txt_telefone);
-			panel1.Controls.Add(txt_CNPJ_CPF);
-			panel1.Controls.Add(cbx_cpf);
-			panel1.Controls.Add(label8);
-			panel1.Controls.Add(btn_cadastrar);
-			panel1.Controls.Add(btn_cancelar);
-			panel1.Controls.Add(label7);
-			panel1.Controls.Add(txt_confsenha);
-			panel1.Controls.Add(label6);
-			panel1.Controls.Add(txt_senha);
-			panel1.Controls.Add(label5);
-			panel1.Controls.Add(label4);
-			panel1.Controls.Add(txt_nome);
-			panel1.Controls.Add(label3);
-			panel1.Controls.Add(txt_email);
-			panel1.Controls.Add(label2);
-			panel1.Controls.Add(label1);
-			panel1.Location = new Point(309, 12);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(557, 519);
-			panel1.TabIndex = 9;
-			// 
-			// dtNascimento
-			// 
-			dtNascimento.CustomFormat = "dd/MM/yyyy";
-			dtNascimento.Format = DateTimePickerFormat.Custom;
-			dtNascimento.Location = new Point(316, 212);
-			dtNascimento.Name = "dtNascimento";
-			dtNascimento.Size = new Size(200, 23);
-			dtNascimento.TabIndex = 16;
-			// 
-			// txt_telefone
-			// 
-			txt_telefone.Location = new Point(316, 141);
-			txt_telefone.Mask = "00 00000-0000";
-			txt_telefone.Name = "txt_telefone";
-			txt_telefone.Size = new Size(216, 23);
-			txt_telefone.TabIndex = 2;
-			txt_telefone.TextAlign = HorizontalAlignment.Center;
-			txt_telefone.Leave += txt_telefone_Leave_1;
-			// 
-			// txt_CNPJ_CPF
-			// 
-			txt_CNPJ_CPF.Location = new Point(164, 365);
-			txt_CNPJ_CPF.Name = "txt_CNPJ_CPF";
-			txt_CNPJ_CPF.Size = new Size(211, 23);
-			txt_CNPJ_CPF.TabIndex = 8;
-			txt_CNPJ_CPF.Leave += txt_CNPJ_CPF_Leave;
-			// 
-			// cbx_cpf
-			// 
-			cbx_cpf.DropDownStyle = ComboBoxStyle.DropDownList;
-			cbx_cpf.FormattingEnabled = true;
-			cbx_cpf.IntegralHeight = false;
-			cbx_cpf.Items.AddRange(new object[] { "CPF", "CNPJ" });
-			cbx_cpf.Location = new Point(19, 365);
-			cbx_cpf.Name = "cbx_cpf";
-			cbx_cpf.Size = new Size(108, 23);
-			cbx_cpf.TabIndex = 7;
-			cbx_cpf.SelectedIndexChanged += cbx_cpf_SelectedIndexChanged;
-			// 
-			// label8
-			// 
-			label8.AutoSize = true;
-			label8.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label8.Location = new Point(19, 325);
-			label8.Name = "label8";
-			label8.Size = new Size(108, 23);
-			label8.TabIndex = 15;
-			label8.Text = "CPF ou CNPJ";
-			// 
-			// btn_cadastrar
-			// 
-			btn_cadastrar.BackColor = Color.DarkCyan;
-			btn_cadastrar.FlatAppearance.BorderColor = Color.DarkCyan;
-			btn_cadastrar.Font = new Font("Segoe Print", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_cadastrar.Location = new Point(182, 435);
-			btn_cadastrar.Name = "btn_cadastrar";
-			btn_cadastrar.Size = new Size(107, 58);
-			btn_cadastrar.TabIndex = 9;
-			btn_cadastrar.Text = "Cadastrar";
-			btn_cadastrar.UseVisualStyleBackColor = false;
-			btn_cadastrar.Click += btn_cadastrar_Click;
-			// 
-			// btn_cancelar
-			// 
-			btn_cancelar.BackColor = Color.DarkCyan;
-			btn_cancelar.FlatAppearance.BorderColor = Color.DarkCyan;
-			btn_cancelar.Font = new Font("Segoe Print", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_cancelar.Location = new Point(316, 435);
-			btn_cancelar.Name = "btn_cancelar";
-			btn_cancelar.Size = new Size(102, 58);
-			btn_cancelar.TabIndex = 10;
-			btn_cancelar.Text = "Cancelar";
-			btn_cancelar.UseVisualStyleBackColor = false;
-			// 
-			// label7
-			// 
-			label7.AutoSize = true;
-			label7.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label7.Location = new Point(330, 177);
-			label7.Name = "label7";
-			label7.Size = new Size(166, 23);
-			label7.TabIndex = 12;
-			label7.Text = "Data de Nascimento";
-			// 
-			// txt_confsenha
-			// 
-			txt_confsenha.Location = new Point(291, 289);
-			txt_confsenha.MaxLength = 11;
-			txt_confsenha.Name = "txt_confsenha";
-			txt_confsenha.Size = new Size(253, 23);
-			txt_confsenha.TabIndex = 6;
-			txt_confsenha.UseSystemPasswordChar = true;
-			txt_confsenha.Leave += txt_confsenha_Leave;
-			// 
-			// label6
-			// 
-			label6.AutoSize = true;
-			label6.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label6.Location = new Point(291, 254);
-			label6.Name = "label6";
-			label6.Size = new Size(136, 23);
-			label6.TabIndex = 9;
-			label6.Text = "Confirmar senha";
-			// 
-			// txt_senha
-			// 
-			txt_senha.Location = new Point(19, 289);
-			txt_senha.MaxLength = 11;
-			txt_senha.Name = "txt_senha";
-			txt_senha.Size = new Size(253, 23);
-			txt_senha.TabIndex = 5;
-			txt_senha.UseSystemPasswordChar = true;
-			// 
-			// label5
-			// 
-			label5.AutoSize = true;
-			label5.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label5.Location = new Point(19, 254);
-			label5.Name = "label5";
-			label5.Size = new Size(57, 23);
-			label5.TabIndex = 7;
-			label5.Text = "Senha";
-			// 
-			// label4
-			// 
-			label4.AutoSize = true;
-			label4.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label4.Location = new Point(381, 115);
-			label4.Name = "label4";
-			label4.Size = new Size(73, 23);
-			label4.TabIndex = 5;
-			label4.Text = "Telefone";
-			// 
-			// txt_nome
-			// 
-			txt_nome.Location = new Point(19, 212);
-			txt_nome.MaxLength = 80;
-			txt_nome.Name = "txt_nome";
-			txt_nome.Size = new Size(253, 23);
-			txt_nome.TabIndex = 3;
-			// 
-			// label3
-			// 
-			label3.AutoSize = true;
-			label3.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label3.Location = new Point(19, 177);
-			label3.Name = "label3";
-			label3.Size = new Size(137, 23);
-			label3.TabIndex = 3;
-			label3.Text = "Nome Completo";
-			// 
-			// txt_email
-			// 
-			txt_email.ForeColor = SystemColors.WindowText;
-			txt_email.Location = new Point(19, 141);
-			txt_email.MaxLength = 256;
-			txt_email.Name = "txt_email";
-			txt_email.PlaceholderText = "xxxxxxx@xxxxx.com";
-			txt_email.Size = new Size(253, 23);
-			txt_email.TabIndex = 1;
-			txt_email.Leave += txt_email_Leave;
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label2.Location = new Point(19, 104);
-			label2.Name = "label2";
-			label2.Size = new Size(51, 23);
-			label2.TabIndex = 1;
-			label2.Text = "Email";
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.Font = new Font("Segoe Print", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
-			label1.Location = new Point(164, 27);
-			label1.Name = "label1";
-			label1.Size = new Size(223, 58);
-			label1.TabIndex = 0;
-			label1.Text = "Cadastre-se";
-			// 
-			// errorProvider1
-			// 
-			errorProvider1.ContainerControl = this;
-			// 
-			// errorProvider2
-			// 
-			errorProvider2.ContainerControl = this;
-			// 
-			// errorProvider3
-			// 
-			errorProvider3.ContainerControl = this;
-			// 
-			// errorProvider4
-			// 
-			errorProvider4.ContainerControl = this;
-			// 
-			// errorProvider5
-			// 
-			errorProvider5.ContainerControl = this;
-			// 
-			// Cadastro_Cliente
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.DarkCyan;
-			ClientSize = new Size(878, 540);
-			Controls.Add(pictureBox1);
-			Controls.Add(panel1);
-			Name = "Cadastro_Cliente";
-			Text = "Cadastro_Cliente";
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-			panel1.ResumeLayout(false);
-			panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
-			((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
-			((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
-			((System.ComponentModel.ISupportInitialize)errorProvider4).EndInit();
-			((System.ComponentModel.ISupportInitialize)errorProvider5).EndInit();
-			ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Cliente));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dtNascimento = new System.Windows.Forms.DateTimePicker();
+            this.txt_telefone = new System.Windows.Forms.MaskedTextBox();
+            this.txt_CNPJ_CPF = new System.Windows.Forms.MaskedTextBox();
+            this.cbx_cpf = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btn_cadastrar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_confsenha = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_senha = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_nome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 94);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(282, 341);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.dtNascimento);
+            this.panel1.Controls.Add(this.txt_telefone);
+            this.panel1.Controls.Add(this.txt_CNPJ_CPF);
+            this.panel1.Controls.Add(this.cbx_cpf);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.btn_cadastrar);
+            this.panel1.Controls.Add(this.btn_cancelar);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txt_confsenha);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txt_senha);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txt_nome);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txt_email);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(309, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(557, 519);
+            this.panel1.TabIndex = 9;
+            // 
+            // dtNascimento
+            // 
+            this.dtNascimento.CustomFormat = "dd/MM/yyyy";
+            this.dtNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNascimento.Location = new System.Drawing.Point(316, 212);
+            this.dtNascimento.Name = "dtNascimento";
+            this.dtNascimento.Size = new System.Drawing.Size(200, 23);
+            this.dtNascimento.TabIndex = 16;
+            // 
+            // txt_telefone
+            // 
+            this.txt_telefone.Location = new System.Drawing.Point(316, 141);
+            this.txt_telefone.Mask = "00 00000-0000";
+            this.txt_telefone.Name = "txt_telefone";
+            this.txt_telefone.Size = new System.Drawing.Size(216, 23);
+            this.txt_telefone.TabIndex = 2;
+            this.txt_telefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_CNPJ_CPF
+            // 
+            this.txt_CNPJ_CPF.Location = new System.Drawing.Point(164, 365);
+            this.txt_CNPJ_CPF.Name = "txt_CNPJ_CPF";
+            this.txt_CNPJ_CPF.Size = new System.Drawing.Size(211, 23);
+            this.txt_CNPJ_CPF.TabIndex = 8;
+            // 
+            // cbx_cpf
+            // 
+            this.cbx_cpf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_cpf.FormattingEnabled = true;
+            this.cbx_cpf.IntegralHeight = false;
+            this.cbx_cpf.Items.AddRange(new object[] {
+            "CPF",
+            "CNPJ"});
+            this.cbx_cpf.Location = new System.Drawing.Point(19, 365);
+            this.cbx_cpf.Name = "cbx_cpf";
+            this.cbx_cpf.Size = new System.Drawing.Size(108, 23);
+            this.cbx_cpf.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(19, 325);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 23);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "CPF ou CNPJ";
+            // 
+            // btn_cadastrar
+            // 
+            this.btn_cadastrar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_cadastrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btn_cadastrar.Font = new System.Drawing.Font("Segoe Print", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_cadastrar.Location = new System.Drawing.Point(182, 435);
+            this.btn_cadastrar.Name = "btn_cadastrar";
+            this.btn_cadastrar.Size = new System.Drawing.Size(107, 58);
+            this.btn_cadastrar.TabIndex = 9;
+            this.btn_cadastrar.Text = "Cadastrar";
+            this.btn_cadastrar.UseVisualStyleBackColor = false;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click_1);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btn_cancelar.Font = new System.Drawing.Font("Segoe Print", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_cancelar.Location = new System.Drawing.Point(316, 435);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(102, 58);
+            this.btn_cancelar.TabIndex = 10;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(330, 177);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(166, 23);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Data de Nascimento";
+            // 
+            // txt_confsenha
+            // 
+            this.txt_confsenha.Location = new System.Drawing.Point(291, 289);
+            this.txt_confsenha.MaxLength = 11;
+            this.txt_confsenha.Name = "txt_confsenha";
+            this.txt_confsenha.Size = new System.Drawing.Size(253, 23);
+            this.txt_confsenha.TabIndex = 6;
+            this.txt_confsenha.UseSystemPasswordChar = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(291, 254);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 23);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Confirmar senha";
+            // 
+            // txt_senha
+            // 
+            this.txt_senha.Location = new System.Drawing.Point(19, 289);
+            this.txt_senha.MaxLength = 11;
+            this.txt_senha.Name = "txt_senha";
+            this.txt_senha.Size = new System.Drawing.Size(253, 23);
+            this.txt_senha.TabIndex = 5;
+            this.txt_senha.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(19, 254);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 23);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Senha";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(381, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 23);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Telefone";
+            // 
+            // txt_nome
+            // 
+            this.txt_nome.Location = new System.Drawing.Point(19, 212);
+            this.txt_nome.MaxLength = 80;
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(253, 23);
+            this.txt_nome.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(19, 177);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 23);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nome Completo";
+            // 
+            // txt_email
+            // 
+            this.txt_email.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txt_email.Location = new System.Drawing.Point(19, 141);
+            this.txt_email.MaxLength = 256;
+            this.txt_email.Name = "txt_email";
+            this.txt_email.PlaceholderText = "xxxxxxx@xxxxx.com";
+            this.txt_email.Size = new System.Drawing.Size(253, 23);
+            this.txt_email.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(19, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Email";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(164, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(223, 58);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cadastre-se";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // Cadastro_Cliente
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.ClientSize = new System.Drawing.Size(878, 540);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
+            this.Name = "Cadastro_Cliente";
+            this.Text = "Cadastro_Cliente";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            this.ResumeLayout(false);
+
 		}
 
 		#endregion

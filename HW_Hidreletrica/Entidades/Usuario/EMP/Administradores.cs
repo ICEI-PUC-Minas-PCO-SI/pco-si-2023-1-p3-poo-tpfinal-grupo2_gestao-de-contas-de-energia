@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace HW_Hidreletrica.Entidades.Usuario.EMP
 {
-    internal class Administrador : Usuario
+    internal class Administradores : Usuario
     {
-        public Administrador()
+        public Administradores()
         {
             
         }
-        public Administrador(string _nome, string _email, string _senha) : base (_nome,_email,_senha)
+        public Administradores(string _nome, string _email, string _senha) : base (_nome,_email,_senha)
         {
             
         }
