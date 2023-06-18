@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace HW_Hidreletrica.Telas.Tela_emp
 {
-    public partial class Perfil_EMP : Form
-    {
-        public Perfil_EMP()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class Perfil_EMP : Form
+	{
+		public Perfil_EMP()
+		{
+			InitializeComponent();
+		}
+
+		private void Perfil_EMP_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (e.CloseReason == CloseReason.UserClosing)
+			{
+				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					Application.Exit();
+				}
+				else
+				{
+					e.Cancel = true;
+				}
+			}
+		}
+	}
 }
