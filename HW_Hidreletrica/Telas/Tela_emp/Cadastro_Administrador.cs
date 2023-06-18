@@ -62,7 +62,7 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 				}
 				else
 				{
-					administrador = new Administradores(_nome: txt_nome.Text, _email: txt_email.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text));
+					administrador = new Administradores(_nome: txt_nome.Text, _email: txt_email.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), " gdg");
 
 					administradorRepository.Add(administrador);
 					MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

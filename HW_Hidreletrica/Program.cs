@@ -32,7 +32,7 @@ namespace HW_Hidreletrica
 						Application.Run(new Principal());
 					}
 				} else {
-					Application.Run(new Principal());
+					Application.Run(new Cadastro_Cliente());
 				}
 			} catch (Exception ex) {
 				MessageBox.Show(ex.Message);
