@@ -97,7 +97,7 @@
 			// 
 			perfilToolStripMenuItem1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
 			perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
-			perfilToolStripMenuItem1.Size = new Size(130, 24);
+			perfilToolStripMenuItem1.Size = new Size(180, 24);
 			perfilToolStripMenuItem1.Text = "Perfil";
 			perfilToolStripMenuItem1.Click += menu_perfil;
 			// 
@@ -105,7 +105,7 @@
 			// 
 			logOutToolStripMenuItem.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
 			logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-			logOutToolStripMenuItem.Size = new Size(130, 24);
+			logOutToolStripMenuItem.Size = new Size(180, 24);
 			logOutToolStripMenuItem.Text = "LogOut";
 			logOutToolStripMenuItem.Click += menu_logout;
 			// 

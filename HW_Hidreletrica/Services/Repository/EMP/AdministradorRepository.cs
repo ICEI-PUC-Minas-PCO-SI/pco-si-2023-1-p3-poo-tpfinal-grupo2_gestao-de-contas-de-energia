@@ -34,6 +34,19 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 				}
 			}
 		}
+
+		public DataTable getInformacoesAdministrador(int codigoAdm) {
+			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
+				conexao.Open();
+				string query = $"select * from Administrador where CodAdministrador = '{codigoAdm}'";
+
+				using (SqlDataAdapter dados = new SqlDataAdapter(query, conexao)) {
+					DataTable datatable = new DataTable();
+					dados.Fill(datatable);
+					return datatable;
+				}
+			}
+		}
 		public DataTable getAllClientes()
 		{
 			using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
