@@ -8,6 +8,7 @@ namespace HW_Hidreletrica
 		public Principal()
 		{
 			InitializeComponent();
+			pictureBox1.Image = Properties.Resources.logo__2_;
 		}
 
 		private void btn_login_Click(object sender, EventArgs e)

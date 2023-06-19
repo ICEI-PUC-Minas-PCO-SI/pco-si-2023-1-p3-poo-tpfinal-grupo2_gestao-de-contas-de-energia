@@ -21,9 +21,9 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 		public Tela_Principal_EMP()
 		{
 			InitializeComponent();
-			cbx_Filtro.SelectedIndex = 0;
+			cbx_Filtro.SelectedIndex = 5;
 			dt_Clientes.DataSource = adminRepos.getAllClientes();
-			label4.Text = (dt_Clientes.RowCount - 1).ToString();
+			label4.Text = (dt_Clientes.RowCount).ToString();
 
 		}
 
@@ -51,7 +51,10 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 					errorProvider1.Clear();
 					txt_Input.Enabled = false;
 					break;
-
+				case "5":
+					errorProvider1.Clear();
+					txt_Input.Enabled = false;
+					break;
 
 			}
 
@@ -95,8 +98,13 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 					case "4":
 						dt_Clientes.DataSource = adminRepos.getClienteByContaAtraso();
 						break;
+					case "5":
+						dt_Clientes.DataSource = adminRepos.getAllClientes();
+						break;
+
 				}
-				label4.Text = (dt_Clientes.RowCount - 1).ToString();
+				label4.Text = (dt_Clientes.RowCount).ToString();
+				
 			}
 
 

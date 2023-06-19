@@ -82,6 +82,7 @@
 			Controls.Add(pictureBox1);
 			DoubleBuffered = true;
 			Name = "Principal";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Principal";
 			FormClosing += Principal_FormClosing;
 			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

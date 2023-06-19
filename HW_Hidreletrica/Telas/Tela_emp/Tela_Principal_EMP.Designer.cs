@@ -98,7 +98,7 @@
 			// 
 			cbx_Filtro.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbx_Filtro.FormattingEnabled = true;
-			cbx_Filtro.Items.AddRange(new object[] { "CPF", "CNPJ", "Identificador", "Consumo", "Contas em Atraso" });
+			cbx_Filtro.Items.AddRange(new object[] { "CPF", "CNPJ", "Identificador", "Consumo", "Contas em Atraso", "Todos os Clientes" });
 			cbx_Filtro.Location = new Point(1019, 64);
 			cbx_Filtro.Name = "cbx_Filtro";
 			cbx_Filtro.Size = new Size(121, 23);

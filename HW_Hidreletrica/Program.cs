@@ -23,23 +23,36 @@ namespace HW_Hidreletrica
 			} 
 			catch (Exception e)
 			{
-				try {
-					
+				//caso caia aqui, significa que o banco já existe
+			}
+			finally
+			{
+				try
+				{
 					Connect_Server.database = "HW_Hidreletrica";
-					if (LocalStorage.verificaUsuarioLogado()) {
+					if (LocalStorage.verificaUsuarioLogado())
+					{
 						string tipoUsuario = LocalStorage.getTipoUsuario();
-						if (tipoUsuario == "Cliente") {
+						if (tipoUsuario == "Cliente")
+						{
 							Application.Run(new Tela_Principal_Cliente());
 						}
-						if (tipoUsuario == "Administrador") {
+						if (tipoUsuario == "Administrador")
+						{
 							Application.Run(new Tela_Principal_EMP());
-						} else {
-							Application.Run(new Cadastro_Administrador());
 						}
-					} else {
-						Application.Run(new Tela_Principal_EMP());
+						else
+						{
+							Application.Run(new Principal());
+						}
 					}
-				} catch (Exception ex) {
+					else
+					{
+						Application.Run(new Principal());
+					}
+				}
+				catch (Exception ex)
+				{
 					MessageBox.Show(ex.Message);
 				}
 			}

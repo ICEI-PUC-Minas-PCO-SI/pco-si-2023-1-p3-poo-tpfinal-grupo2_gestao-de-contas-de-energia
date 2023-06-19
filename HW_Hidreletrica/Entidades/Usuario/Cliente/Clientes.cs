@@ -17,6 +17,11 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente
         public Clientes(string _telefone,DateTime _dtNascimento,string _nome, string _email, string _senha,string _codigo) : base (_nome,_email,_senha,_codigo)
         {
             this.telefone = _telefone;
+
+            if((DateTime.Now.Year - dtNascimento.Year) < 16)
+            {
+                throw new ClienteIdadeInvalidaException("O cadastro de cliente é permitido apenas para maiores de 16 anos");
+            }
             this.dtNascimento = _dtNascimento;
         }
         public string getTelefone()

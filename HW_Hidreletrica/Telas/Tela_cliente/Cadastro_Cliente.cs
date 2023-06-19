@@ -96,32 +96,41 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 				}
 				else
 				{
-					if (cbx_cpf.SelectedIndex == 0)
+					try
 					{
-						cliente = new Pessoa_Fisica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), _codigo: clienteRepository.getIdCliente(),
-																		 _cpf: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
+						if (cbx_cpf.SelectedIndex == 0)
+						{
+							cliente = new Pessoa_Fisica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), _codigo: clienteRepository.getIdCliente(),
+																			 _cpf: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
 
+						}
+						else
+						{
+							cliente = new Pessoa_Juridica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), _codigo: clienteRepository.getIdCliente(),
+																			 _cnpj: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
+						}
+
+						
+						//Cadastrando novo Usuário
+						clienteRepository.Add(cliente);
+						MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+						
+						// Salvando Usuário que acabou de se cadastrar no LocalStorage
+						DataTable dt = clienteRepository.getCliente(txt_email.Text, Cryptography_Password.CryptographyMethod(txt_senha.Text));
+						int codigo = int.Parse(dt.Rows[0]["codigo"].ToString());
+						LocalStorage.salvaInformacoes(txt_nome.Text, txt_email.Text, codigo, "Cliente");
+
+
+						Tela_Principal_Cliente principalCliente = new Tela_Principal_Cliente();
+						principalCliente.Show();
+						this.Hide();
 					}
-					else
+					catch (ClienteIdadeInvalidaException ex)
 					{
-						cliente = new Pessoa_Juridica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), _codigo: clienteRepository.getIdCliente(),
-																		 _cnpj: txt_CNPJ_CPF.Text, _dtNascimento: new DateTime(int.Parse(dtNascimento.Text.Substring(6)), int.Parse(dtNascimento.Text.Substring(3, 2)), int.Parse(dtNascimento.Text.Substring(0, 2))));
+						MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 					}
-
-					//Cadastrando novo Usuário
-					clienteRepository.Add(cliente);
-					MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-					// Salvando Usuário que acabou de se cadastrar no LocalStorage
-					DataTable dt = clienteRepository.getCliente(txt_email.Text, Cryptography_Password.CryptographyMethod(txt_senha.Text));
-					int codigo = int.Parse(dt.Rows[0]["codigo"].ToString());
-					LocalStorage.salvaInformacoes(txt_nome.Text, txt_email.Text, codigo, "Cliente");
-
-
-					Tela_Principal_Cliente principalCliente = new Tela_Principal_Cliente();
-					principalCliente.Show();
-					this.Hide();
+					
 				}
 			}
 
