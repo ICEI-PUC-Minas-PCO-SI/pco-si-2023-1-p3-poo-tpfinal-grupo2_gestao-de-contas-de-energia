@@ -1,6 +1,7 @@
 ﻿using HW_Hidreletrica.Entidades.Usuario;
 using HW_Hidreletrica.Entidades.Usuario.EMP;
-using HW_Hidreletrica.Services.Repository.Administrador;
+using HW_Hidreletrica.Services.Repository.Cliente;
+using HW_Hidreletrica.Services.Repository.EMP;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 	public partial class Cadastro_Administrador : Form
 	{
 
+		//AdministradorRepository administradorRepository = new AdministradorRepository();
 		AdministradorRepository administradorRepository = new AdministradorRepository();
 		public Cadastro_Administrador()
 		{
@@ -65,7 +67,15 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 					administrador = new Administradores(_nome: txt_nome.Text, _email: txt_email.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), administradorRepository.getIdAdministrador());
 
 					administradorRepository.Add(administrador);
-					MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					//MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+					DataTable dt = administradorRepository.getAdminitrador(txt_email.Text, Cryptography_Password.CryptographyMethod(txt_senha.Text));
+					int codigo = int.Parse(dt.Rows[0]["CodAdministrador"].ToString());
+					LocalStorage.salvaInformacoes(txt_nome.Text, txt_email.Text, codigo, "Administrador");
+
+					Tela_Principal_EMP principal_EMP = new Tela_Principal_EMP();
+					principal_EMP.Show();
+					this.Hide();
 				}
 			}
 		}
@@ -96,5 +106,11 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 
 		}
 
+		private void btn_cancelar_Click(object sender, EventArgs e)
+		{
+			Principal principal = new Principal();
+			principal.Show();
+			this.Hide();
+		}
 	}
 }

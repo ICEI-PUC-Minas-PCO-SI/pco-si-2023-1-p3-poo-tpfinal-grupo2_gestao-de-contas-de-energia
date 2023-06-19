@@ -103,7 +103,7 @@
 			// 
 			button1.BackColor = Color.DarkCyan;
 			button1.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-			button1.Location = new Point(197, 350);
+			button1.Location = new Point(91, 350);
 			button1.Name = "button1";
 			button1.Size = new Size(88, 49);
 			button1.TabIndex = 4;
@@ -170,7 +170,7 @@
 			// 
 			btnVoltar.BackColor = Color.DarkCyan;
 			btnVoltar.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-			btnVoltar.Location = new Point(89, 350);
+			btnVoltar.Location = new Point(185, 350);
 			btnVoltar.Name = "btnVoltar";
 			btnVoltar.Size = new Size(90, 49);
 			btnVoltar.TabIndex = 16;

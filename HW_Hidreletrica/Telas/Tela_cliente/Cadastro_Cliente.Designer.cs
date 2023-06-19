@@ -154,7 +154,7 @@
 			btn_cadastrar.BackColor = Color.DarkCyan;
 			btn_cadastrar.FlatAppearance.BorderColor = Color.DarkCyan;
 			btn_cadastrar.Font = new Font("Segoe Print", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_cadastrar.Location = new Point(268, 435);
+			btn_cadastrar.Location = new Point(137, 435);
 			btn_cadastrar.Name = "btn_cadastrar";
 			btn_cadastrar.Size = new Size(107, 58);
 			btn_cadastrar.TabIndex = 9;
@@ -167,7 +167,7 @@
 			btn_cancelar.BackColor = Color.DarkCyan;
 			btn_cancelar.FlatAppearance.BorderColor = Color.DarkCyan;
 			btn_cancelar.Font = new Font("Segoe Print", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
-			btn_cancelar.Location = new Point(144, 435);
+			btn_cancelar.Location = new Point(273, 435);
 			btn_cancelar.Name = "btn_cancelar";
 			btn_cancelar.Size = new Size(102, 58);
 			btn_cancelar.TabIndex = 10;

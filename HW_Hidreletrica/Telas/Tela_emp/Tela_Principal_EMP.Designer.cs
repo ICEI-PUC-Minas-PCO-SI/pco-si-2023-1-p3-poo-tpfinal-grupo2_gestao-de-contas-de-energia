@@ -76,11 +76,11 @@
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Font = new Font("Microsoft YaHei UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+			label1.Font = new Font("Microsoft YaHei UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
 			label1.ForeColor = Color.SlateBlue;
-			label1.Location = new Point(74, 59);
+			label1.Location = new Point(73, 67);
 			label1.Name = "label1";
-			label1.Size = new Size(95, 28);
+			label1.Size = new Size(134, 39);
 			label1.TabIndex = 1;
 			label1.Text = "Clientes";
 			// 
@@ -88,7 +88,7 @@
 			// 
 			label2.AutoSize = true;
 			label2.Font = new Font("Microsoft YaHei UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-			label2.Location = new Point(1047, 628);
+			label2.Location = new Point(1176, 630);
 			label2.Name = "label2";
 			label2.Size = new Size(55, 19);
 			label2.TabIndex = 2;
@@ -126,7 +126,7 @@
 			// label4
 			// 
 			label4.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label4.Location = new Point(1108, 628);
+			label4.Location = new Point(1237, 630);
 			label4.Name = "label4";
 			label4.Size = new Size(47, 19);
 			label4.TabIndex = 6;
@@ -186,14 +186,14 @@
 			// perfilToolStripMenuItem
 			// 
 			perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
-			perfilToolStripMenuItem.Size = new Size(180, 26);
+			perfilToolStripMenuItem.Size = new Size(132, 26);
 			perfilToolStripMenuItem.Text = "Perfil";
 			perfilToolStripMenuItem.Click += perfilToolStripMenuItem_Click;
 			// 
 			// logOutToolStripMenuItem
 			// 
 			logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-			logOutToolStripMenuItem.Size = new Size(180, 26);
+			logOutToolStripMenuItem.Size = new Size(132, 26);
 			logOutToolStripMenuItem.Text = "LogOut";
 			logOutToolStripMenuItem.Click += logOutToolStripMenuItem_Click;
 			// 

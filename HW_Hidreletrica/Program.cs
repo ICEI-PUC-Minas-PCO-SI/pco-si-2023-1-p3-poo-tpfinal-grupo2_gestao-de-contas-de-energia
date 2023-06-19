@@ -31,10 +31,10 @@ namespace HW_Hidreletrica
 					if (tipoUsuario == "Administrador") {
 						Application.Run(new Tela_Principal_EMP());
 					} else {
-						Application.Run(new Cadastro_Administrador());
+						Application.Run(new Principal());
 					}
 				} else {
-					Application.Run(new Tela_Principal_EMP());
+					Application.Run(new Principal());
 				}
 			} catch (Exception ex) {
 				MessageBox.Show(ex.Message);

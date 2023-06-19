@@ -108,6 +108,7 @@
 			btn_cancelar.TabIndex = 10;
 			btn_cancelar.Text = "Cancelar";
 			btn_cancelar.UseVisualStyleBackColor = false;
+			btn_cancelar.Click += btn_cancelar_Click;
 			// 
 			// txt_confsenha
 			// 

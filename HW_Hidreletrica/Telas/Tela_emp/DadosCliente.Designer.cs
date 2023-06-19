@@ -1,5 +1,7 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente {
-	partial class DadosCliente {
+﻿namespace HW_Hidreletrica.Telas.Tela_cliente
+{
+	partial class DadosCliente
+	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -9,8 +11,10 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing) {
-			if (disposing && (components != null)) {
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -22,7 +26,8 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent() {
+		private void InitializeComponent()
+		{
 			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -58,9 +63,9 @@
 			// labelNome
 			// 
 			labelNome.AutoSize = true;
-			labelNome.BackColor = Color.DarkCyan;
+			labelNome.BackColor = Color.SeaShell;
 			labelNome.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-			labelNome.ForeColor = Color.White;
+			labelNome.ForeColor = Color.DarkSlateGray;
 			labelNome.Location = new Point(4, 148);
 			labelNome.MaximumSize = new Size(280, 0);
 			labelNome.MinimumSize = new Size(300, 0);
@@ -83,9 +88,9 @@
 			// labelEmail
 			// 
 			labelEmail.AutoSize = true;
-			labelEmail.BackColor = Color.DarkCyan;
+			labelEmail.BackColor = Color.SeaShell;
 			labelEmail.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-			labelEmail.ForeColor = Color.White;
+			labelEmail.ForeColor = Color.DarkSlateGray;
 			labelEmail.Location = new Point(43, 252);
 			labelEmail.MaximumSize = new Size(280, 0);
 			labelEmail.MinimumSize = new Size(250, 0);
@@ -97,9 +102,9 @@
 			// labelTelefone
 			// 
 			labelTelefone.AutoSize = true;
-			labelTelefone.BackColor = Color.DarkCyan;
+			labelTelefone.BackColor = Color.SeaShell;
 			labelTelefone.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
-			labelTelefone.ForeColor = Color.White;
+			labelTelefone.ForeColor = Color.DarkSlateGray;
 			labelTelefone.Location = new Point(43, 293);
 			labelTelefone.MinimumSize = new Size(200, 0);
 			labelTelefone.Name = "labelTelefone";
@@ -109,7 +114,7 @@
 			// 
 			// pictureBox2
 			// 
-			pictureBox2.BackColor = Color.DarkCyan;
+			pictureBox2.BackColor = Color.SeaShell;
 			pictureBox2.Image = Properties.Resources.telefone_icone;
 			pictureBox2.Location = new Point(10, 287);
 			pictureBox2.Name = "pictureBox2";
@@ -120,7 +125,7 @@
 			// 
 			// pictureBox3
 			// 
-			pictureBox3.BackColor = Color.DarkCyan;
+			pictureBox3.BackColor = Color.SeaShell;
 			pictureBox3.Image = Properties.Resources.emailIcone;
 			pictureBox3.Location = new Point(3, 252);
 			pictureBox3.Name = "pictureBox3";
@@ -185,7 +190,7 @@
 			// 
 			labelResidencias.AutoSize = true;
 			labelResidencias.Font = new Font("Comic Sans MS", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-			labelResidencias.ForeColor = Color.White;
+			labelResidencias.ForeColor = Color.DarkSlateGray;
 			labelResidencias.Location = new Point(347, 12);
 			labelResidencias.Name = "labelResidencias";
 			labelResidencias.Size = new Size(419, 49);
@@ -210,9 +215,9 @@
 			// labelIdentificador
 			// 
 			labelIdentificador.AutoSize = true;
-			labelIdentificador.BackColor = Color.DarkCyan;
+			labelIdentificador.BackColor = Color.SeaShell;
 			labelIdentificador.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
-			labelIdentificador.ForeColor = Color.White;
+			labelIdentificador.ForeColor = Color.DarkSlateGray;
 			labelIdentificador.Location = new Point(53, 218);
 			labelIdentificador.MinimumSize = new Size(200, 0);
 			labelIdentificador.Name = "labelIdentificador";
@@ -237,7 +242,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.DarkCyan;
+			BackColor = Color.SeaShell;
 			ClientSize = new Size(800, 450);
 			Controls.Add(labelDescricao);
 			Controls.Add(labelIdentificador);
