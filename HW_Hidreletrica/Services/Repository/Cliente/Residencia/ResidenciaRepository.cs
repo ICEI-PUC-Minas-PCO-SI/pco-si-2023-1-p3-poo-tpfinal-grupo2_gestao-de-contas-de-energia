@@ -12,7 +12,7 @@ namespace HW_Hidreletrica.Services.Residencia {
 	public class ResidenciaRepository : IResidenciaRepository {
 
 		public ResidenciaRepository() {
-			Connect_Server.database = "HW_Hidreletrica";
+			
 		}
 
 		public DataTable getResidencias(int codUsuario) {
