@@ -25,9 +25,9 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 
 				using (SqlCommand cmd = cn.CreateCommand())
 				{
-					cmd.CommandText = "create database Testando";
+					cmd.CommandText = "create database HW_Hidreletrica";
 					cmd.ExecuteNonQuery();
-					cmd.CommandText = "use Testando";
+					cmd.CommandText = "use HW_Hidreletrica";
 					cmd.ExecuteNonQuery();
 					cmd.CommandText = "create table Administrador(\r\n\tCodAdministrador int PRIMARY KEY IDENTITY(1,1),\r\n\tNome char(30) not null,\r\n\tEmail char(30) not null,\r\n\tsenha char(15) not null\r\n);";
 					cmd.ExecuteNonQuery();
@@ -46,7 +46,7 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 
 				}
 				
-				Connect_Server.database = "Testando";
+				Connect_Server.database = "HW_Hidreletrica";
            
                 InsertItemsDatabase();
             }
