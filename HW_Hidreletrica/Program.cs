@@ -18,25 +18,34 @@ namespace HW_Hidreletrica
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+
 			try {
-				//Script_Server.CreateDatabase();
-				Connect_Server.database = "HW_Hidreletrica";
-				if (LocalStorage.verificaUsuarioLogado()) {
-					string tipoUsuario = LocalStorage.getTipoUsuario();
-					if (tipoUsuario == "Cliente") {
-						Application.Run(new Tela_Principal_Cliente());
-					}
-					if (tipoUsuario == "Administrador") {
-						Application.Run(new Tela_Principal_EMP());
+				Script_Server.CreateDatabase();
+			} 
+			catch (Exception e)
+			{
+				try {
+					
+					Connect_Server.database = "HW_Hidreletrica";
+					if (LocalStorage.verificaUsuarioLogado()) {
+						string tipoUsuario = LocalStorage.getTipoUsuario();
+						if (tipoUsuario == "Cliente") {
+							Application.Run(new Tela_Principal_Cliente());
+						}
+						if (tipoUsuario == "Administrador") {
+							Application.Run(new Tela_Principal_EMP());
+						} else {
+							Application.Run(new Cadastro_Administrador());
+						}
 					} else {
-						Application.Run(new Cadastro_Administrador());
+						Application.Run(new Tela_Principal_EMP());
 					}
-				} else {
-					Application.Run(new Tela_Principal_EMP());
+				} catch (Exception ex) {
+					MessageBox.Show(ex.Message);
 				}
-			} catch (Exception ex) {
-				MessageBox.Show(ex.Message);
 			}
+			
 		}
     }
 }

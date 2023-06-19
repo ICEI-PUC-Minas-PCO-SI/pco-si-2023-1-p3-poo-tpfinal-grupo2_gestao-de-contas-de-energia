@@ -1,4 +1,11 @@
-﻿using System;
+﻿using HW_Hidreletrica.Entidades.Usuario;
+using HW_Hidreletrica.Entidades.Usuario.Cliente.Conta.Conta_Comercial;
+using HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Fisica;
+using HW_Hidreletrica.Entidades.Usuario.Cliente.Residencia;
+using HW_Hidreletrica.Services.Repository.Cliente;
+using HW_Hidreletrica.Services.Repository.Cliente.Conta;
+using HW_Hidreletrica.Services.Residencia;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -18,9 +25,9 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 
 				using (SqlCommand cmd = cn.CreateCommand())
 				{
-					cmd.CommandText = "create database HW_Hidreletrica";
+					cmd.CommandText = "create database Testando";
 					cmd.ExecuteNonQuery();
-					cmd.CommandText = "use HW_Hidreletrica";
+					cmd.CommandText = "use Testando";
 					cmd.ExecuteNonQuery();
 					cmd.CommandText = "create table Administrador(\r\n\tCodAdministrador int PRIMARY KEY IDENTITY(1,1),\r\n\tNome char(30) not null,\r\n\tEmail char(30) not null,\r\n\tsenha char(15) not null\r\n);";
 					cmd.ExecuteNonQuery();
@@ -39,7 +46,7 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 
 				}
 				
-				Connect_Server.database = "HW_Hidreletrica";
+				Connect_Server.database = "Testando";
            
                 InsertItemsDatabase();
             }
@@ -53,16 +60,45 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 
 				using (SqlCommand cmd = cn.CreateCommand())
 				{
+					ClienteRepository clienteRepository = new ClienteRepository();
+					ResidenciaRepository residenciaRepository = new ResidenciaRepository();
+					ContaRepository contaRepository = new ContaRepository();
+
+					Residencias residencia = new Residencias();
+					Pessoa_Fisica pessoa = new Pessoa_Fisica();
+
 					cmd.CommandText = "insert into TipoPessoa(Descricao) values('Pessoa Fisica')";
 					cmd.ExecuteNonQuery();
 					cmd.CommandText = "insert into TipoPessoa(Descricao) values('Pessoa Juridica')";
 					cmd.ExecuteNonQuery();
 
-					cmd.CommandText = "insert into TipoConta(Descricao) values ('Residencial')";
-					cmd.ExecuteNonQuery();
 					cmd.CommandText = "insert into TipoConta(Descricao) values ('Comercial')";
 					cmd.ExecuteNonQuery();
+					cmd.CommandText = "insert into TipoConta(Descricao) values ('Residencial')";
+					cmd.ExecuteNonQuery();
 
+					//Para Pessoa Física todas as propriedades de menos a data de nascimento sâo strings, se atentar para colocar entre aspas " " 
+
+					//clienteRepository.Add(new Pessoa_Fisica(_cpf:  , _telefone: , _dtNascimento: , _nome: , _email: ,
+					//	_senha: Cryptography_Password.CryptographyMethod(), _codigo: ));
+
+					// Para Residencia -- Codigo, CodPEssoa e numero sâo int, demais campos são string
+
+					//residenciaRepository.Add(new Residencias(codigo: ,rua: , bairro: ,cidade: ,numero: ,cep: ,estado: 
+					//	, descricao: ,codPessoa: ));
+
+
+					clienteRepository.Add(new Pessoa_Fisica(_cpf:  "959.185.590-78", _telefone: "31 97527-5120", _dtNascimento: new DateTime(2001,10,30), _nome: "Lucas Castro Soares", _email: "lucas.castro@gmail.com",
+						_senha: Cryptography_Password.CryptographyMethod("1"), _codigo: "1"));
+
+					residenciaRepository.Add(new Residencias(codigo: 1, rua: "Rua Aderbal Lopes", bairro: "Funcionários", cidade: "contagem", numero: 20, cep: "32040-360", estado:"MG"
+						, descricao: "casa", codPessoa: 1));
+
+					pessoa.codigo = "1";
+					residencia.codigo = 1;
+					Conta_Comercial contaComercial = new Conta_Comercial(dtPagamento: new DateTime(2023, 06, 27), dtVencimento: new DateTime(2023, 06, 30), mesAnterior: 500, mesReferencia: 900
+																		  , residencia: residencia, cliente: pessoa);
+					contaRepository.Add(contaComercial);
 				}
 			}
 		}
