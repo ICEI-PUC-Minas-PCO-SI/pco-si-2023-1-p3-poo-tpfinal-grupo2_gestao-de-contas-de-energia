@@ -1,5 +1,7 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_emp {
-	partial class Tela_Principal_EMP {
+﻿namespace HW_Hidreletrica.Telas.Tela_emp
+{
+	partial class Tela_Principal_EMP
+	{
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -9,8 +11,10 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing) {
-			if (disposing && (components != null)) {
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -22,7 +26,8 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent() {
+		private void InitializeComponent()
+		{
 			components = new System.ComponentModel.Container();
 			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
@@ -36,8 +41,13 @@
 			btn_AplicaFiltro = new Button();
 			errorProvider1 = new ErrorProvider(components);
 			btnVerCliente = new Button();
+			menuStrip1 = new MenuStrip();
+			toolStripMenuItem1 = new ToolStripMenuItem();
+			perfilToolStripMenuItem = new ToolStripMenuItem();
+			logOutToolStripMenuItem = new ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)dt_Clientes).BeginInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+			menuStrip1.SuspendLayout();
 			SuspendLayout();
 			// 
 			// dt_Clientes
@@ -143,7 +153,7 @@
 			// 
 			// btnVerCliente
 			// 
-			btnVerCliente.BackColor = Color.Teal;
+			btnVerCliente.BackColor = Color.SteelBlue;
 			btnVerCliente.FlatStyle = FlatStyle.Flat;
 			btnVerCliente.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
 			btnVerCliente.ForeColor = SystemColors.ControlLightLight;
@@ -154,6 +164,38 @@
 			btnVerCliente.Text = "Ver Cliente";
 			btnVerCliente.UseVisualStyleBackColor = false;
 			btnVerCliente.Click += btnVerCliente_Click;
+			// 
+			// menuStrip1
+			// 
+			menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+			menuStrip1.Location = new Point(0, 0);
+			menuStrip1.Name = "menuStrip1";
+			menuStrip1.Size = new Size(1494, 29);
+			menuStrip1.TabIndex = 9;
+			menuStrip1.Text = "menuStrip1";
+			// 
+			// toolStripMenuItem1
+			// 
+			toolStripMenuItem1.BackColor = Color.DarkCyan;
+			toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { perfilToolStripMenuItem, logOutToolStripMenuItem });
+			toolStripMenuItem1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+			toolStripMenuItem1.Name = "toolStripMenuItem1";
+			toolStripMenuItem1.Size = new Size(57, 25);
+			toolStripMenuItem1.Text = "Perfil";
+			// 
+			// perfilToolStripMenuItem
+			// 
+			perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
+			perfilToolStripMenuItem.Size = new Size(180, 26);
+			perfilToolStripMenuItem.Text = "Perfil";
+			perfilToolStripMenuItem.Click += perfilToolStripMenuItem_Click;
+			// 
+			// logOutToolStripMenuItem
+			// 
+			logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+			logOutToolStripMenuItem.Size = new Size(180, 26);
+			logOutToolStripMenuItem.Text = "LogOut";
+			logOutToolStripMenuItem.Click += logOutToolStripMenuItem_Click;
 			// 
 			// Tela_Principal_EMP
 			// 
@@ -170,12 +212,16 @@
 			Controls.Add(label2);
 			Controls.Add(label1);
 			Controls.Add(dt_Clientes);
+			Controls.Add(menuStrip1);
+			MainMenuStrip = menuStrip1;
 			Name = "Tela_Principal_EMP";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Tela Principal Administrador";
 			FormClosing += Tela_Principal_EMP_FormClosing;
 			((System.ComponentModel.ISupportInitialize)dt_Clientes).EndInit();
 			((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+			menuStrip1.ResumeLayout(false);
+			menuStrip1.PerformLayout();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -192,5 +238,9 @@
 		private Button btn_AplicaFiltro;
 		private ErrorProvider errorProvider1;
 		private Button btnVerCliente;
+		private MenuStrip menuStrip1;
+		private ToolStripMenuItem toolStripMenuItem1;
+		private ToolStripMenuItem perfilToolStripMenuItem;
+		private ToolStripMenuItem logOutToolStripMenuItem;
 	}
 }

@@ -19,8 +19,8 @@ namespace HW_Hidreletrica
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 			Connect_Server.database = "HW_Hidreletrica";
-			Application.Run(new Perfil_EMP());
-			/*try {
+			//Application.Run(new Perfil_EMP());
+			try {
 				//Script_Server.CreateDatabase();
 				Connect_Server.database = "HW_Hidreletrica";
 				if (LocalStorage.verificaUsuarioLogado()) {
@@ -38,7 +38,7 @@ namespace HW_Hidreletrica
 				}
 			} catch (Exception ex) {
 				MessageBox.Show(ex.Message);
-			}*/
+			}
 
 
 		}
