@@ -75,7 +75,7 @@ namespace HW_Hidreletrica.Entidades.Connect_SQL
 					Residencias residencia = new Residencias();
 					Pessoa_Fisica pessoa = new Pessoa_Fisica();
 
-					Administradores adm = new Administradores(_nome: "Adm", _email: "adm@gmail.com",_codigo: "1", _senha: "123");
+					Administradores adm = new Administradores(_nome: "Adm", _email: "adm@gmail.com",_codigo: "1", _senha: Cryptography_Password.CryptographyMethod("123"));
 					AdministradorRepository administradorRepository = new AdministradorRepository();
 					administradorRepository.Add(adm);
 

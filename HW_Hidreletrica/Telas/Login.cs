@@ -13,43 +13,33 @@ using HW_Hidreletrica.Services.Repository.EMP;
 using HW_Hidreletrica.Telas.Tela_cliente;
 using HW_Hidreletrica.Telas.Tela_emp;
 
-namespace HW_Hidreletrica.Telas
-{
-	public partial class Login : Form
-	{
+namespace HW_Hidreletrica.Telas {
+	public partial class Login : Form {
 
 		ClienteRepository cliente = new ClienteRepository();
 		AdministradorRepository adm = new AdministradorRepository();
-		public Login()
-		{
+		public Login() {
 			InitializeComponent();
 		}
-		private void txt_usuario_TextChanged(object sender, EventArgs e)
-		{
+		private void txt_usuario_TextChanged(object sender, EventArgs e) {
 
 		}
 
-		private void txt_password_TextChanged(object sender, EventArgs e)
-		{
+		private void txt_password_TextChanged(object sender, EventArgs e) {
 		}
 
-		private void btn_login(object sender, EventArgs e)
-		{
+		private void btn_login(object sender, EventArgs e) {
 			string email = txtEmail.Text;
 			string senha = txtSenha.Text;
 			string tipoUsuario = cbxTipoUsuario.Text;
 
-			if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(senha) && !string.IsNullOrEmpty(tipoUsuario))
-			{
+			if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(senha) && !string.IsNullOrEmpty(tipoUsuario)) {
 				mensagem.Visible = false;
-				try
-				{
+				try {
 					senha = Cryptography_Password.CryptographyMethod(senha);
-					if (tipoUsuario == "Cliente")
-					{
+					if (tipoUsuario == "Cliente") {
 						DataTable sql = cliente.getCliente(email, senha);
-						if (sql.Rows.Count != 0)
-						{
+						if (sql.Rows.Count != 0) {
 							mensagem.Visible = false;
 
 							string nome = sql.Rows[0]["nome"].ToString();
@@ -59,18 +49,13 @@ namespace HW_Hidreletrica.Telas
 							Tela_Principal_Cliente telaCliente = new Tela_Principal_Cliente();
 							telaCliente.Show();
 							this.Hide();
-						}
-						else
-						{
+						} else {
 							mensagem.Text = "Email ou senha incorretos";
 							mensagem.Visible = true;
 						}
-					}
-					else
-					{
+					} else {
 						DataTable sql = adm.getAdminitrador(email, senha);
-						if (sql.Rows.Count != 0)
-						{
+						if (sql.Rows.Count != 0) {
 							mensagem.Visible = false;
 
 							string nome = sql.Rows[0]["nome"].ToString();
@@ -80,69 +65,57 @@ namespace HW_Hidreletrica.Telas
 							Tela_Principal_EMP telaAdm = new Tela_Principal_EMP();
 							telaAdm.Show();
 							this.Hide();
-						}
-						else
-						{
+						} else {
 							mensagem.Text = "Email ou senha incorretos";
 							mensagem.Visible = true;
 						}
 					}
 
-				}
-				catch (Exception ex)
-				{
+				} catch (Exception ex) {
 					MessageBox.Show(ex.Message);
 				}
 
-			}
-			else
-			{
+			} else {
 				mensagem.Text = "Preencha todos os campos";
 				mensagem.Visible = true;
 			}
 
 		}
 
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
+		private void pictureBox1_Click(object sender, EventArgs e) {
 
 		}
 
-		private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-		{
+		private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
 
 		}
 
-		private void label2_Click(object sender, EventArgs e)
-		{
+		private void label2_Click(object sender, EventArgs e) {
 
 		}
 
-		private void label4_Click(object sender, EventArgs e)
-		{
+		private void label4_Click(object sender, EventArgs e) {
 
 		}
 
-		private void btnVoltar_Click(object sender, EventArgs e)
-		{
+		private void btnVoltar_Click(object sender, EventArgs e) {
 			Principal principal = new Principal();
 			principal.Show();
 			this.Hide();
 		}
 
-		private void Login_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			if (e.CloseReason == CloseReason.UserClosing)
-			{
-				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-				{
+		private void Login_FormClosing(object sender, FormClosingEventArgs e) {
+			if (e.CloseReason == CloseReason.UserClosing) {
+				if (MessageBox.Show("Você deseja fechar a aplicação?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
 					Application.Exit();
-				}
-				else
-				{
+				} else {
 					e.Cancel = true;
 				}
 			}
+		}
+
+		private void Login_Load(object sender, EventArgs e) {
+
 		}
 	}
 }
