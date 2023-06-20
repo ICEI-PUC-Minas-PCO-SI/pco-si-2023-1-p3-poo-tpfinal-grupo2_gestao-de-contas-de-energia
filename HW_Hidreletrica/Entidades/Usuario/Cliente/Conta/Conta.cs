@@ -19,14 +19,14 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta
         public Clientes cliente { get; set; }
         public Residencias residencia { get; set; }
         public int codigoTipo { get; set; }
-        public DateTime dtPagamento { get; set; }
+		public DateTime? dtPagamento;
         public DateTime dtVencimento { get; set; }
         public Contas()
         {
             
         }
 
-		public Contas(double mesReferencia, double mesAnterior, Clientes cliente, Residencias residencia, DateTime dtPagamento, DateTime dtVencimento)
+		public Contas(double mesReferencia, double mesAnterior, Clientes cliente, Residencias residencia, DateTime? dtPagamento, DateTime dtVencimento)
 		{
 			this.mesReferencia = mesReferencia;
 			this.mesAnterior = mesAnterior;

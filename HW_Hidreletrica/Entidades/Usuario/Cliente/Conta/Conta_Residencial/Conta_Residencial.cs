@@ -21,7 +21,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta.Conta_Residencial
 
 		public override double CalculaConsumo(double val1, double val2)
 		{
-			this.consumo = (val1 - val2);
+			this.consumo = Math.Abs(val1 - val2);
 			return this.consumo;
 		}
 
@@ -31,7 +31,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta.Conta_Residencial
 			double contribuicaoAdicional = 9.25;
 			double soma = (this.consumo * tarifa) + contribuicaoAdicional;
 
-			return  soma;
+			return  Math.Round(soma,2);
 		}
 
 		public override double CalculaValorTotal(double val1)
@@ -41,7 +41,7 @@ namespace HW_Hidreletrica.Entidades.Usuario.Cliente.Conta.Conta_Residencial
 			double imposto = 0.30;
 			double soma = (this.consumo * tarifa) + contribuicaoAdicional;
 
-			return (soma * imposto) + soma;
+			return Math.Round((soma * imposto) + soma,2);
 			
 		}
 	}

@@ -19,17 +19,19 @@ namespace HW_Hidreletrica
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 			try {
+				
 				Script_Server.CreateDatabase();
+				
 			} 
 			catch (Exception e)
 			{
-				//caso caia aqui, significa que o banco já existe
+				MessageBox.Show(e.Message);
 			}
 			finally
 			{
 				try
 				{
-					Connect_Server.database = "HW_Hidreletrica";
+					Connect_Server.database = "Testando";
 					if (LocalStorage.verificaUsuarioLogado())
 					{
 						string tipoUsuario = LocalStorage.getTipoUsuario();
