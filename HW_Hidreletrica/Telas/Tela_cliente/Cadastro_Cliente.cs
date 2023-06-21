@@ -123,7 +123,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 						
 						//Cadastrando novo Usuário
 						clienteRepository.Add(cliente);
-						MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						//MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 						
 						// Salvando Usuário que acabou de se cadastrar no LocalStorage
