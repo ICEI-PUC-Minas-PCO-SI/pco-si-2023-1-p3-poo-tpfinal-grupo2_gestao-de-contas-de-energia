@@ -24,7 +24,7 @@ namespace HW_Hidreletrica.Services.Repository.Cliente.Conta
 			using (SqlConnection cn = new SqlConnection(Connect_Server.Connect()))
 			{
 				cn.Open();
-				string query = $"select Codigo, MesReferencia as 'Mês Referência kW/h', MesAnterior as 'Mês Anterior kW/h', Consumo, ValorTotal as 'Valor Total', ValorTotalSemImposto as 'Valor Total sem Imposto' ,dtPagamento as 'Data de Pagamento', dtVencimento as 'Data de Vencimento' from Conta where month(dtVencimento) = month(getdate()) - { mesReferencia} and CodResidencia = {codigoResidencia}; ";
+				string query = $"select Codigo, MesReferencia as 'Mês Referência kW/h', MesAnterior as 'Mês Anterior kW/h', Consumo as 'Consumo em kW/h', ValorTotal as 'Valor Total em R$', ValorTotalSemImposto as 'Valor Total sem Imposto' ,dtPagamento as 'Data de Pagamento', dtVencimento as 'Data de Vencimento' from Conta where month(dtVencimento) = month(getdate()) - { mesReferencia} and CodResidencia = {codigoResidencia}; ";
 
 				using (SqlDataAdapter da = new SqlDataAdapter(query,cn))
 				{
