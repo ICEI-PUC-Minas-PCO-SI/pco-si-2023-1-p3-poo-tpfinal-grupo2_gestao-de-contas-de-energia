@@ -25,13 +25,13 @@ namespace HW_Hidreletrica
 			} 
 			catch (Exception e)
 			{
-				MessageBox.Show(e.Message);
+				
 			}
 			finally
 			{
 				try
 				{
-					Connect_Server.database = "Testando";
+					Connect_Server.database = "HW_Hidreletrica";
 					if (LocalStorage.verificaUsuarioLogado())
 					{
 						string tipoUsuario = LocalStorage.getTipoUsuario();

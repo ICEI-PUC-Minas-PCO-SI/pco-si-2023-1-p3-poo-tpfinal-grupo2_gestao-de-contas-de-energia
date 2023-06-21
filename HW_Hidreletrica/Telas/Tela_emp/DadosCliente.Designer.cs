@@ -243,7 +243,7 @@
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = Color.SeaShell;
-			ClientSize = new Size(800, 450);
+			ClientSize = new Size(832, 455);
 			Controls.Add(labelDescricao);
 			Controls.Add(labelIdentificador);
 			Controls.Add(btnVoltar);

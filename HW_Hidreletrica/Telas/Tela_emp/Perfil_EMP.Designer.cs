@@ -148,6 +148,7 @@
 			ClientSize = new Size(832, 519);
 			Controls.Add(panel1);
 			Name = "Perfil_EMP";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Perfil_EMP";
 			Load += Perfil_EMP_Load;
 			panel1.ResumeLayout(false);
