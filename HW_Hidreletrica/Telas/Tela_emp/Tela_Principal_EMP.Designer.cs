@@ -1,7 +1,5 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_emp
-{
-	partial class Tela_Principal_EMP
-	{
+﻿namespace HW_Hidreletrica.Telas.Tela_emp {
+	partial class Tela_Principal_EMP {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -11,10 +9,8 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
+		protected override void Dispose(bool disposing) {
+			if (disposing && (components != null)) {
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -26,8 +22,7 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent()
-		{
+		private void InitializeComponent() {
 			components = new System.ComponentModel.Container();
 			DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
 			DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
@@ -55,7 +50,7 @@
 			dt_Clientes.AllowUserToAddRows = false;
 			dt_Clientes.AllowUserToDeleteRows = false;
 			dt_Clientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dt_Clientes.Location = new Point(54, 144);
+			dt_Clientes.Location = new Point(31, 117);
 			dt_Clientes.Name = "dt_Clientes";
 			dt_Clientes.ReadOnly = true;
 			dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -70,17 +65,17 @@
 			dt_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
 			dt_Clientes.RowTemplate.Height = 25;
 			dt_Clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dt_Clientes.Size = new Size(1375, 435);
+			dt_Clientes.Size = new Size(1287, 472);
 			dt_Clientes.TabIndex = 0;
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Font = new Font("Microsoft YaHei UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+			label1.Font = new Font("Microsoft YaHei UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
 			label1.ForeColor = Color.SlateBlue;
-			label1.Location = new Point(73, 67);
+			label1.Location = new Point(96, 41);
 			label1.Name = "label1";
-			label1.Size = new Size(134, 39);
+			label1.Size = new Size(170, 50);
 			label1.TabIndex = 1;
 			label1.Text = "Clientes";
 			// 
@@ -88,7 +83,7 @@
 			// 
 			label2.AutoSize = true;
 			label2.Font = new Font("Microsoft YaHei UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-			label2.Location = new Point(1176, 630);
+			label2.Location = new Point(1092, 632);
 			label2.Name = "label2";
 			label2.Size = new Size(55, 19);
 			label2.TabIndex = 2;
@@ -99,7 +94,7 @@
 			cbx_Filtro.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbx_Filtro.FormattingEnabled = true;
 			cbx_Filtro.Items.AddRange(new object[] { "CPF", "CNPJ", "Identificador", "Consumo", "Contas em Atraso", "Todos os Clientes" });
-			cbx_Filtro.Location = new Point(1019, 64);
+			cbx_Filtro.Location = new Point(916, 75);
 			cbx_Filtro.Name = "cbx_Filtro";
 			cbx_Filtro.Size = new Size(121, 23);
 			cbx_Filtro.TabIndex = 3;
@@ -107,7 +102,7 @@
 			// 
 			// txt_Input
 			// 
-			txt_Input.Location = new Point(1164, 64);
+			txt_Input.Location = new Point(1061, 75);
 			txt_Input.Name = "txt_Input";
 			txt_Input.Size = new Size(143, 23);
 			txt_Input.TabIndex = 4;
@@ -117,7 +112,7 @@
 			// 
 			label3.AutoSize = true;
 			label3.Font = new Font("Microsoft YaHei UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-			label3.Location = new Point(933, 67);
+			label3.Location = new Point(830, 78);
 			label3.Name = "label3";
 			label3.Size = new Size(83, 16);
 			label3.TabIndex = 5;
@@ -126,7 +121,7 @@
 			// label4
 			// 
 			label4.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-			label4.Location = new Point(1237, 630);
+			label4.Location = new Point(1138, 632);
 			label4.Name = "label4";
 			label4.Size = new Size(47, 19);
 			label4.TabIndex = 6;
@@ -139,7 +134,7 @@
 			btn_AplicaFiltro.FlatStyle = FlatStyle.Flat;
 			btn_AplicaFiltro.Font = new Font("Microsoft YaHei UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
 			btn_AplicaFiltro.ForeColor = SystemColors.ControlLightLight;
-			btn_AplicaFiltro.Location = new Point(1334, 59);
+			btn_AplicaFiltro.Location = new Point(1223, 70);
 			btn_AplicaFiltro.Name = "btn_AplicaFiltro";
 			btn_AplicaFiltro.Size = new Size(95, 32);
 			btn_AplicaFiltro.TabIndex = 7;
@@ -157,7 +152,7 @@
 			btnVerCliente.FlatStyle = FlatStyle.Flat;
 			btnVerCliente.Font = new Font("Microsoft YaHei UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
 			btnVerCliente.ForeColor = SystemColors.ControlLightLight;
-			btnVerCliente.Location = new Point(1334, 623);
+			btnVerCliente.Location = new Point(1223, 625);
 			btnVerCliente.Name = "btnVerCliente";
 			btnVerCliente.Size = new Size(95, 32);
 			btnVerCliente.TabIndex = 8;
