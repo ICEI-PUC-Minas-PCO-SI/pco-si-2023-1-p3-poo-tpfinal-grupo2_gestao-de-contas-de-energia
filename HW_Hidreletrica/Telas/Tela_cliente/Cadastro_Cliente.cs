@@ -13,10 +13,11 @@ using HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Fisica;
 using HW_Hidreletrica.Entidades.Usuario.Cliente;
 using HW_Hidreletrica.Entidades.Usuario.Cliente.Pessoa_Juridica;
 using HW_Hidreletrica.Entidades.Usuario;
+using HW_Hidreletrica.Entidades.Usuario.Cliente.Execptions;
 
 namespace HW_Hidreletrica.Telas.Tela_cliente
 {
-	public partial class Cadastro_Cliente : Form
+    public partial class Cadastro_Cliente : Form
 	{
 		ClienteRepository clienteRepository = new ClienteRepository();
 		public Cadastro_Cliente()
@@ -86,6 +87,10 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 				errorProvider5.SetError(txt_CNPJ_CPF, "Favor preencher o campo de forma completa");
 
 			}
+			else if (txt_senha.Text.Length < 8)
+			{
+				MessageBox.Show("A senha deve conter no mínimo 8 caracteres","ERROR",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
+			}
 			else
 			{
 				// Aqui verifica se o e-mail que esta tentando ser cadastrado já existe
@@ -98,6 +103,11 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 				{
 					try
 					{
+
+						if ((DateTime.Now.Year - (int.Parse(dtNascimento.Text.Substring(6))) < 16))
+						{
+							throw new EClienteIdadeInvalida("Cadastro de usuários somente para maiores de 16 anos");
+						}
 						if (cbx_cpf.SelectedIndex == 0)
 						{
 							cliente = new Pessoa_Fisica(_nome: txt_nome.Text, _email: txt_email.Text, _telefone: txt_telefone.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), _codigo: clienteRepository.getIdCliente(),
@@ -126,7 +136,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 						principalCliente.Show();
 						this.Hide();
 					}
-					catch (ClienteIdadeInvalidaException ex)
+					catch (EClienteIdadeInvalida ex)
 					{
 						MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 					}

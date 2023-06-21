@@ -28,7 +28,6 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			dtConta2MesesAnterior.DataSource = contaRepository.getContaMes(2, codigoResidencia);
 
 
-
 			cb_FiltroMes.SelectedIndex = 0;
 			this.codigoResidencia = codigoResidencia;
 		}

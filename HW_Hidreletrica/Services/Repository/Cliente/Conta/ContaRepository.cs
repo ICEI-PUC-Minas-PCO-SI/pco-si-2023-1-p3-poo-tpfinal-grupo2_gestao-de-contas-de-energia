@@ -30,6 +30,7 @@ namespace HW_Hidreletrica.Services.Repository.Cliente.Conta
 				{
 					DataTable dt = new DataTable();
 					da.Fill(dt);
+
 					return dt;
 				}
 			}
@@ -75,21 +76,6 @@ namespace HW_Hidreletrica.Services.Repository.Cliente.Conta
 					}
 				}
 			}
-		}
-
-		void IRepository.Delete<T>(T entity)
-		{
-			throw new NotImplementedException();
-		}
-
-		bool IRepository.SaveChanges()
-		{
-			throw new NotImplementedException();
-		}
-
-		void IRepository.Update<T>(T entity)
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

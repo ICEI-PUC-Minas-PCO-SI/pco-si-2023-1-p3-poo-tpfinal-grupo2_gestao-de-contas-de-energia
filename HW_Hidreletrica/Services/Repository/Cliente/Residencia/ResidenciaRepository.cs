@@ -84,18 +84,6 @@ namespace HW_Hidreletrica.Services.Residencia {
 			}
 		}
 
-		public void Delete<T>(T entity) where T : class {
-			throw new NotImplementedException();
-		}
-
-		public bool SaveChanges() {
-			throw new NotImplementedException();
-		}
-
-		public void Update<T>(T entity) where T : class {
-			throw new NotImplementedException();
-		}
-
 		public DataTable getInformacoesResidencia(int codResidencia) {
 			using (SqlConnection conexao = new SqlConnection(Connect_Server.Connect())) {
 					conexao.Open();

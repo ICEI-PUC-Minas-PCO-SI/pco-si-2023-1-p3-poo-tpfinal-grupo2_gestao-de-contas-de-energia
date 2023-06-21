@@ -216,21 +216,5 @@ namespace HW_Hidreletrica.Services.Repository.EMP
 			}
 		}
 
-
-
-		void IRepository.Delete<T>(T entity)
-		{
-			throw new NotImplementedException();
-		}
-
-		bool IRepository.SaveChanges()
-		{
-			throw new NotImplementedException();
-		}
-
-		void IRepository.Update<T>(T entity)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }
