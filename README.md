@@ -9,6 +9,10 @@ Software para auxiliar os consumidores a terem um maior controle do consumo mens
 
 `SEMESTRE` Terceiro Semestre
 
+## Orientador
+
+* Fabio Leandro Rodrigues Cordeiro
+
 ## Integrantes
 
 * Gustavo Alves Teixeira
