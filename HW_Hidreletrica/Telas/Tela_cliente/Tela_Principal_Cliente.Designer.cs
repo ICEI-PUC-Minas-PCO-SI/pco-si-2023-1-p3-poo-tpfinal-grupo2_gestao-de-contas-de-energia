@@ -1,7 +1,5 @@
-﻿namespace HW_Hidreletrica.Telas.Tela_cliente
-{
-	partial class Tela_Principal_Cliente
-	{
+﻿namespace HW_Hidreletrica.Telas.Tela_cliente {
+	partial class Tela_Principal_Cliente {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -11,10 +9,8 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
+		protected override void Dispose(bool disposing) {
+			if (disposing && (components != null)) {
 				components.Dispose();
 			}
 			base.Dispose(disposing);
@@ -26,8 +22,7 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent()
-		{
+		private void InitializeComponent() {
 			label3 = new Label();
 			label5 = new Label();
 			menuStrip1 = new MenuStrip();
@@ -174,10 +169,10 @@
 			// 
 			// pictureBox4
 			// 
-			pictureBox4.Image = Properties.Resources.img_logo;
-			pictureBox4.Location = new Point(800, 341);
+			pictureBox4.Image = Properties.Resources.logoComFundo;
+			pictureBox4.Location = new Point(765, 311);
 			pictureBox4.Name = "pictureBox4";
-			pictureBox4.Size = new Size(104, 113);
+			pictureBox4.Size = new Size(139, 143);
 			pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
 			pictureBox4.TabIndex = 15;
 			pictureBox4.TabStop = false;

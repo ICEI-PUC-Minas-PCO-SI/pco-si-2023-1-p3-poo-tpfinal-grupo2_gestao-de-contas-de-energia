@@ -95,6 +95,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 					residencia.atualizaApelido(txbApelido.Text, codResidencia);
 					Form residenciasCadastradas = new Residencias_Cliente();
 					residenciasCadastradas.Show();
+					
 					this.Hide();
 				}
 				catch (Exception ex)
@@ -131,6 +132,7 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 				cbxUF.Enabled = false;
 				txtNumero.Text = sql.Rows[0]["Numero"].ToString();
 				txtNumero.ReadOnly = true;
+				btnCadastro.Text = "Salvar";
 			}
 			catch (Exception ex)
 			{
