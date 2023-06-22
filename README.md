@@ -2,7 +2,6 @@
 
 Software para auxiliar os consumidores a terem um maior controle do consumo mensal de energia, incentivando a economia e evitando desperdícios desnecessários. Através da utilização do software HW, os usuários terão acesso a novos métodos e práticas para reduzir o consumo, garantindo uma gestão eficiente e responsável
 
-
 `CURSO` Sistemas de Informação
 
 `DISCIPLINA` Programação Orientada a Objetos
@@ -21,3 +20,14 @@ Software para auxiliar os consumidores a terem um maior controle do consumo mens
 * Thais Alves Silva
 
 ## Instruções de utilização
+Na criação do script do banco foram criados usuários fictícios que podem ser utilizados para testar melhor todas as funcionalidades do sistema:
+
+* Para testar como usuário 'Administrador':
+
+      email: adm@gmail.com
+      senha: 12345678
+
+* Para testar como usuário 'Cliente':
+
+      email: lucas.castro@gmail.com
+      senha: 12345678
