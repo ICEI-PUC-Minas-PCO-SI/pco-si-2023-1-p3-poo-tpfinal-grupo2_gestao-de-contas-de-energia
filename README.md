@@ -20,14 +20,31 @@ Software para auxiliar os consumidores a terem um maior controle do consumo mens
 * Thais Alves Silva
 
 ## Instruções de utilização
+
 Na criação do script do banco foram criados usuários fictícios que podem ser utilizados para testar melhor todas as funcionalidades do sistema:
 
 * Para testar como usuário 'Administrador':
 
-      email: adm@gmail.com
+      Email: adm@gmail.com
       senha: 12345678
 
 * Para testar como usuário 'Cliente':
 
-      email: lucas.castro@gmail.com
+      Email: jeniferrosaria16@hotmail.com  
+      Senha: 12345678
+
+      Email: vicsilvadias@gmail.com
+      Senha: 12345678
+      
+      Email: mattmiranda@hotmail.com
+      Senha: 12345678
+  
+      Email: lucas.castro@gmail.com
       senha: 12345678
+
+      Email: abigail.soares@gmail.com
+      senha: 12345678
+      
+      Email: fernando@gmail.com
+      senha: 12345678
+      
