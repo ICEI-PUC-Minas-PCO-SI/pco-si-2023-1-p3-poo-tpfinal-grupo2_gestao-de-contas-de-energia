@@ -223,6 +223,7 @@
 			Controls.Add(pictureBox1);
 			Controls.Add(panel1);
 			Name = "Cadastro_Administrador";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Cadastro_Administrador";
 			Load += Cadastro_Administrador_Load;
 			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

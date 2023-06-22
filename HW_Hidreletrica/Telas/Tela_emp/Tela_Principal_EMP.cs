@@ -68,29 +68,38 @@ namespace HW_Hidreletrica.Telas.Tela_emp {
 			} else {
 				errorProvider1.Clear();
 
-				switch (cbx_Filtro.SelectedIndex.ToString()) {
-					case "0":
-					dt_Clientes.DataSource = adminRepos.getClienteByCpf(txt_Input.Text);
-					break;
-					case "1":
-					dt_Clientes.DataSource = adminRepos.getClienteByCnpj(txt_Input.Text);
-					break;
-					case "2":
-					dt_Clientes.DataSource = adminRepos.getClienteByCIdentificador(txt_Input.Text);
-					break;
-					case "3":
-					dt_Clientes.DataSource = adminRepos.getClienteByConsumo(double.Parse(txt_Input.Text));
-					break;
-					case "4":
-					dt_Clientes.DataSource = adminRepos.getClienteByContaAtraso();
-					break;
-					case "5":
-					dt_Clientes.DataSource = adminRepos.getAllClientes();
-					break;
+				try
+				{
 
+
+					switch (cbx_Filtro.SelectedIndex.ToString())
+					{
+						case "0":
+							dt_Clientes.DataSource = adminRepos.getClienteByCpf(txt_Input.Text);
+							break;
+						case "1":
+							dt_Clientes.DataSource = adminRepos.getClienteByCnpj(txt_Input.Text);
+							break;
+						case "2":
+							dt_Clientes.DataSource = adminRepos.getClienteByCIdentificador(txt_Input.Text);
+							break;
+						case "3":
+							dt_Clientes.DataSource = adminRepos.getClienteByConsumo(double.Parse(txt_Input.Text));
+							break;
+						case "4":
+							dt_Clientes.DataSource = adminRepos.getClienteByContaAtraso();
+							break;
+						case "5":
+							dt_Clientes.DataSource = adminRepos.getAllClientes();
+							break;
+
+					}
+					label4.Text = (dt_Clientes.RowCount).ToString();
 				}
-				label4.Text = (dt_Clientes.RowCount).ToString();
-
+				catch(Exception ex)
+				{
+					MessageBox.Show("Ocorreu um problema inesperado, contate o administrador e mostre o seguinte erro: " + ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+				}
 			}
 
 

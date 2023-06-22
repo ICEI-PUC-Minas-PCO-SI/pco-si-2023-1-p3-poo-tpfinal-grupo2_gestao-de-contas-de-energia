@@ -140,6 +140,10 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 					{
 						MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Ocorreu um problema inesperado e não foi possível realizar o cadastro do usuário, contate o administrador e mostre o seguinte erro: " + ex.Message,"ERROR",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
+					}
 					
 				}
 			}

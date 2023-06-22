@@ -91,7 +91,7 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 		{
 			try
 			{
-				LocalStorage.logOut();
+				
 				Cadastro_Administrador cadastro = new Cadastro_Administrador();
 				cadastro.Show();
 				this.Hide();

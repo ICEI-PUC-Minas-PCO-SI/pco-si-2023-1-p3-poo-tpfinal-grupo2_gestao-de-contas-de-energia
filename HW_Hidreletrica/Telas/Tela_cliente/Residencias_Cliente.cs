@@ -170,22 +170,27 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 
 		private void btnContas_Click(object sender, EventArgs e)
 		{
-
-
-			int residenciasSelecionadas = dataGridViewResidencias.Rows.GetRowCount(DataGridViewElementStates.Selected);
-			if (residenciasSelecionadas == 1)
+			try
 			{
-				foreach (DataGridViewRow row in dataGridViewResidencias.SelectedRows)
+				int residenciasSelecionadas = dataGridViewResidencias.Rows.GetRowCount(DataGridViewElementStates.Selected);
+				if (residenciasSelecionadas == 1)
 				{
-					int codResidencia = (int)row.Cells[0].Value;        //PEGANDO CÓDIGO DA RESIDENCIA
-					Contas_Clientes contas = new Contas_Clientes(codResidencia);
-					contas.Show();
-					this.Hide();
+					foreach (DataGridViewRow row in dataGridViewResidencias.SelectedRows)
+					{
+						int codResidencia = (int)row.Cells[0].Value;        //PEGANDO CÓDIGO DA RESIDENCIA
+						Contas_Clientes contas = new Contas_Clientes(codResidencia);
+						contas.Show();
+						this.Hide();
+					}
+				}
+				else
+				{
+					MessageBox.Show("Selecione apenas uma residência para ver as contas!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 				}
 			}
-			else
+			catch(Exception ex)
 			{
-				MessageBox.Show("Selecione apenas uma residência para ver as contas!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+				MessageBox.Show("Ocorreu um problema inesperado, contate o administrador e mostre o seguinte erro: " + ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 			}
 		}
 

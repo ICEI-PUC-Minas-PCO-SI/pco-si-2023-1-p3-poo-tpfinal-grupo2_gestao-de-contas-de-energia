@@ -58,24 +58,36 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 
 			else
 			{
-				if (administradorRepository.getAdministradorByEmail(txt_email.Text))
+				try
 				{
-					MessageBox.Show("Esse administrador ja esta cadastrado", "ERRO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+
+
+					if (administradorRepository.getAdministradorByEmail(txt_email.Text))
+					{
+						MessageBox.Show("Esse administrador ja esta cadastrado", "ERRO", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+					}
+					else
+					{
+						
+						administrador = new Administradores(_nome: txt_nome.Text, _email: txt_email.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), administradorRepository.getIdAdministrador());
+
+						administradorRepository.Add(administrador);
+						//MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+						LocalStorage.logOut();
+						DataTable dt = administradorRepository.getAdminitrador(txt_email.Text, Cryptography_Password.CryptographyMethod(txt_senha.Text));
+						int codigo = int.Parse(dt.Rows[0]["CodAdministrador"].ToString());
+						LocalStorage.salvaInformacoes(txt_nome.Text, txt_email.Text, codigo, "Administrador");
+
+						Tela_Principal_EMP principal_EMP = new Tela_Principal_EMP();
+						principal_EMP.Show();
+						this.Hide();
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					administrador = new Administradores(_nome: txt_nome.Text, _email: txt_email.Text, _senha: Cryptography_Password.CryptographyMethod(txt_senha.Text), administradorRepository.getIdAdministrador());
+					MessageBox.Show("Ocorreu um problema inesperado e não foi possível realizar o cadastro do administrador, contate o administrador e mostre o seguinte erro: " + ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 
-					administradorRepository.Add(administrador);
-					//MessageBox.Show("Usuário Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-					DataTable dt = administradorRepository.getAdminitrador(txt_email.Text, Cryptography_Password.CryptographyMethod(txt_senha.Text));
-					int codigo = int.Parse(dt.Rows[0]["CodAdministrador"].ToString());
-					LocalStorage.salvaInformacoes(txt_nome.Text, txt_email.Text, codigo, "Administrador");
-
-					Tela_Principal_EMP principal_EMP = new Tela_Principal_EMP();
-					principal_EMP.Show();
-					this.Hide();
 				}
 			}
 		}
@@ -94,6 +106,12 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 				errorProvider2.SetError(txt_senha, erro);
 				errorProvider3.SetError(txt_confsenha, erro);
 			}
+			else if(txt_senha.Text.Length < 8)
+			{
+				string erro = "Senhas devem ter no mínimo 8 caracteres";
+				errorProvider2.SetError(txt_senha, erro);
+				errorProvider3.SetError(txt_confsenha, erro);
+			}
 			else
 			{
 				errorProvider2.Clear();
@@ -108,8 +126,8 @@ namespace HW_Hidreletrica.Telas.Tela_emp
 
 		private void btn_cancelar_Click(object sender, EventArgs e)
 		{
-			Principal principal = new Principal();
-			principal.Show();
+			Perfil_EMP perfil = new Perfil_EMP();
+			perfil.Show();
 			this.Hide();
 		}
 	}

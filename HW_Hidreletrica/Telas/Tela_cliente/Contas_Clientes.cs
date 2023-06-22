@@ -22,12 +22,17 @@ namespace HW_Hidreletrica.Telas.Tela_cliente
 			this.codigoResidencia = codigoResidencia;
 			InitializeComponent();
 
-
-			dtContaAtual.DataSource = contaRepository.getContaMes(0, codigoResidencia);
-			dtContaMesAnterior.DataSource = contaRepository.getContaMes(1, codigoResidencia);
-			dtConta2MesesAnterior.DataSource = contaRepository.getContaMes(2, codigoResidencia);
-
-
+			try
+			{
+				dtContaAtual.DataSource = contaRepository.getContaMes(0, codigoResidencia);
+				dtContaMesAnterior.DataSource = contaRepository.getContaMes(1, codigoResidencia);
+				dtConta2MesesAnterior.DataSource = contaRepository.getContaMes(2, codigoResidencia);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Ocorreu um problema inesperado, contate o administrador e mostre o seguinte erro: " + ex.Message, "ERROR", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+			}
+			
 			cb_FiltroMes.SelectedIndex = 0;
 			this.codigoResidencia = codigoResidencia;
 		}
